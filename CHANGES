@@ -1,0 +1,153 @@
+New in release 1.4.1rc
+======================
+
+* Compile warning: implicit declaration of function ‘save_chk’ fixed (SF bug #9)
+* bmore seg fault on file not found fixed
+* set columns prevents filename display on the commandline fixed (SF bug #8)
+* bmore new option -r 
+  bvi new setting: set reverse
+  Characters between 160 - 254 are displayed as "reverse video text" as used in
+  some legacy systems (Atari, Commodore, Apple II, etc).
+* castings fixed in comm.c
+
+
+New in release 1.4.0
+====================
+
+* Minor fixes
+
+
+New in release 1.4.0rc2
+=======================
+
+* Ubuntu bug #252604 fixed
+* set scroll fixed
+* adding ASCII_DEL 0x7f for backspace
+
+
+New in release 1.4.0rc
+======================
+
+* b B w W commands behave equally now (SF bug #5)
+* .bvirc empty line bug fixed (SF bug #6)
+* g-command bug fixed (SF bug #7)
+* several minor fixes
+
+
+New in release 1.4.0beta
+========================
+
+* ~ - bug fixed (by elo3456)
+* debian bug #469704 fixed (bmore)
+* debian bug #715687 fixed (bmore)
+* red hat bug #925119 fixed
+
+
+New in release 1.4.0alpha
+==========================
+
+* highlight search result (by David Kelley)
+* Large File Support added (by Joe Hinteregger)
+* binary representation of byte in status line
+* command line options renamed for compability with hexdump
+* Offset handling fixed (Bug item #3036881)
+* noshowmode: fix length of statusline
+* bmore: 'b' bug fixed (by Tatsuyoshi)
+* ';' bug fixed (by Nathan Hougthon and Christian Weisgerber)
+* ZZ write bug fixed (by Joe Hinteregger)
+* Buffer overflow if terminal > 255 columns (by Richard Yao)
+* configure fixed (by Richard Yao)
+* ncurses with tinfo fixed (by Richard Yao)
+
+
+New in release 1.3.2
+====================
+
+* configure: checking term.h and ncurses/term.h
+* cast in bmore.c in putline();
+* ported to compile under DJGPP v2.0 w/ PDCURSES (by simoN)
+* fixed multiple file handling for "bmore" (by simoN)
+* renamed several local screen processing routines to avoid compiler conflicts
+* several minor fixes to "bmore" code (by simoN)
+* reset tty after CTRL-C in bmore
+* -c option in bmore (clear before displaying)
+* -n num option in bmore (display the indicated number of lines in each
+  screenful
+* -w num option in bmore (display the indicated number of bytes in each
+  line)
+
+
+New in release 1.3.1
+====================
+
+* autoconf 2.52
+* do_back() fix
+* replace sys_errlist[errno] with strerror(errno) (Debian #106762)
+* deleting bytes in empty file fixed (Debian #121934)
+* no ":set mm" for x at eof (Debian #122240)
+* cast for alloc_buf() in set.c
+* r-bug fix in edit.c and bvi.c
+* renamed CTRL to BVICTRL (AIX problem)
+* bmore: nicer last line
+* bmore: bmbeep() instead of beep()
+* bmore: subshell support fixes
+
+
+New in release 1.3.0
+====================
+
+* a "bmore" program has been added
+* --with-ncurses option to configure to specify an alternate
+  search path for Ncurses outside the normal include/lib search path.
+* make uninstall option
+* Reading of Block Special Files
+* New Command line options:
+     +cmd
+	 -b begin  \
+	 -e end     > for partial file read
+	 -s size   /
+* :e# bug fixed
+* Debian bug #68436 (Buffer overflow in io.c) fixed
+
+
+New in release 1.2.0
+====================
+
+* configuration with GNU autoconfig
+* CR moves cursor to 1st column
+* alphabet. order for :set all
+* new settings:
+  set columns=n
+  set (no)memmove
+* insert and delete (a, d, i, I, x, X)
+* vi-syntax for y (yank), overwriting put o
+* new colon (ex) commands:
+  :undo :delete :global
+  :yank :put :overwrite
+  :insert :change :append
+* new option:
+  -f script
+
+
+New in release 1.1.1
+=====================
+
+* .bvirc not read in some cases, fixed
+* ":f newname" does not work, fixed
+* distribution tar file with no directory, fixed
+* freebsd and openbsd added to Makefile
+* undo of D command fixed
+
+
+New in release 1.1.0
+=====================
+
+* A lot of bugfixes
+* New option ":set offset=n" for counting the addresses beginning
+  with n instead of 0
+* New bit-wise commands :xor :and :or :not :neg :lshift :rshift
+  :rrotate :lrotate
+* Byte addressing for colon commands, e.g. ":5,100w foo" writes
+  byte 5 through 100 to file foo
+* Backwards hex search character % changed to #
+* Filename substitution with %, e.g. ":w %.new"

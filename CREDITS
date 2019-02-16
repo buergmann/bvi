@@ -1,0 +1,38 @@
+Patches:
+Guido <guido@bearix.oche.de> sys_errlist
+Christian "naddy" Weisgerber <naddy@mips.rhein-neckar.de> {Free,Open}BSD
+Gunnar Larisch <la@softing.com> ^ZZ bug
+Peter J. Holzer <hjp@wsr.ac.at> setlocale
+Albert Chin-A-Young <china@thewrittenword.com> Makefile.in
+Ralf <rks@ffm.tc.iot.dtag.de> AIX fixes
+Claudio Nieder <claudio@chili.symmetrix.ch> Makefile
+Nico Schmidt <Nico.Schmidt@ipk.fhg.de> r-bug fix
+Steve Waltner <swaltner@lsil.com> Mac OS X support
+Andre Wobst <Andre.Wobst@Physik.Uni-Augsburg.de> AIX fixes
+SimoN <simontdd@netzero.net> bmore: subshell support fixes, DJGPP support
+Alastair Thomas Parker <u4111504@anu.edu.au> binary representation in status
+Tatsuyoshi <toyota@tatsuyoshi.net> bmore: 'b' bug fix
+Nathan Hougthon <natex84@gmail.com> ';' - bug
+Christian "naddy" Weisgerber <naddy@mips.rhein-neckar.de> ';' - bug
+David Kelley <dskelley@gmail.com> Highlight patch, backspace patch
+Markus Ewert <sarum90@gmail.com> Apple backspace
+Michael Tautschnig <mt@devian.org> Conflicting declaration of 'precoint' fixed
+Sebastian Kayser <> Offset handling fixed (Bug item #3036881)
+Josef Hinteregger <joehtg@joehtg.co.at> ZZ write bug, lfs
+Richard Yao <ryao@gentoo.org> Buffer overflow at terminals > 255, ncurses with tinfo, configure fixed
+<elo3456@sbcglobal.net> ~ operator dumps core
+Dave Keaton <davek@gmail.com> ASCII_DEL patch
+
+
+Packages:
+Christian "naddy" Weisgerber <naddy@mips.rhein-neckar.de> Source RPM
+Christian Kurz <shorty@jupiter.rhein-neckar.de> Debian package
+Stijn de Bekker <stijn@debekker.org> Debian package
+Troy Engel <tengel@sonic.net> i386 RPM package
+Thomas Steudten <thomas@steudten.com> RH alpha and x86 RPM package
+John M. Huddleston <jhudd@frii.com> Cygwin binaries
+Sam Hocevar <sam+deb@zoy.org> Debian Packages
+
+Doc:
+Sven Guckes <first-contact@guckes.net>
+Ben <info@leedsnet.com>

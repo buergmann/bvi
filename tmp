@@ -1,0 +1,15 @@
+		if ((ch > 31) && (ch < 127)) {
+		    PRINTF("%c", ch);
+		} else {
+			if (r_flag) {
+				if ((ch & 128) && ((ch > 159) && (ch < 255))) {
+					if (!no_tty) highlight();
+		    		PRINTF("%c", ch & 127);
+					if (!no_tty) normal();
+				} else {
+		    		PRINTF(".");
+				}
+			} else {
+		    	PRINTF(".");
+			}
+		}
