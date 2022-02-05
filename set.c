@@ -58,6 +58,8 @@ struct	param	params[] = {
 	{ "wrapscan",	"ws",		TRUE,	"",	P_BOOL },
 	{ "highlight",  "hl",       TRUE,   "", P_BOOL },
 	{ "reverse",    "re",       FALSE,  "", P_BOOL },
+	{ "groupcolor",  "gc",      TRUE,   "", P_BOOL },
+	{ "columnsgroup",	"cg",		4,		"",	P_NUM },
 #if defined(__MSDOS__) && !defined(DJGPP)
 	{ "color",		"co",		7,		"",	P_NUM  },
 #endif

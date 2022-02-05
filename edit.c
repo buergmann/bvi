@@ -11,7 +11,7 @@
  * 2003-07-04 V 1.3.2
  * 2006-04-05 V 1.3.3 alpha - binary representation
  * 2014-09-30 V 1.4.0
- * 2019-01-22 V 1.4.1
+ * 2019-10-12 V 1.4.1
  *
  * Copyright 1996-2019 by Gerhard Buergmann
  * gerhard@puon.at
@@ -47,6 +47,7 @@ char contru[][4] = {"NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL",
 char tmpbuf[10];
 char linbuf[16384];
 long hl_spat = 0;
+int hex_counter=0;
 
 static  char    getcbuff[BUFFER];
 static  char    *getcnext = NULL;
@@ -484,7 +485,7 @@ statpos()
 	}
 	bin_val[8] = '\0';
 	
-	statsize = sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
+	sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
 		(long long)(bytepos + P(P_OF)), bin_val, Char1, Char1, Char1);
 	attrset(A_BOLD);
 	status = maxx - 1 - statsize;
@@ -532,6 +533,11 @@ printline(mempos, scpos)
 	PTR			f_end = 0;
 	int			print_pos = 0, mv_pos = 0;
 	unsigned char cur_ch;
+
+    start_color(); //byzig
+    /*init_pair(1,COLOR_YELLOW,COLOR_BLACK);*/
+    init_pair(1,15,COLOR_BLACK);
+    hex_counter=0;
 
 	if (mempos > maxpos) {
 		strcpy(linbuf, "~         ");
@@ -585,14 +591,27 @@ printline(mempos, scpos)
 		}
 		if (mempos + print_pos >= maxpos) {
 			sprintf(tmpbuf, "   ");
+            addstr(tmpbuf);
 			cur_ch = ' ';
 		} else {
 			cur_ch = *(mempos + print_pos);
-			sprintf(tmpbuf, "%02X ", cur_ch);
+            if (P(P_GC)) {
+                    if ((hex_counter/P(P_GS))%2!=0) {
+                        attron(COLOR_PAIR(1)); 
+                    }
+                    else
+                    {
+                        attroff(COLOR_PAIR(1)); 
+                    }
+            }
+            sprintf(tmpbuf, "%02X ", cur_ch);
+            addstr(tmpbuf);
+            hex_counter++;
+
 		}
 		strcat(linbuf, tmpbuf);
 	}
-	mvaddstr(scpos, mv_pos, linbuf);
+	/*mvaddstr(scpos, mv_pos, linbuf);*/
 	attrset(A_NORMAL);
 
 	for (print_pos = 0; print_pos < Anzahl; print_pos++) {
@@ -615,6 +634,8 @@ printline(mempos, scpos)
 			    	addstr(".");
 				}
 			}
+		} else {
+			addstr(" ");
 		}
 	}
 }

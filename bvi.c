@@ -12,7 +12,7 @@
  * 2006-04-04  V 1.3.3
  * 2013-08-23  V 1.4.0alpha
  * 2014-10-07  V 1.4.0
- * 2019-01-22  V 1.4.1
+ * 2019-10-12  V 1.4.1
  *
  * NOTE: Edit this file with tabstop=4 !
  *
@@ -266,20 +266,18 @@ main(argc, argv)
 	cbreak();
 	noecho();
 
-	{
-       /* address column width */
-       /*  default is 8 + 2 blanks  */
-       /* if block_begin has 8 hex digits or more */
-       /* reserve 1 hex digit more than required  */
-       char tmp[sizeof(block_begin) * 2 + 3];
-       AnzAdd = sprintf(tmp, "%llX", (long long unsigned)block_begin) + 1;
-       if (AnzAdd < 8)
-           AnzAdd = 8;
-       if (AnzAdd > sizeof(block_begin) * 2)
-           AnzAdd = sizeof(block_begin) * 2;
-       sprintf(addr_form,  "%%0%dllX  ", AnzAdd);
-       AnzAdd = sprintf(tmp, addr_form, block_begin);
-	}
+    /* address column width */
+    /*  default is 8 + 2 blanks  */
+    /* if block_begin has 8 hex digits or more */
+    /* reserve 1 hex digit more than required  */
+    char tmp[sizeof(block_begin) * 2 + 3];
+    AnzAdd = sprintf(tmp, "%llX", (long long unsigned)block_begin) + 1;
+    if (AnzAdd < 8)
+        AnzAdd = 8;
+    if (AnzAdd > sizeof(block_begin) * 2)
+        AnzAdd = sizeof(block_begin) * 2;
+    sprintf(addr_form,  "%%0%dllX  ", AnzAdd);
+    AnzAdd = sprintf(tmp, addr_form, block_begin);
 
 	Anzahl = ((COLS - AnzAdd - 1) / 16) * 4;
 	P(P_CM) = Anzahl;
@@ -308,9 +306,21 @@ main(argc, argv)
 	do {
 		setjmp(env);
 		current = (PTR)(pagepos + y * Anzahl + xpos());
-		if (wrstat) statpos();
+        if (wrstat) statpos();
 		wrstat = 1;
-		setcur();
+
+        repaint();
+        if (x < (Anzahl3 + AnzAdd - 2)) 
+        {
+                mvchgat(y, 7+Anzahl3+x/3, 1, A_REVERSE, 0, NULL);
+        }
+        else
+        {
+                mvchgat(y,(x-Anzahl3-10)*3+10,1,A_REVERSE,0,NULL);
+                mvchgat(y,(x-Anzahl3-10)*3+11,1,A_REVERSE,0,NULL);
+        }
+
+        setcur();
 		ch = vgetc();
 		while (ch >= '0' && ch <= '9') {
 			if (arrnum < MAXCMD) numarr[arrnum++] = ch;
@@ -322,18 +332,23 @@ main(argc, argv)
 		lflag = arrnum = 0;
 
 		switch (ch) {
-		case '^':	x = AnzAdd;
+        case '0':
+		case '^':	
+                    x = AnzAdd;
 					loc = HEX;
 					break;
-		/*
-		case '0':	x = AnzAdd + Anzahl3;
+		/*case '0':	x = AnzAdd + Anzahl3;*/
+					/*loc = ASCII;*/
+					/*break;*/
+		case '$':	
+                    
+                    x = AnzAdd - 1 + Anzahl3 + Anzahl;
 					loc = ASCII;
 					break;
-		*/
-		case '$':	x = AnzAdd - 1 + Anzahl3 + Anzahl;
-					loc = ASCII;
-					break;
-		case '\t':  toggle();
+		case '\t':  
+                    
+                    
+                    toggle();
 					break;
 		case '~':	if (precount < 1) precount = 1;
 					sprintf(rep_buf, "%ld~", precount);
@@ -341,7 +356,10 @@ main(argc, argv)
 					lflag++;
 					break;
 		case KEY_HOME:
-		case 'H':	if (precount > 0) {
+		case 'H':	
+                    
+                    
+                    if (precount > 0) {
 						y = --precount;
 						if (y > maxy - 1) {
 							scrolldown(y - maxy + 1);
@@ -350,7 +368,10 @@ main(argc, argv)
 					if (loc == HEX) x = AnzAdd;
 						else	x = AnzAdd + Anzahl3;
 					break;
-		case 'M':	y = maxy / 2;
+		case 'M':	
+                    
+                    
+                    y = maxy / 2;
 					if ((PTR)(pagepos + screen) > maxpos)
 						y = (int)(maxpos - pagepos) / Anzahl / 2;
 					if (loc == HEX) x = AnzAdd;
@@ -369,7 +390,10 @@ main(argc, argv)
 		case ASCII_DEL:
 		case KEY_BACKSPACE:
 		case KEY_LEFT:
-		case 'h':	do {
+		case 'h':	
+                    
+                    
+                    do {
 						if (x > (AnzAdd + 2) && x < (Anzahl3 + AnzAdd + 1))
 								x -= 3;
 							else
@@ -380,7 +404,10 @@ main(argc, argv)
 					break;
 		case ' ':
 		case KEY_RIGHT:
-		case 'l':	do {
+		case 'l':   
+                    
+                    
+                    do {
 						/*
 						if (x < (Anzahl3 + 6))  x += 3;
 						*/
@@ -394,18 +421,25 @@ main(argc, argv)
 					break;
 		case '-':
 		case KEY_UP :
-		case 'k':	do {
+		case 'k':	
+                    
+                    
+                    do {
 						if (y > 0) y--;
 							else scrollup(1);
 					} while(--precount > 0);
 					break;
 		case '+':
-		case CR:	if (loc == HEX) x = AnzAdd;
+		case CR:	
+                    
+                    if (loc == HEX) x = AnzAdd;
 						else		x = AnzAdd + Anzahl3;
 		case 'j':
 		case BVICTRL('J'):
 		case BVICTRL('N'):
 		case KEY_DOWN:
+                    
+                    
 					do {
 						if ((PTR)((pagepos + (y + 1) * Anzahl)) > maxpos) break;
 						if (y < (maxy - 1))	y++;
