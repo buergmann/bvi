@@ -14,6 +14,7 @@
  * 2010-06-02 V 1.3.4
  * 2014-01-28 V 1.4.0
  * 2019-01-27 V 1.4.1
+ * 2019-10-29 V 1.4.2
  *
  * NOTE: Edit this file with tabstop=4 !
  *
@@ -308,7 +309,7 @@ docmdline(cmdline)
 				else	ok = save(c_argv[0], start_addr, end_addr, saveflag);
 		} else {
 			if (c_argc == 0) {
-				save_chk(name, start_addr, end_addr, saveflag);
+				ok = save_chk(name, start_addr, end_addr, saveflag);
 			} else {
 				if (!stat(c_argv[0], &buf)) {
 					if (saveflag == WRITE) {

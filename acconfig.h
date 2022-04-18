@@ -4,6 +4,8 @@
 
 #undef HAVE_CURSES_H
 
+#undef HAVE_NCURSESW_CURSES_H
+
 #undef NO_SYSERRL
 
 #undef NEED_PUTC_CHAR

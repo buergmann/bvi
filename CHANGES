@@ -1,3 +1,14 @@
+New in release 1.4.2
+====================
+
+* :wq bug fixed
+* Message if input no terminal
+* Mixed licenses (SF bug #10)
+* Segmentation fault occurs on undo (SF bug #11)
+* Segmentation fault occurs on substitution in 32-bit systems (SF bug #12)
+* ncursesw support
+
+
 New in release 1.4.1
 ====================
 
