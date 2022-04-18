@@ -68,6 +68,19 @@ static ssize_t read_to_end(int fd, void *buf, size_t count) {
 	return read_bytes;
 }
 
+//@ write on linux has a limit of 0x7ffff000 bytes (see `man 2 write`)
+//@ this function calls recursively write until all `count` characters are written.
+static ssize_t write_to_end(int fd, const void *buf, size_t count) {
+	size_t written_bytes = 0;
+	while(written_bytes < count) {
+		const ssize_t ret = write(fd, ((const char*)buf)+written_bytes, count-written_bytes);
+		if(ret <= 0) return ret;
+		written_bytes += ret;
+	}
+	return written_bytes;
+}
+
+
 int		filemode;
 static	struct	stat	buf;
 static	off_t	block_read;
@@ -149,7 +162,7 @@ save(fname, start, end, flags)
 			(unsigned long long)filesize);
 	}
 
-	if (write(fd, start, filesize) != filesize) {
+	if (write_to_end(fd, start, filesize) != filesize) {
 		sysemsg(fname);
 		free(string);
 		close(fd);
