@@ -807,7 +807,8 @@ outmsg(s)
 		poi = s;
 		while (*poi != '\0' && *poi != '@' && *poi != '|') {
 			addch(*poi++);
-			cnt++; }
+			cnt++;
+		}
 	} else {
     	if (poi) poi++;
 			else poi = s;
@@ -820,6 +821,7 @@ outmsg(s)
 	}
 	return cnt;
 }
+
 
 /* If flag == TRUE we do a repaint
  *

@@ -12,7 +12,7 @@
  * 2006-04-04  V 1.3.3
  * 2013-08-23  V 1.4.0alpha
  * 2014-10-07  V 1.4.0
- * 2019-01-22  V 1.4.1
+ * 2019-10-12  V 1.4.1
  *
  * NOTE: Edit this file with tabstop=4 !
  *
@@ -266,20 +266,18 @@ main(argc, argv)
 	cbreak();
 	noecho();
 
-	{
-       /* address column width */
-       /*  default is 8 + 2 blanks  */
-       /* if block_begin has 8 hex digits or more */
-       /* reserve 1 hex digit more than required  */
-       char tmp[sizeof(block_begin) * 2 + 3];
-       AnzAdd = sprintf(tmp, "%llX", (long long unsigned)block_begin) + 1;
-       if (AnzAdd < 8)
-           AnzAdd = 8;
-       if (AnzAdd > sizeof(block_begin) * 2)
-           AnzAdd = sizeof(block_begin) * 2;
-       sprintf(addr_form,  "%%0%dllX  ", AnzAdd);
-       AnzAdd = sprintf(tmp, addr_form, block_begin);
-	}
+    /* address column width */
+    /*  default is 8 + 2 blanks  */
+    /* if block_begin has 8 hex digits or more */
+    /* reserve 1 hex digit more than required  */
+    char tmp[sizeof(block_begin) * 2 + 3];
+    AnzAdd = sprintf(tmp, "%llX", (long long unsigned)block_begin) + 1;
+    if (AnzAdd < 8)
+        AnzAdd = 8;
+    if (AnzAdd > sizeof(block_begin) * 2)
+        AnzAdd = sizeof(block_begin) * 2;
+    sprintf(addr_form,  "%%0%dllX  ", AnzAdd);
+    AnzAdd = sprintf(tmp, addr_form, block_begin);
 
 	Anzahl = ((COLS - AnzAdd - 1) / 16) * 4;
 	P(P_CM) = Anzahl;

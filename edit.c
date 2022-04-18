@@ -11,7 +11,7 @@
  * 2003-07-04 V 1.3.2
  * 2006-04-05 V 1.3.3 alpha - binary representation
  * 2014-09-30 V 1.4.0
- * 2019-01-22 V 1.4.1
+ * 2019-10-12 V 1.4.1
  *
  * Copyright 1996-2019 by Gerhard Buergmann
  * gerhard@puon.at
@@ -484,7 +484,7 @@ statpos()
 	}
 	bin_val[8] = '\0';
 	
-	statsize = sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
+	sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
 		(long long)(bytepos + P(P_OF)), bin_val, Char1, Char1, Char1);
 	attrset(A_BOLD);
 	status = maxx - 1 - statsize;
@@ -615,6 +615,8 @@ printline(mempos, scpos)
 			    	addstr(".");
 				}
 			}
+		} else {
+			addstr(" ");
 		}
 	}
 }
