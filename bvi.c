@@ -308,6 +308,18 @@ main(argc, argv)
 		current = (PTR)(pagepos + y * Anzahl + xpos());
 		if (wrstat) statpos();
 		wrstat = 1;
+
+        repaint();
+        if (x < (Anzahl3 + AnzAdd - 2)) 
+        {
+                mvchgat(y, 7+Anzahl3+x/3, 1, A_REVERSE, 0, NULL);
+        }
+        else
+        {
+                mvchgat(y,(x-Anzahl3-10)*3+10,1,A_REVERSE,0,NULL);
+                mvchgat(y,(x-Anzahl3-10)*3+11,1,A_REVERSE,0,NULL);
+        }
+
 		setcur();
 		ch = vgetc();
 		while (ch >= '0' && ch <= '9') {

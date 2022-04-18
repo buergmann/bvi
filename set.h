@@ -69,7 +69,9 @@ extern	struct	param	params[];
 #define	P_WS		15	/* wrapscan */
 #define P_HL		16	/* highlight search enabled */
 #define P_RE		17  /* reverse video */
-#define	P_CO		18	/* color/attribute setting */
+#define P_GC        18 /* Grouped Highlight hex */
+#define P_GS        19 /* Group lenght for highlight */
+#define	P_CO		20	/* color/attribute setting */
 
 /*
  * Macro to get the value of a parameter
