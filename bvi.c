@@ -13,10 +13,11 @@
  * 2013-08-23  V 1.4.0alpha
  * 2014-10-07  V 1.4.0
  * 2019-10-12  V 1.4.1
+ * 2023-03-06  V 1.4.2
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2023 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -33,6 +34,7 @@
  */
 
 #include <sys/types.h>
+#include <unistd.h>
 
 #include "bvi.h"
 #include "set.h"
@@ -42,7 +44,7 @@
 #endif
 
 
-char	*copyright  = "(C) GPL 1996-2019 by Gerhard Buergmann";
+char	*copyright  = "(C) GPL 1996-2023 by Gerhard Buergmann";
 
 jmp_buf	env;        /* context for `longjmp' function   */
 
@@ -144,6 +146,13 @@ main(argc, argv)
 	} else if (!strcasecmp(progname, "bvedit")) {
 		/* This should be the beginners version */
 	}
+
+	if (isatty(fileno(stdin)) == 0) {
+		// Guckes
+		fprintf(stderr, "Input is not from a terminal\n");
+    	exit(1);
+	}
+
 
 	while (n < argc) {
 		switch (argv[n][0]) {
@@ -918,7 +927,7 @@ do_put(loc, n, buf)
 		emsg(nobytes);
 		return;
 	}
-	if (loc > maxpos) {
+	if (loc >= maxpos) {
 		beep();
 		return;
 	}

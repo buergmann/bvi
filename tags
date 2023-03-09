@@ -1,566 +1,551 @@
 !_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
 !_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
-!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
-!_TAG_PROGRAM_NAME	Exuberant Ctags	//
-!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
-!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
-AND	bvi.h	90;"	d
-ANSI	bmore.h	104;"	d
-ANSI	bvi.h	120;"	d
-APPEND	comm.c	51;"	d	file:
-APPEND	comm.c	54;"	d	file:
-ASCII	bmore.h	83;"	d
-ASCII	bvi.h	97;"	d
-ASCII_DEL	bvi.h	106;"	d
-A_ATTRIBUTES	doscur.h	56;"	d
-A_BLINK	doscur.h	54;"	d
-A_BOLD	doscur.h	52;"	d
-A_CHARTEXT	doscur.h	55;"	d
-A_NORMAL	doscur.h	50;"	d
-A_REVERSE	doscur.h	53;"	d
-A_STANDOUT	doscur.h	51;"	d
-AnzAdd	bmore.c	/^int		AnzAdd;$/;"	v
-AnzAdd	bvi.c	/^int		AnzAdd, Anzahl, Anzahl3;$/;"	v
-Anzahl	bvi.c	/^int		AnzAdd, Anzahl, Anzahl3;$/;"	v
-Anzahl3	bvi.c	/^int		AnzAdd, Anzahl, Anzahl3;$/;"	v
-Ausgabe_Datei	bvi.c	/^FILE	*Ausgabe_Datei;$/;"	v
-BACKWARD	bmore.h	85;"	d
-BACKWARD	bvi.h	99;"	d
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/home/bg/src/bvi/bvi/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	//
+AND	bvi.h	/^#define AND /;"	d
+ANSI	bmore.h	/^#	define ANSI$/;"	d
+ANSI	bvi.h	/^#	define ANSI$/;"	d
+APPEND	comm.c	/^#   define APPEND /;"	d	file:
+ASCII	bmore.h	/^#define ASCII	/;"	d
+ASCII	bvi.h	/^#define ASCII	/;"	d
+ASCII_DEL	bvi.h	/^#define	ASCII_DEL	/;"	d
+A_ATTRIBUTES	doscur.h	/^#define A_ATTRIBUTES /;"	d
+A_BLINK	doscur.h	/^#define A_BLINK /;"	d
+A_BOLD	doscur.h	/^#define A_BOLD /;"	d
+A_CHARTEXT	doscur.h	/^#define A_CHARTEXT /;"	d
+A_NORMAL	doscur.h	/^#define A_NORMAL /;"	d
+A_REVERSE	doscur.h	/^#define A_REVERSE /;"	d
+A_STANDOUT	doscur.h	/^#define A_STANDOUT /;"	d
+AnzAdd	bmore.c	/^int		AnzAdd;$/;"	v	typeref:typename:int
+AnzAdd	bvi.c	/^int		AnzAdd, Anzahl, Anzahl3;$/;"	v	typeref:typename:int
+Anzahl	bvi.c	/^int		AnzAdd, Anzahl, Anzahl3;$/;"	v	typeref:typename:int
+Anzahl3	bvi.c	/^int		AnzAdd, Anzahl, Anzahl3;$/;"	v	typeref:typename:int
+Ausgabe_Datei	bvi.c	/^FILE	*Ausgabe_Datei;$/;"	v	typeref:typename:FILE *
+BACKWARD	bmore.h	/^#define BACKWARD	/;"	d
+BACKWARD	bvi.h	/^#define BACKWARD	/;"	d
 BLOCK_BEGIN	bvi.h	/^    BLOCK_BEGIN = 1,$/;"	e	enum:_block_datum
 BLOCK_END	bvi.h	/^    BLOCK_END = 2,$/;"	e	enum:_block_datum
 BLOCK_LEN	bvi.h	/^    BLOCK_LEN = 4$/;"	e	enum:_block_datum
-BLOCK_SPECIAL	bmore.h	75;"	d
-BLOCK_SPECIAL	bvi.h	66;"	d
-BS	bmore.h	88;"	d
-BS	bvi.h	102;"	d
-BUFFER	bmore.h	116;"	d
-BUFFER	bvi.h	134;"	d
-BVICTRL	bmore.h	92;"	d
-BVICTRL	bvi.h	105;"	d
-CHARACTER_SPECIAL	bmore.h	74;"	d
-CHARACTER_SPECIAL	bvi.h	65;"	d
-CMDLNG	bvi.h	108;"	d
-CMDSZ	comm.c	57;"	d	file:
-COLS	dosio.c	/^int	COLS = 80;$/;"	v
-CR	bmore.h	86;"	d
-CR	bvi.h	100;"	d
-DELIM	bmore.h	107;"	d
-DELIM	bmore.h	112;"	d
-DELIM	bvi.h	123;"	d
-DELIM	bvi.h	130;"	d
-DIRECTORY	bmore.h	73;"	d
-DIRECTORY	bvi.h	64;"	d
-ECHO	dosio.c	/^int	ECHO = TRUE;$/;"	v
-END	bmore.h	79;"	d
-END	bvi.h	70;"	d
-ERR	doscur.h	147;"	d
-ERROR	bmore.h	70;"	d
-ERROR	bvi.h	61;"	d
-ESC	bmore.h	89;"	d
-ESC	bvi.h	103;"	d
-ESC	doscur.h	31;"	d
-FALSE	bmore.h	100;"	d
-FALSE	bvi.h	116;"	d
-FALSE	doscur.h	29;"	d
-FORWARD	bmore.h	84;"	d
-FORWARD	bvi.h	98;"	d
-HAVE_CURSES_H	acconfig.h	5;"	d
-HAVE_FCNTL_H	dosconf.h	40;"	d
-HAVE_LOCALE_H	dosconf.h	44;"	d
-HAVE_MEMMOVE	dosconf.h	31;"	d
-HAVE_NCURSES_H	acconfig.h	3;"	d
-HAVE_NCURSES_TERM_H	acconfig.h	11;"	d
-HAVE_STRDUP	dosconf.h	34;"	d
-HAVE_STRTOL	dosconf.h	37;"	d
-HELPFILE	bmore.c	43;"	d	file:
-HELPFILE	bmore.c	45;"	d	file:
-HEX	bvi.h	96;"	d
-Home	bm_unix.c	/^char	*Home;			\/* go to home *\/$/;"	v
-JOEHTG	bvi.h	43;"	d
-KEY_BACKSPACE	doscur.h	42;"	d
-KEY_DC	doscur.h	45;"	d
-KEY_DOWN	doscur.h	34;"	d
-KEY_ENTER	doscur.h	41;"	d
-KEY_F	doscur.h	33;"	d
-KEY_F0	doscur.h	32;"	d
-KEY_HOME	doscur.h	43;"	d
-KEY_IC	doscur.h	46;"	d
-KEY_LEFT	doscur.h	36;"	d
-KEY_LL	doscur.h	44;"	d
-KEY_NPAGE	doscur.h	38;"	d
-KEY_PPAGE	doscur.h	39;"	d
-KEY_RETURN	doscur.h	40;"	d
-KEY_RIGHT	doscur.h	37;"	d
-KEY_UP	doscur.h	35;"	d
-LINES	dosio.c	/^int	LINES =	25;$/;"	v
-LROTATE	bvi.h	88;"	d
-LSHIFT	bvi.h	86;"	d
-MAXCMD	bmore.h	115;"	d
-MAXCMD	bvi.h	133;"	d
-MAXNAME	comm.c	58;"	d	file:
-MAX_ONE_ARG	comm.c	63;"	d	file:
-MAX_ONE_FILE	comm.c	65;"	d	file:
-NEED_PUTC_CHAR	acconfig.h	9;"	d
-NEED_PUTC_CHAR	bm_unix.c	52;"	d	file:
-NEG	bvi.h	93;"	d
-NEW	bmore.h	72;"	d
-NEW	bvi.h	63;"	d
-NL	bmore.h	87;"	d
-NL	bvi.h	101;"	d
-NODEL	dosio.c	/^int	NODEL = FALSE;$/;"	v
-NOT	bvi.h	94;"	d
-NO_ADDR	comm.c	60;"	d	file:
-NO_ARG	comm.c	61;"	d	file:
-NO_SYSERRL	acconfig.h	7;"	d
-NULL	bmore.h	95;"	d
-NULL	bvi.h	111;"	d
-OFF_T_MAX	io.c	47;"	d	file:
-ONE	bmore.h	80;"	d
-ONE	bvi.h	71;"	d
-ONE_ARG	comm.c	62;"	d	file:
-ONE_FILE	comm.c	64;"	d	file:
-OR	bvi.h	91;"	d
-P	set.h	77;"	d
-PARTIAL	bmore.h	76;"	d
-PARTIAL	bvi.h	67;"	d
-PRINTF	bmore.c	38;"	d	file:
-PRINTF	bmore.c	40;"	d	file:
-PTR	bmore.h	105;"	d
-PTR	bmore.h	111;"	d
-PTR	bvi.h	121;"	d
-PTR	bvi.h	129;"	d
-P_AW	set.h	54;"	d
-P_BOOL	set.h	42;"	d
-P_CHANGED	set.h	45;"	d
-P_CM	set.h	55;"	d
-P_CO	set.h	72;"	d
-P_EB	set.h	56;"	d
-P_HL	set.h	70;"	d
-P_IC	set.h	57;"	d
-P_LI	set.h	67;"	d
-P_MA	set.h	58;"	d
-P_MM	set.h	59;"	d
-P_MO	set.h	63;"	d
-P_NUM	set.h	43;"	d
-P_OF	set.h	60;"	d
-P_RE	set.h	71;"	d
-P_RO	set.h	61;"	d
-P_SS	set.h	62;"	d
-P_TE	set.h	65;"	d
-P_TEXT	set.h	44;"	d
-P_TT	set.h	64;"	d
-P_US	set.h	66;"	d
-P_WL	set.h	68;"	d
-P_WS	set.h	69;"	d
-REGULAR	bmore.h	71;"	d
-REGULAR	bvi.h	62;"	d
-REPLACE	bmore.h	91;"	d
-RROTATE	bvi.h	89;"	d
-RSHIFT	bvi.h	87;"	d
-SEARCH	bmore.h	90;"	d
-SEARCH	bvi.h	104;"	d
-SKIP_WHITE	bvi.h	136;"	d
-STAR	bmore.h	81;"	d
-STAR	bvi.h	72;"	d
-STDC_HEADERS	dosconf.h	28;"	d
-S_GLOBAL	bvi.h	83;"	d
-S_ISBLK	bvi.h	198;"	d
-S_ISCHR	bvi.h	197;"	d
-S_ISDIR	bvi.h	196;"	d
-S_ISFIFO	bvi.h	200;"	d
-S_ISREG	bvi.h	199;"	d
-TBUFSIZ	bm_dos.c	32;"	d	file:
-TBUFSIZ	bm_unix.c	32;"	d	file:
-TRUE	bmore.h	99;"	d
-TRUE	bvi.h	115;"	d
-TRUE	doscur.h	28;"	d
-U_APPEND	bvi.h	80;"	d
-U_BACK	bvi.h	79;"	d
-U_DELETE	bvi.h	78;"	d
-U_EDIT	bvi.h	75;"	d
-U_INSERT	bvi.h	77;"	d
-U_TILDE	bvi.h	81;"	d
-U_TRUNC	bvi.h	76;"	d
-VERSION	patchlevel.h	1;"	d
-WINDOW	doscur.h	60;"	d
-WRITE	comm.c	50;"	d	file:
-WRITE	comm.c	53;"	d	file:
-XOR	bvi.h	92;"	d
+BLOCK_SPECIAL	bmore.h	/^#define BLOCK_SPECIAL	/;"	d
+BLOCK_SPECIAL	bvi.h	/^#define BLOCK_SPECIAL	/;"	d
+BS	bmore.h	/^#define BS	/;"	d
+BS	bvi.h	/^#define BS	/;"	d
+BUFFER	bmore.h	/^#define BUFFER	/;"	d
+BUFFER	bvi.h	/^#define BUFFER	/;"	d
+BVICTRL	bmore.h	/^#define BVICTRL(/;"	d
+BVICTRL	bvi.h	/^#define BVICTRL(/;"	d
+CHARACTER_SPECIAL	bmore.h	/^#define CHARACTER_SPECIAL	/;"	d
+CHARACTER_SPECIAL	bvi.h	/^#define CHARACTER_SPECIAL	/;"	d
+CMDLNG	bvi.h	/^#define CMDLNG(/;"	d
+CMDSZ	comm.c	/^#define	CMDSZ	/;"	d	file:
+COLS	dosio.c	/^int	COLS = 80;$/;"	v	typeref:typename:int
+CR	bmore.h	/^#define CR	/;"	d
+CR	bvi.h	/^#define CR	/;"	d
+DELIM	bmore.h	/^#   define DELIM	/;"	d
+DELIM	bvi.h	/^#   define DELIM	/;"	d
+DIRECTORY	bmore.h	/^#define DIRECTORY	/;"	d
+DIRECTORY	bvi.h	/^#define DIRECTORY	/;"	d
+ECHO	dosio.c	/^int	ECHO = TRUE;$/;"	v	typeref:typename:int
+END	bmore.h	/^#define END /;"	d
+END	bvi.h	/^#define END /;"	d
+ERR	doscur.h	/^#define ERR /;"	d
+ERROR	bmore.h	/^#define	ERROR	/;"	d
+ERROR	bvi.h	/^#define	ERROR	/;"	d
+ESC	bmore.h	/^#define	ESC	/;"	d
+ESC	bvi.h	/^#define	ESC	/;"	d
+ESC	doscur.h	/^#define ESC /;"	d
+FALSE	bmore.h	/^#	define FALSE	/;"	d
+FALSE	bvi.h	/^#	define FALSE	/;"	d
+FALSE	doscur.h	/^#define FALSE /;"	d
+FORWARD	bmore.h	/^#define FORWARD	/;"	d
+FORWARD	bvi.h	/^#define FORWARD	/;"	d
+HAVE_FCNTL_H	dosconf.h	/^#define HAVE_FCNTL_H /;"	d
+HAVE_LOCALE_H	dosconf.h	/^#	define HAVE_LOCALE_H /;"	d
+HAVE_MEMMOVE	dosconf.h	/^#define HAVE_MEMMOVE /;"	d
+HAVE_STRDUP	dosconf.h	/^#define HAVE_STRDUP /;"	d
+HAVE_STRTOL	dosconf.h	/^#define HAVE_STRTOL /;"	d
+HELPFILE	bmore.c	/^#	define HELPFILE /;"	d	file:
+HEX	bvi.h	/^#define HEX	/;"	d
+Home	bm_unix.c	/^char	*Home;			\/* go to home *\/$/;"	v	typeref:typename:char *
+JOEHTG	bvi.h	/^#define JOEHTG$/;"	d
+KEY_BACKSPACE	doscur.h	/^#define KEY_BACKSPACE /;"	d
+KEY_DC	doscur.h	/^#define KEY_DC /;"	d
+KEY_DOWN	doscur.h	/^#define KEY_DOWN /;"	d
+KEY_ENTER	doscur.h	/^#define KEY_ENTER /;"	d
+KEY_F	doscur.h	/^#define KEY_F(/;"	d
+KEY_F0	doscur.h	/^#define KEY_F0 /;"	d
+KEY_HOME	doscur.h	/^#define KEY_HOME /;"	d
+KEY_IC	doscur.h	/^#define KEY_IC /;"	d
+KEY_LEFT	doscur.h	/^#define KEY_LEFT /;"	d
+KEY_LL	doscur.h	/^#define KEY_LL /;"	d
+KEY_NPAGE	doscur.h	/^#define KEY_NPAGE /;"	d
+KEY_PPAGE	doscur.h	/^#define KEY_PPAGE /;"	d
+KEY_RETURN	doscur.h	/^#define KEY_RETURN /;"	d
+KEY_RIGHT	doscur.h	/^#define KEY_RIGHT /;"	d
+KEY_UP	doscur.h	/^#define KEY_UP /;"	d
+LINES	dosio.c	/^int	LINES =	25;$/;"	v	typeref:typename:int
+LROTATE	bvi.h	/^#define LROTATE /;"	d
+LSHIFT	bvi.h	/^#define LSHIFT /;"	d
+MAXCMD	bmore.h	/^#define MAXCMD	/;"	d
+MAXCMD	bvi.h	/^#define MAXCMD	/;"	d
+MAXNAME	comm.c	/^#define MAXNAME	/;"	d	file:
+MAX_ONE_ARG	comm.c	/^#define	MAX_ONE_ARG	/;"	d	file:
+MAX_ONE_FILE	comm.c	/^#define	MAX_ONE_FILE	/;"	d	file:
+NEG	bvi.h	/^#define NEG /;"	d
+NEW	bmore.h	/^#define NEW	/;"	d
+NEW	bvi.h	/^#define NEW	/;"	d
+NL	bmore.h	/^#define NL	/;"	d
+NL	bvi.h	/^#define NL	/;"	d
+NODEL	dosio.c	/^int	NODEL = FALSE;$/;"	v	typeref:typename:int
+NOT	bvi.h	/^#define NOT /;"	d
+NO_ADDR	comm.c	/^#define NO_ADDR	/;"	d	file:
+NO_ARG	comm.c	/^#define NO_ARG	/;"	d	file:
+NULL	bmore.h	/^#	define NULL	/;"	d
+NULL	bvi.h	/^#	define NULL	/;"	d
+OFF_T_MAX	io.c	/^#  		define OFF_T_MAX /;"	d	file:
+ONE	bmore.h	/^#define ONE /;"	d
+ONE	bvi.h	/^#define ONE /;"	d
+ONE_ARG	comm.c	/^#define ONE_ARG	/;"	d	file:
+ONE_FILE	comm.c	/^#define ONE_FILE	/;"	d	file:
+OR	bvi.h	/^#define OR /;"	d
+P	set.h	/^#define	P(/;"	d
+PARTIAL	bmore.h	/^#define PARTIAL /;"	d
+PARTIAL	bvi.h	/^#define PARTIAL /;"	d
+PRINTF	bmore.c	/^#	define PRINTF	/;"	d	file:
+PTR	bmore.h	/^#	define PTR	/;"	d
+PTR	bvi.h	/^#	define PTR	/;"	d
+P_AW	set.h	/^#define	P_AW	/;"	d
+P_BOOL	set.h	/^#define	P_BOOL	/;"	d
+P_CHANGED	set.h	/^#define	P_CHANGED	/;"	d
+P_CM	set.h	/^#define P_CM	/;"	d
+P_CO	set.h	/^#define	P_CO	/;"	d
+P_EB	set.h	/^#define	P_EB	/;"	d
+P_HL	set.h	/^#define P_HL	/;"	d
+P_IC	set.h	/^#define	P_IC	/;"	d
+P_LI	set.h	/^#define	P_LI	/;"	d
+P_MA	set.h	/^#define	P_MA	/;"	d
+P_MM	set.h	/^#define P_MM	/;"	d
+P_MO	set.h	/^#define	P_MO	/;"	d
+P_NUM	set.h	/^#define	P_NUM	/;"	d
+P_OF	set.h	/^#define	P_OF	/;"	d
+P_RE	set.h	/^#define P_RE	/;"	d
+P_RO	set.h	/^#define P_RO	/;"	d
+P_SS	set.h	/^#define	P_SS	/;"	d
+P_TE	set.h	/^#define P_TE	/;"	d
+P_TEXT	set.h	/^#define P_TEXT	/;"	d
+P_TT	set.h	/^#define P_TT	/;"	d
+P_US	set.h	/^#define P_US	/;"	d
+P_WL	set.h	/^#define P_WL	/;"	d
+P_WS	set.h	/^#define	P_WS	/;"	d
+REGULAR	bmore.h	/^#define REGULAR	/;"	d
+REGULAR	bvi.h	/^#define REGULAR	/;"	d
+REPLACE	bmore.h	/^#define REPLACE	/;"	d
+RROTATE	bvi.h	/^#define RROTATE /;"	d
+RSHIFT	bvi.h	/^#define RSHIFT /;"	d
+SEARCH	bmore.h	/^#define SEARCH	/;"	d
+SEARCH	bvi.h	/^#define SEARCH	/;"	d
+SKIP_WHITE	bvi.h	/^#define SKIP_WHITE /;"	d
+STAR	bmore.h	/^#define STAR /;"	d
+STAR	bvi.h	/^#define STAR /;"	d
+STDC_HEADERS	dosconf.h	/^#define STDC_HEADERS /;"	d
+S_GLOBAL	bvi.h	/^#define S_GLOBAL	/;"	d
+S_ISBLK	bvi.h	/^#define	S_ISBLK(/;"	d
+S_ISCHR	bvi.h	/^#define	S_ISCHR(/;"	d
+S_ISDIR	bvi.h	/^#define	S_ISDIR(/;"	d
+S_ISFIFO	bvi.h	/^#define	S_ISFIFO(/;"	d
+S_ISREG	bvi.h	/^#define	S_ISREG(/;"	d
+TBUFSIZ	bm_dos.c	/^#define TBUFSIZ /;"	d	file:
+TBUFSIZ	bm_unix.c	/^#define TBUFSIZ /;"	d	file:
+TRUE	bmore.h	/^#	define TRUE	/;"	d
+TRUE	bvi.h	/^#	define TRUE	/;"	d
+TRUE	doscur.h	/^#define TRUE /;"	d
+U_APPEND	bvi.h	/^#define U_APPEND	/;"	d
+U_BACK	bvi.h	/^#define U_BACK	/;"	d
+U_DELETE	bvi.h	/^#define U_DELETE	/;"	d
+U_EDIT	bvi.h	/^#define U_EDIT	/;"	d
+U_INSERT	bvi.h	/^#define U_INSERT	/;"	d
+U_TILDE	bvi.h	/^#define U_TILDE	/;"	d
+U_TRUNC	bvi.h	/^#define U_TRUNC	/;"	d
+VERSION	patchlevel.h	/^#define VERSION /;"	d
+WINDOW	doscur.h	/^#define WINDOW /;"	d
+WRITE	comm.c	/^#   define WRITE /;"	d	file:
+XOR	bvi.h	/^#define XOR /;"	d
 _block_datum	bvi.h	/^typedef enum _block_datum {$/;"	g
-act_pat	re.c	/^char	act_pat[MAXCMD];  \/* found pattern *\/$/;"	v
-addch	doscur.h	95;"	d
-addfile	dosio.c	/^addfile(char *fname)$/;"	f
+act_pat	re.c	/^char	act_pat[MAXCMD];  \/* found pattern *\/$/;"	v	typeref:typename:char[]
+addch	doscur.h	/^#define addch(/;"	d
 addfile	io.c	/^addfile(fname)$/;"	f
-addr_flag	comm.c	/^int		addr_flag;$/;"	v
-addr_form	bmore.c	/^char	addr_form[15];$/;"	v
-addr_form	bvi.c	/^char	addr_form[15];$/;"	v
-addstr	doscur.h	99;"	d
-again	recomp.c	/^int		again = 0;$/;"	v
-alloc_buf	dosio.c	/^alloc_buf(off_t n, char **buffer)$/;"	f
+addr_flag	comm.c	/^int		addr_flag;$/;"	v	typeref:typename:int
+addr_form	bmore.c	/^char	addr_form[15];$/;"	v	typeref:typename:char[15]
+addr_form	bvi.c	/^char	addr_form[15];$/;"	v	typeref:typename:char[15]
+addstr	doscur.h	/^#define addstr(/;"	d
+again	recomp.c	/^int		again = 0;$/;"	v	typeref:typename:int
 alloc_buf	io.c	/^alloc_buf(n, buffer)$/;"	f
-altfile	comm.c	/^static	char	*altfile = NULL;	\/* alternate file *\/$/;"	v	file:
-ambigous	comm.c	/^char	*ambigous  = "Ambigous|Too many file names";$/;"	v
-ambvalue	comm.c	/^char	*ambvalue  = "Ambigous|Too many values";$/;"	v
-arrnum	bmore.c	/^int		arrnum = 0;$/;"	v
-arrnum	bvi.c	/^int		arrnum = 0;$/;"	v
+altfile	comm.c	/^static	char	*altfile = NULL;	\/* alternate file *\/$/;"	v	typeref:typename:char *	file:
+ambigous	comm.c	/^char	*ambigous  = "Ambigous|Too many file names";$/;"	v	typeref:typename:char *
+ambvalue	comm.c	/^char	*ambvalue  = "Ambigous|Too many values";$/;"	v	typeref:typename:char *
+arrnum	bmore.c	/^int		arrnum = 0;$/;"	v	typeref:typename:int
+arrnum	bvi.c	/^int		arrnum = 0;$/;"	v	typeref:typename:int
 ascii_comp	recomp.c	/^ascii_comp(smem, pattern)$/;"	f
-ascii_flag	bmore.c	/^int		ascii_flag = 0;$/;"	v
-attrset	dosio.c	/^attrset(int attr)$/;"	f
+ascii_flag	bmore.c	/^int		ascii_flag = 0;$/;"	v	typeref:typename:int
+attrset	dosio.c	/^attrset(int attr)$/;"	f	typeref:typename:void
 backsearch	re.c	/^backsearch(start, mode)$/;"	f
-beep	doscur.h	76;"	d
-block_begin	bvi.c	/^off_t	block_begin, block_end, block_size;$/;"	v
+beep	doscur.h	/^#define beep(/;"	d
+block_begin	bvi.c	/^off_t	block_begin, block_end, block_size;$/;"	v	typeref:typename:off_t
 block_datum	bvi.h	/^} block_datum;$/;"	t	typeref:enum:_block_datum
-block_end	bvi.c	/^off_t	block_begin, block_end, block_size;$/;"	v
-block_flag	bvi.c	/^int		block_flag = 0;$/;"	v
-block_read	io.c	/^static	off_t	block_read;$/;"	v	file:
-block_size	bvi.c	/^off_t	block_begin, block_end, block_size;$/;"	v
-bmbeep	bmore.c	/^bmbeep() {$/;"	f
-bmore_search_pat	bmore.c	/^char	bmore_search_pat[BUFFER];   \/* \/ or ? command *\/$/;"	v
+block_end	bvi.c	/^off_t	block_begin, block_end, block_size;$/;"	v	typeref:typename:off_t
+block_flag	bvi.c	/^int		block_flag = 0;$/;"	v	typeref:typename:int
+block_read	io.c	/^static	off_t	block_read;$/;"	v	typeref:typename:off_t	file:
+block_size	bvi.c	/^off_t	block_begin, block_end, block_size;$/;"	v	typeref:typename:off_t
+bmbeep	bmore.c	/^bmbeep() {$/;"	f	typeref:typename:void
+bmore_search_pat	bmore.c	/^char	bmore_search_pat[BUFFER];   \/* \/ or ? command *\/$/;"	v	typeref:typename:char[]
 bmregexec	bmore.c	/^bmregexec(scan)$/;"	f
 bmsearch	bmore.c	/^bmsearch(ch)$/;"	f
 bregexec	re.c	/^bregexec(start, scan)$/;"	f
 buf	comm.c	/^static	struct	stat buf;$/;"	v	typeref:struct:stat	file:
 buf	dosio.c	/^static  struct  stat    buf;$/;"	v	typeref:struct:stat	file:
 buf	io.c	/^static	struct	stat	buf;$/;"	v	typeref:struct:stat	file:
-buf	set.c	/^static	char	buf[MAXCMD+1];$/;"	v	file:
-buffer1	bmore.c	/^char	buffer1[MAXCMD], buffer2[MAXCMD];$/;"	v
-buffer2	bmore.c	/^char	buffer1[MAXCMD], buffer2[MAXCMD];$/;"	v
-bvi_init	dosio.c	/^bvi_init(char *dir)$/;"	f
+buf	set.c	/^static	char	buf[MAXCMD+1];$/;"	v	typeref:typename:char[]	file:
+buffer1	bmore.c	/^char	buffer1[MAXCMD], buffer2[MAXCMD];$/;"	v	typeref:typename:char[]
+buffer2	bmore.c	/^char	buffer1[MAXCMD], buffer2[MAXCMD];$/;"	v	typeref:typename:char[]
 bvi_init	io.c	/^bvi_init(dir)$/;"	f
-bytepos	bmore.c	/^off_t	bytepos, oldpos;$/;"	v
-c_argc	comm.c	/^static	int		c_argc = 0;$/;"	v	file:
-c_argv	comm.c	/^static	char	*c_argv[9];$/;"	v	file:
-c_flag	bmore.c	/^int		c_flag = 0, d_flag = 0, r_flag = 0;$/;"	v
+bytepos	bmore.c	/^off_t	bytepos, oldpos;$/;"	v	typeref:typename:off_t
+c_argc	comm.c	/^static	int		c_argc = 0;$/;"	v	typeref:typename:int	file:
+c_argv	comm.c	/^static	char	*c_argv[9];$/;"	v	typeref:typename:char * [9]	file:
+c_flag	bmore.c	/^int		c_flag = 0, d_flag = 0, r_flag = 0;$/;"	v	typeref:typename:int
 calc_addr	re.c	/^calc_addr(pointer, def_addr)$/;"	f
 calc_size	bvi.c	/^calc_size(arg)$/;"	f
-cbreak	doscur.h	136;"	d
+cbreak	doscur.h	/^#define cbreak(/;"	d
 chk_comm	comm.c	/^chk_comm(flag)$/;"	f
-chtype	doscur.h	58;"	d
-clear	doscur.h	83;"	d
-clear_marks	edit.c	/^clear_marks()$/;"	f
-clear_sc	bm_unix.c	/^char	*clear_sc;		\/* clear screen *\/$/;"	v
-clearscreen	bm_dos.c	/^clearscreen()$/;"	f
-clearscreen	bm_unix.c	/^clearscreen()$/;"	f
-clearstr	comm.c	/^clearstr()$/;"	f
+chtype	doscur.h	/^#define chtype /;"	d
+clear	doscur.h	/^#define clear(/;"	d
+clear_marks	edit.c	/^clear_marks()$/;"	f	typeref:typename:void
+clear_sc	bm_unix.c	/^char	*clear_sc;		\/* clear screen *\/$/;"	v	typeref:typename:char *
+clearscreen	bm_dos.c	/^clearscreen()$/;"	f	typeref:typename:void
+clearscreen	bm_unix.c	/^clearscreen()$/;"	f	typeref:typename:void
+clearstr	comm.c	/^clearstr()$/;"	f	typeref:typename:void
 cleartoeol	bm_dos.c	/^cleartoeol()$/;"	f
-cleartoeol	bm_unix.c	/^cleartoeol()$/;"	f
-clrtoeol	doscur.h	79;"	d
-cmdbuf	bmore.c	/^static	char	cmdbuf[MAXCMD];$/;"	v	file:
-cmdstr	bvi.c	/^char	cmdstr[MAXCMD+1] = "";$/;"	v
-cnt	bmore.c	/^static	int		cnt = 0;$/;"	v	file:
-contrd	edit.c	/^char contrd[][4] = {"NUL", " ^A", " ^B", " ^C", " ^D", " ^E", " ^F", "BEL",$/;"	v
-contru	edit.c	/^char contru[][4] = {"NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL",$/;"	v
-copyright	bmore.c	/^char	*copyright  = "GPL (C) 1990-2019 by Gerhard Buergmann";$/;"	v
-copyright	bvi.c	/^char	*copyright  = "(C) GPL 1996-2019 by Gerhard Buergmann";$/;"	v
-corr	bmore.c	/^int		corr = 0, do_header = 0, to_print;$/;"	v
-cur_back	edit.c	/^cur_back()$/;"	f
+cleartoeol	bm_unix.c	/^cleartoeol()$/;"	f	typeref:typename:void
+clrtoeol	doscur.h	/^#define clrtoeol(/;"	d
+cmdbuf	bmore.c	/^static	char	cmdbuf[2 * MAXCMD];$/;"	v	typeref:typename:char[]	file:
+cmdstr	bvi.c	/^char	cmdstr[MAXCMD+1] = "";$/;"	v	typeref:typename:char[]
+cnt	bmore.c	/^static	int		cnt = 0;$/;"	v	typeref:typename:int	file:
+contrd	edit.c	/^char contrd[][4] = {"NUL", " ^A", " ^B", " ^C", " ^D", " ^E", " ^F", "BEL",$/;"	v	typeref:typename:char[][4]
+contru	edit.c	/^char contru[][4] = {"NUL", "SOH", "STX", "ETX", "EOT", "ENQ", "ACK", "BEL",$/;"	v	typeref:typename:char[][4]
+copyright	bmore.c	/^char	*copyright  = "GPL (C) 1990-2022 by Gerhard Buergmann";$/;"	v	typeref:typename:char *
+copyright	bvi.c	/^char	*copyright  = "(C) GPL 1996-2023 by Gerhard Buergmann";$/;"	v	typeref:typename:char *
+corr	bmore.c	/^int		corr = 0, do_header = 0, to_print;$/;"	v	typeref:typename:int
+cur_back	edit.c	/^cur_back()$/;"	f	typeref:typename:int
 cur_forw	edit.c	/^cur_forw(check)$/;"	f
-curfile	bvi.c	/^int		curfile;		\/* number of the current file *\/$/;"	v
-curpos	bvi.c	/^PTR		curpos;$/;"	v
-curr_file	bmore.c	/^FILE	*curr_file = NULL, *help_file;$/;"	v
-current	bvi.c	/^PTR		current;$/;"	v
-current_start	bvi.c	/^PTR		current_start;$/;"	v
-d_flag	bmore.c	/^int		c_flag = 0, d_flag = 0, r_flag = 0;$/;"	v
-d_memcpy	dosio.c	/^d_memcpy(PTR dest, PTR src, off_t n)$/;"	f
-d_memmove	dosio.c	/^d_memmove(PTR dest, PTR src, off_t n)$/;"	f
-dbug	bm_dos.c	/^FILE *dbug;$/;"	v
-delch	dosio.c	/^delch()$/;"	f
-deleteln	doscur.h	110;"	d
-dlines	bm_unix.c	/^int     dum_opt, dlines;$/;"	v
+curfile	bvi.c	/^int		curfile;		\/* number of the current file *\/$/;"	v	typeref:typename:int
+curpos	bvi.c	/^PTR		curpos;$/;"	v	typeref:typename:PTR
+curr_file	bmore.c	/^FILE	*curr_file = NULL, *help_file;$/;"	v	typeref:typename:FILE *
+current	bvi.c	/^PTR		current;$/;"	v	typeref:typename:PTR
+current_start	bvi.c	/^PTR		current_start;$/;"	v	typeref:typename:PTR
+d_flag	bmore.c	/^int		c_flag = 0, d_flag = 0, r_flag = 0;$/;"	v	typeref:typename:int
+dbug	bm_dos.c	/^FILE *dbug;$/;"	v	typeref:typename:FILE *
+delch	dosio.c	/^delch()$/;"	f	typeref:typename:void
+deleteln	doscur.h	/^#define deleteln(/;"	d
+dlines	bm_unix.c	/^int     dum_opt, dlines;$/;"	v	typeref:typename:int
 do_append	bvi.c	/^do_append(count, buf)$/;"	f
 do_back	edit.c	/^do_back(n, start)$/;"	f
 do_delete	edit.c	/^do_delete(n, start)$/;"	f
-do_exit	comm.c	/^do_exit()$/;"	f
+do_exit	comm.c	/^do_exit()$/;"	f	typeref:typename:void
 do_ft	edit.c	/^do_ft(ch, flag)$/;"	f
-do_header	bmore.c	/^int		corr = 0, do_header = 0, to_print;$/;"	v
+do_header	bmore.c	/^int		corr = 0, do_header = 0, to_print;$/;"	v	typeref:typename:int
 do_ins_chg	edit.c	/^do_ins_chg(start, arg, mode)$/;"	f
 do_logic	set.c	/^do_logic(mode, str)$/;"	f
 do_mark	edit.c	/^do_mark(mark, addr)$/;"	f
 do_next	bmore.c	/^do_next(n)$/;"	f
 do_over	bvi.c	/^do_over(loc, n, buf)$/;"	f
 do_put	bvi.c	/^do_put(loc, n, buf)$/;"	f
-do_shell	dosio.c	/^do_shell()$/;"	f
-do_shell	io.c	/^do_shell()$/;"	f
+do_shell	io.c	/^do_shell()$/;"	f	typeref:typename:void
 do_substitution	re.c	/^do_substitution(delim, line, startpos, endpos)$/;"	f
 do_tilde	bvi.c	/^do_tilde(count)$/;"	f
-do_undo	bvi.c	/^do_undo()$/;"	f
+do_undo	bvi.c	/^do_undo()$/;"	f	typeref:typename:void
 do_z	edit.c	/^do_z(mode)$/;"	f
 docmdline	comm.c	/^docmdline(cmdline)$/;"	f
 doecmd	comm.c	/^doecmd(arg, force)$/;"	f
 doset	set.c	/^doset(arg)$/;"	f
 doshell	bm_dos.c	/^doshell(cmd)$/;"	f
 doshell	bm_unix.c	/^doshell(cmd)$/;"	f
-doupdate	doscur.h	143;"	d
-dum_opt	bm_unix.c	/^int     dum_opt, dlines;$/;"	v
-dup_print_flag	bmore.c	/^int		dup_print_flag = 0;$/;"	v
-echo	doscur.h	128;"	d
+doupdate	doscur.h	/^#define doupdate(/;"	d
+dum_opt	bm_unix.c	/^int     dum_opt, dlines;$/;"	v	typeref:typename:int
+dup_print_flag	bmore.c	/^int		dup_print_flag = 0;$/;"	v	typeref:typename:int
+echo	doscur.h	/^#define echo(/;"	d
 edit	edit.c	/^edit(mode)$/;"	f
-edits	bvi.c	/^int		edits = 0;$/;"	v
-emptyclass	bmore.c	/^char	*emptyclass = "Empty byte class '[]' or '[^]'";$/;"	v
-emptyclass	re.c	/^char	*emptyclass = "Bad character class|Empty byte class '[]' or '[^]' cannot match";$/;"	v
+edits	bvi.c	/^int		edits = 0;$/;"	v	typeref:typename:int
+emptyclass	bmore.c	/^char	*emptyclass = "Empty byte class '[]' or '[^]'";$/;"	v	typeref:typename:char *
+emptyclass	re.c	/^char	*emptyclass = "Bad character class|Empty byte class '[]' or '[^]' cannot match";$/;"	v	typeref:typename:char *
 emsg	bmore.c	/^emsg(s)$/;"	f
 emsg	comm.c	/^emsg(s)$/;"	f
-end_addr	comm.c	/^PTR		end_addr;$/;"	v
+end_addr	comm.c	/^PTR		end_addr;$/;"	v	typeref:typename:PTR
 end_word	re.c	/^end_word(start)$/;"	f
-endwin	doscur.h	137;"	d
-enlarge	dosio.c	/^enlarge(off_t add)$/;"	f
+endwin	doscur.h	/^#define endwin(/;"	d
 enlarge	io.c	/^enlarge(add)$/;"	f
-env	bvi.c	/^jmp_buf	env;        \/* context for `longjmp' function   *\/$/;"	v
-erase	doscur.h	81;"	d
-erase_ln	bm_unix.c	/^char	*erase_ln;		\/* erase line *\/$/;"	v
-erasechar	doscur.h	75;"	d
-estring	bmore.c	/^char	estring[MAXCMD] = "";	\/* string for shell escape *\/$/;"	v
-extra	comm.c	/^char	*extra     = "Extra chars|Extra characters at end of command";$/;"	v
-exval	bmore.c	/^int		exval = 0;$/;"	v
-fbuf	set.c	/^static	char	fbuf[MAXCMD+1];$/;"	v	file:
-ffp	set.c	/^static	FILE	*ffp;$/;"	v	file:
-file_nr	bmore.c	/^int		file_nr = 0;	\/* number of current input file *\/$/;"	v
+env	bvi.c	/^jmp_buf	env;        \/* context for `longjmp' function   *\/$/;"	v	typeref:typename:jmp_buf
+erase	doscur.h	/^#define erase(/;"	d
+erase_ln	bm_unix.c	/^char	*erase_ln;		\/* erase line *\/$/;"	v	typeref:typename:char *
+erasechar	doscur.h	/^#define erasechar(/;"	d
+estring	bmore.c	/^char	estring[MAXCMD] = "";	\/* string for shell escape *\/$/;"	v	typeref:typename:char[]
+extra	comm.c	/^char	*extra     = "Extra chars|Extra characters at end of command";$/;"	v	typeref:typename:char *
+exval	bmore.c	/^int		exval = 0;$/;"	v	typeref:typename:int
+fbuf	set.c	/^static	char	fbuf[MAXCMD+1];$/;"	v	typeref:typename:char[]	file:
+ffp	set.c	/^static	FILE	*ffp;$/;"	v	typeref:typename:FILE *	file:
+file_nr	bmore.c	/^int		file_nr = 0;	\/* number of current input file *\/$/;"	v	typeref:typename:int
 fileinfo	edit.c	/^fileinfo(fname)$/;"	f
-filemode	dosio.c	/^int		filemode;$/;"	v
-filemode	io.c	/^int		filemode;$/;"	v
-files	bmore.c	/^char	**files;		\/* list of input files *\/$/;"	v
-files	bvi.c	/^char	**files;		\/* list of input files *\/$/;"	v
-filesize	bmore.c	/^off_t	screen_home, filesize;$/;"	v
-filesize	bvi.c	/^off_t	filesize, memsize, undosize;$/;"	v
-flags	set.h	/^	int		flags;$/;"	m	struct:param
-flash	doscur.h	77;"	d
-flushinp	doscur.h	120;"	d
-fname_buf	bvi.c	/^char	*fname_buf = NULL;$/;"	v
-fnum	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v
-from_file	set.c	/^static	int		from_file = 0;$/;"	v	file:
+filemode	dosio.c	/^int		filemode;$/;"	v	typeref:typename:int
+filemode	io.c	/^int		filemode;$/;"	v	typeref:typename:int
+files	bmore.c	/^char	**files;		\/* list of input files *\/$/;"	v	typeref:typename:char **
+files	bvi.c	/^char	**files;		\/* list of input files *\/$/;"	v	typeref:typename:char **
+filesize	bmore.c	/^off_t	screen_home, filesize;$/;"	v	typeref:typename:off_t
+filesize	bvi.c	/^off_t	filesize, memsize, undosize;$/;"	v	typeref:typename:off_t
+flags	set.h	/^	int		flags;$/;"	m	struct:param	typeref:typename:int
+flash	doscur.h	/^#define flash(/;"	d
+flushinp	doscur.h	/^#define flushinp(/;"	d
+fname_buf	bvi.c	/^char	*fname_buf = NULL;$/;"	v	typeref:typename:char *
+fnum	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v	typeref:typename:int
+from_file	set.c	/^static	int		from_file = 0;$/;"	v	typeref:typename:int	file:
 fsearch	re.c	/^fsearch(start, end, smem)$/;"	f
 fsearch_end	re.c	/^fsearch_end(start, end, smem, s_end)$/;"	f
-fullname	set.h	/^	char	*fullname;	\/* full parameter name *\/$/;"	m	struct:param
-getbegyx	doscur.h	105;"	d
-getcbuff	edit.c	/^static  char    getcbuff[BUFFER];$/;"	v	file:
-getch	dosio.c	/^getch()$/;"	f
+fullname	set.h	/^	char	*fullname;	\/* full parameter name *\/$/;"	m	struct:param	typeref:typename:char *
+getbegyx	doscur.h	/^#define getbegyx(/;"	d
+getcbuff	edit.c	/^static  char    getcbuff[BUFFER];$/;"	v	typeref:typename:char[]	file:
+getch	dosio.c	/^getch()$/;"	f	typeref:typename:int
 getcmdstr	set.c	/^getcmdstr(p, x)$/;"	f
-getcnext	edit.c	/^static  char    *getcnext = NULL;$/;"	v	file:
-getmaxyx	doscur.h	106;"	d
-getyx	doscur.h	104;"	d
-got_int	bm_dos.c	/^int		got_int;$/;"	v
-got_int	bm_unix.c	/^int		got_int;$/;"	v
-help_file	bmore.c	/^FILE	*curr_file = NULL, *help_file;$/;"	v
-helppath	bmore.c	/^char	helppath[MAXCMD];$/;"	v
+getcnext	edit.c	/^static  char    *getcnext = NULL;$/;"	v	typeref:typename:char *	file:
+getmaxyx	doscur.h	/^#define getmaxyx(/;"	d
+getyx	doscur.h	/^#define getyx(/;"	d
+got_int	bm_dos.c	/^int		got_int;$/;"	v	typeref:typename:int
+got_int	bm_unix.c	/^int		got_int;$/;"	v	typeref:typename:int
+help_file	bmore.c	/^FILE	*curr_file = NULL, *help_file;$/;"	v	typeref:typename:FILE *
+helppath	bmore.c	/^char	helppath[MAXCMD];$/;"	v	typeref:typename:char[]
 hex_comp	recomp.c	/^hex_comp(smem, pattern)$/;"	f
-hexchar	recomp.c	/^hexchar()$/;"	f
-highlight	bm_dos.c	/^highlight()$/;"	f
-highlight	bm_unix.c	/^highlight()$/;"	f
-hl_spat	edit.c	/^long hl_spat = 0;$/;"	v
-home	bm_dos.c	/^home()$/;"	f
-home	bm_unix.c	/^home()$/;"	f
-icnt	bmore.c	/^static	int		icnt = 0;$/;"	v	file:
-idlok	doscur.h	141;"	d
-ignore_case	recomp.c	/^int		ignore_case = 0;$/;"	v
-inch	dosio.c	/^inch()$/;"	f
-init_byte	bmore.c	/^off_t	init_byte = 0;$/;"	v
-init_search	bmore.c	/^int		init_search = 0;$/;"	v
-initscr	doscur.h	73;"	d
-initterm	bm_dos.c	/^initterm()$/;"	f
-initterm	bm_unix.c	/^initterm()$/;"	f
-insch	dosio.c	/^insch(int c)$/;"	f
-insertln	doscur.h	108;"	d
+hexchar	recomp.c	/^hexchar()$/;"	f	typeref:typename:int
+highlight	bm_dos.c	/^highlight()$/;"	f	typeref:typename:void
+highlight	bm_unix.c	/^highlight()$/;"	f	typeref:typename:void
+hl_spat	edit.c	/^long hl_spat = 0;$/;"	v	typeref:typename:long
+home	bm_dos.c	/^home()$/;"	f	typeref:typename:void
+home	bm_unix.c	/^home()$/;"	f	typeref:typename:void
+icnt	bmore.c	/^static	int		icnt = 0;$/;"	v	typeref:typename:int	file:
+idlok	doscur.h	/^#define idlok(/;"	d
+ignore_case	recomp.c	/^int		ignore_case = 0;$/;"	v	typeref:typename:int
+inch	dosio.c	/^inch()$/;"	f	typeref:typename:int
+init_byte	bmore.c	/^off_t	init_byte = 0;$/;"	v	typeref:typename:off_t
+init_search	bmore.c	/^int		init_search = 0;$/;"	v	typeref:typename:int
+initscr	doscur.h	/^#define initscr(/;"	d
+initterm	bm_dos.c	/^initterm()$/;"	f	typeref:typename:void
+initterm	bm_unix.c	/^initterm()$/;"	f	typeref:typename:void
+insch	dosio.c	/^insch(int c)$/;"	f	typeref:typename:void
+insertln	doscur.h	/^#define insertln(/;"	d
 jmpproc	bvi.c	/^jmpproc(sig)$/;"	f
-keypad	doscur.h	133;"	d
-last_motion	bvi.c	/^PTR		last_motion;$/;"	v
-last_search	bmore.c	/^off_t	last_search = 0;$/;"	v
-linbuf	edit.c	/^char linbuf[16384];$/;"	v
-line	bvi.c	/^static	char	line[MAXCMD+1];$/;"	v	file:
-lineout	edit.c	/^lineout()$/;"	f
-load	dosio.c	/^load(char *fname)$/;"	f
+keypad	doscur.h	/^#define keypad(/;"	d
+last_motion	bvi.c	/^PTR		last_motion;$/;"	v	typeref:typename:PTR
+last_search	bmore.c	/^off_t	last_search = 0;$/;"	v	typeref:typename:off_t
+linbuf	edit.c	/^char linbuf[16384];$/;"	v	typeref:typename:char[16384]
+line	bvi.c	/^static	char	line[MAXCMD+1];$/;"	v	typeref:typename:char[]	file:
+lineout	edit.c	/^lineout()$/;"	f	typeref:typename:int
+load	dosio.c	/^load(char *fname)$/;"	f	typeref:typename:off_t
 load	io.c	/^load(fname)$/;"	f
-loc	bvi.c	/^int		loc;$/;"	v
-magic	recomp.c	/^int		magic = 1;$/;"	v
+loc	bvi.c	/^int		loc;$/;"	v	typeref:typename:int
+magic	recomp.c	/^int		magic = 1;$/;"	v	typeref:typename:int
 main	bmore.c	/^main(argc, argv)$/;"	f
 main	bvi.c	/^main(argc, argv)$/;"	f
-mark	bvi.c	/^static	int		mark;$/;"	v	file:
-markbuf	bvi.c	/^PTR		markbuf[26];$/;"	v
-maxpos	bvi.c	/^PTR		maxpos;$/;"	v
-maxx	bmore.c	/^int		maxx, maxy;$/;"	v
-maxx	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v
-maxy	bmore.c	/^int		maxx, maxy;$/;"	v
-maxy	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v
-mem	bvi.c	/^PTR		mem = NULL;$/;"	v
-memcpy	bvi.h	126;"	d
+mark	bvi.c	/^static	int		mark;$/;"	v	typeref:typename:int	file:
+markbuf	bvi.c	/^PTR		markbuf[26];$/;"	v	typeref:typename:PTR[26]
+maxpos	bvi.c	/^PTR		maxpos;$/;"	v	typeref:typename:PTR
+maxx	bmore.c	/^int		maxx, maxy;$/;"	v	typeref:typename:int
+maxx	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v	typeref:typename:int
+maxy	bmore.c	/^int		maxx, maxy;$/;"	v	typeref:typename:int
+maxy	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v	typeref:typename:int
+mem	bvi.c	/^PTR		mem = NULL;$/;"	v	typeref:typename:PTR
+memcpy	bvi.h	/^#	define	memcpy	/;"	d
 memmove	bm_unix.c	/^memmove(s1, s2, n)$/;"	f
-memmove	bvi.h	127;"	d
+memmove	bvi.h	/^#	define	memmove	/;"	d
 memmove	io.c	/^memmove(s1, s2, n)$/;"	f
-memsize	bvi.c	/^off_t	filesize, memsize, undosize;$/;"	v
-morefiles	comm.c	/^char	*morefiles = "more files@to edit";$/;"	v
-move	doscur.h	91;"	d
-movebyte	edit.c	/^movebyte()$/;"	f
+memsize	bvi.c	/^off_t	filesize, memsize, undosize;$/;"	v	typeref:typename:off_t
+morefiles	comm.c	/^char	*morefiles = "more files@to edit";$/;"	v	typeref:typename:char *
+move	doscur.h	/^#define move(/;"	d
+movebyte	edit.c	/^movebyte()$/;"	f	typeref:typename:void
 msg	comm.c	/^msg(s)$/;"	f
-mvaddch	doscur.h	93;"	d
-mvaddstr	doscur.h	97;"	d
-mvgetch	doscur.h	112;"	d
-mvgetstr	doscur.h	115;"	d
-mvinch	dosio.c	/^mvinch(int y, int x)$/;"	f
-mvinsch	doscur.h	125;"	d
-mvprintw	doscur.h	101;"	d
-mvscanw	doscur.h	122;"	d
-mvwaddch	doscur.h	92;"	d
-mvwaddstr	doscur.h	96;"	d
-mvwgetch	doscur.h	111;"	d
-mvwgetstr	doscur.h	114;"	d
-mvwprintw	doscur.h	100;"	d
-mvwscanw	doscur.h	121;"	d
-mymaxx	bmore.c	/^int		mymaxx = 0, mymaxy = 0;$/;"	v
-mymaxy	bmore.c	/^int		mymaxx = 0, mymaxy = 0;$/;"	v
-name	bmore.c	/^char	*name = NULL;$/;"	v
-name	bvi.c	/^char	*name = NULL;$/;"	v
-new_screen	edit.c	/^new_screen()$/;"	f
-newwin	doscur.h	74;"	d
-nextchar	bmore.c	/^nextchar()$/;"	f
-nl	doscur.h	131;"	d
-no_intty	bm_dos.c	/^int		no_intty, no_tty;$/;"	v
-no_intty	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v
-no_tty	bm_dos.c	/^int		no_intty, no_tty;$/;"	v
-no_tty	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v
-noaddr	comm.c	/^char	*noaddr    = "No address allowed@on this command";$/;"	v
-nobytes	bvi.c	/^char	*nobytes = "No bytes@in the buffer";$/;"	v
-nodelay	doscur.h	127;"	d
-noecho	doscur.h	129;"	d
-nonl	doscur.h	132;"	d
-noprev	re.c	/^char	*noprev = "No previous expression";$/;"	v
-noraw	doscur.h	139;"	d
-normal	bm_dos.c	/^normal()$/;"	f
-normal	bm_unix.c	/^normal()$/;"	f
-notfound	re.c	/^char	*notfound = "Fail|Pattern not found";$/;"	v
-notimeout	doscur.h	140;"	d
-noval	comm.c	/^char	*noval     = "No value@for binary operation";$/;"	v
-nowrtmsg	comm.c	/^char	*nowrtmsg  = "No write@since last change (:%s! overrides)";$/;"	v
-nstate	bm_unix.c	/^struct termios ostate, nstate;$/;"	v	typeref:struct:
-numarr	bmore.c	/^char	numarr[64];		\/* string for collecting number *\/$/;"	v
-numarr	bvi.c	/^char	numarr[MAXCMD+1];		\/* string for collecting number *\/$/;"	v
-numfiles	bmore.c	/^int		numfiles;		\/* number of input files *\/$/;"	v
-numfiles	bvi.c	/^int		numfiles;		\/* number of input files *\/$/;"	v
-nvalue	set.h	/^	off_t	nvalue;$/;"	m	struct:param
-off_t	bmore.h	106;"	d
-off_t	bvi.h	122;"	d
-oldbuf	comm.c	/^static	char	oldbuf[CMDSZ];		\/** for :!! command **\/$/;"	v	file:
-oldpos	bmore.c	/^off_t	bytepos, oldpos;$/;"	v
+mvaddch	doscur.h	/^#define mvaddch(/;"	d
+mvaddstr	doscur.h	/^#define mvaddstr(/;"	d
+mvgetch	doscur.h	/^#define mvgetch(/;"	d
+mvgetstr	doscur.h	/^#define mvgetstr(/;"	d
+mvinch	dosio.c	/^mvinch(int y, int x)$/;"	f	typeref:typename:int
+mvinsch	doscur.h	/^#define mvinsch(/;"	d
+mvprintw	doscur.h	/^#define mvprintw(/;"	d
+mvscanw	doscur.h	/^#define mvscanw(/;"	d
+mvwaddch	doscur.h	/^#define mvwaddch(/;"	d
+mvwaddstr	doscur.h	/^#define mvwaddstr(/;"	d
+mvwgetch	doscur.h	/^#define mvwgetch(/;"	d
+mvwgetstr	doscur.h	/^#define mvwgetstr(/;"	d
+mvwprintw	doscur.h	/^#define mvwprintw(/;"	d
+mvwscanw	doscur.h	/^#define mvwscanw(/;"	d
+mymaxx	bmore.c	/^int		mymaxx = 0, mymaxy = 0;$/;"	v	typeref:typename:int
+mymaxy	bmore.c	/^int		mymaxx = 0, mymaxy = 0;$/;"	v	typeref:typename:int
+name	bmore.c	/^char	*name = NULL;$/;"	v	typeref:typename:char *
+name	bvi.c	/^char	*name = NULL;$/;"	v	typeref:typename:char *
+new_screen	edit.c	/^new_screen()$/;"	f	typeref:typename:void
+newwin	doscur.h	/^#define newwin(/;"	d
+nextchar	bmore.c	/^nextchar()$/;"	f	typeref:typename:int
+nl	doscur.h	/^#define nl(/;"	d
+no_intty	bm_dos.c	/^int		no_intty, no_tty;$/;"	v	typeref:typename:int
+no_intty	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v	typeref:typename:int
+no_tty	bm_dos.c	/^int		no_intty, no_tty;$/;"	v	typeref:typename:int
+no_tty	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v	typeref:typename:int
+noaddr	comm.c	/^char	*noaddr    = "No address allowed@on this command";$/;"	v	typeref:typename:char *
+nobytes	bvi.c	/^char	*nobytes = "No bytes@in the buffer";$/;"	v	typeref:typename:char *
+nodelay	doscur.h	/^#define nodelay(/;"	d
+noecho	doscur.h	/^#define noecho(/;"	d
+nonl	doscur.h	/^#define nonl(/;"	d
+noprev	re.c	/^char	*noprev = "No previous expression";$/;"	v	typeref:typename:char *
+noraw	doscur.h	/^#define noraw(/;"	d
+normal	bm_dos.c	/^normal()$/;"	f	typeref:typename:void
+normal	bm_unix.c	/^normal()$/;"	f	typeref:typename:void
+notfound	re.c	/^char	*notfound = "Fail|Pattern not found";$/;"	v	typeref:typename:char *
+notimeout	doscur.h	/^#define notimeout(/;"	d
+noval	comm.c	/^char	*noval     = "No value@for binary operation";$/;"	v	typeref:typename:char *
+nowrtmsg	comm.c	/^char	*nowrtmsg  = "No write@since last change (:%s! overrides)";$/;"	v	typeref:typename:char *
+nstate	bm_unix.c	/^struct termios ostate, nstate;$/;"	v	typeref:struct:termios
+numarr	bmore.c	/^char	numarr[64];		\/* string for collecting number *\/$/;"	v	typeref:typename:char[64]
+numarr	bvi.c	/^char	numarr[MAXCMD+1];		\/* string for collecting number *\/$/;"	v	typeref:typename:char[]
+numfiles	bmore.c	/^int		numfiles;		\/* number of input files *\/$/;"	v	typeref:typename:int
+numfiles	bvi.c	/^int		numfiles;		\/* number of input files *\/$/;"	v	typeref:typename:int
+nvalue	set.h	/^	off_t	nvalue;$/;"	m	struct:param	typeref:typename:off_t
+off_t	bmore.h	/^#	define off_t	/;"	d
+off_t	bvi.h	/^#	define off_t	/;"	d
+oldbuf	comm.c	/^static	char	oldbuf[CMDSZ + 3];		\/** for :!! command **\/$/;"	v	typeref:typename:char[]	file:
+oldpos	bmore.c	/^off_t	bytepos, oldpos;$/;"	v	typeref:typename:off_t
 open_file	bmore.c	/^open_file(name)$/;"	f
 ostate	bm_unix.c	/^struct termios ostate, nstate;$/;"	v	typeref:struct:termios
-out_len	bmore.c	/^int		out_len;$/;"	v
+out_len	bmore.c	/^int		out_len;$/;"	v	typeref:typename:int
 outmsg	comm.c	/^outmsg(s)$/;"	f
-pagepos	bvi.c	/^PTR		pagepos;$/;"	v
+pagepos	bvi.c	/^PTR		pagepos;$/;"	v	typeref:typename:PTR
 param	set.h	/^struct	param {$/;"	s
-params	set.c	/^struct	param	params[] = {$/;"	v	typeref:struct:param
+params	set.c	/^struct	param	params[] = {$/;"	v	typeref:struct:param[]
 patcpy	re.c	/^patcpy(s1, s2, delim)$/;"	f
-pattern	re.c	/^char	pattern[MAXCMD + 1];$/;"	v
-poi	recomp.c	/^char	*poi;$/;"	v
-precount	bmore.c	/^long	precount = -1;	\/* number preceding command *\/$/;"	v
-precount	bvi.c	/^long	precount = -1;$/;"	v
+pattern	re.c	/^char	pattern[MAXCMD + 1];$/;"	v	typeref:typename:char[]
+poi	recomp.c	/^char	*poi;$/;"	v	typeref:typename:char *
+precount	bmore.c	/^long	precount = -1;	\/* number preceding command *\/$/;"	v	typeref:typename:long
+precount	bvi.c	/^long	precount = -1;$/;"	v	typeref:typename:long
 printline	edit.c	/^printline(mempos, scpos)$/;"	f
 printout	bmore.c	/^printout(lns)$/;"	f
-printw	doscur.h	103;"	d
-progname	bmore.c	/^static	char	progname[10];$/;"	v	file:
-progname	bvi.c	/^static	char	progname[8];$/;"	v	file:
-prompt	bmore.c	/^int		prompt = 1;$/;"	v
+printw	doscur.h	/^#define printw /;"	d
+progname	bmore.c	/^static	char	progname[10];$/;"	v	typeref:typename:char[10]	file:
+progname	bvi.c	/^static	char	progname[8];$/;"	v	typeref:typename:char[8]	file:
+prompt	bmore.c	/^int		prompt = 1;$/;"	v	typeref:typename:int
 pushback	bmore.c	/^pushback(n, where)$/;"	f
 putchr	bm_unix.c	/^putchr(ch)$/;"	f
-putchr	bm_unix.c	/^putchr(char ch)$/;"	f
+putchr	bm_unix.c	/^putchr(char ch)$/;"	f	typeref:typename:int
 putline	bmore.c	/^putline(buf, num)$/;"	f
-quit	edit.c	/^quit()$/;"	f
-r_flag	bmore.c	/^int		c_flag = 0, d_flag = 0, r_flag = 0;$/;"	v
+quit	edit.c	/^quit()$/;"	f	typeref:typename:void
+r_flag	bmore.c	/^int		c_flag = 0, d_flag = 0, r_flag = 0;$/;"	v	typeref:typename:int
 range	bvi.c	/^range(ch)$/;"	f
-raw	doscur.h	138;"	d
+raw	doscur.h	/^#define raw(/;"	d
 rdline	bmore.c	/^rdline(ch, sstring)$/;"	f
 read_rc	set.c	/^read_rc(fn)$/;"	f
-refresh	doscur.h	134;"	d
-rep_buf	bvi.c	/^char	rep_buf[BUFFER];$/;"	v
-repaint	edit.c	/^repaint()	\/***** redraw screen *********************\/$/;"	f
-repl_count	comm.c	/^int		repl_count = -1;$/;"	v
-reset_tty	bm_dos.c	/^reset_tty ()$/;"	f
-reset_tty	bm_unix.c	/^reset_tty()$/;"	f
-resetty	doscur.h	145;"	d
-rev_end	bm_unix.c	/^char	*rev_start, *rev_end;	\/* enter and exit standout mode *\/$/;"	v
-rev_start	bm_unix.c	/^char	*rev_start, *rev_end;	\/* enter and exit standout mode *\/$/;"	v
+read_to_end	io.c	/^read_to_end(int fd, void *buf, size_t count) {$/;"	f	typeref:typename:ssize_t	file:
+refresh	doscur.h	/^#define refresh(/;"	d
+rep_buf	bvi.c	/^char	rep_buf[BUFFER];$/;"	v	typeref:typename:char[]
+repaint	edit.c	/^repaint()	\/***** redraw screen *********************\/$/;"	f	typeref:typename:void
+repl_count	comm.c	/^int		repl_count = -1;$/;"	v	typeref:typename:int
+reset_tty	bm_dos.c	/^reset_tty ()$/;"	f	typeref:typename:void
+reset_tty	bm_unix.c	/^reset_tty()$/;"	f	typeref:typename:void
+resetty	doscur.h	/^#define resetty(/;"	d
+rev_end	bm_unix.c	/^char	*rev_start, *rev_end;	\/* enter and exit standout mode *\/$/;"	v	typeref:typename:char *
+rev_start	bm_unix.c	/^char	*rev_start, *rev_end;	\/* enter and exit standout mode *\/$/;"	v	typeref:typename:char *
 rsearch	re.c	/^rsearch(start, end, smem)$/;"	f
-save	dosio.c	/^save(char *fname, PTR start, PTR end, int flags)$/;"	f
+save	dosio.c	/^save(char *fname, PTR start, PTR end, int flags)$/;"	f	typeref:typename:int
 save	io.c	/^save(fname, start, end, flags)$/;"	f
 save_chk	comm.c	/^save_chk(fname, start, end, flags)$/;"	f
-savetty	doscur.h	144;"	d
+savetty	doscur.h	/^#define savetty(/;"	d
 sbracket	bmore.c	/^sbracket(start, scan, count)$/;"	f
 sbracket	re.c	/^sbracket(start, scan, count)$/;"	f	file:
-scanw	doscur.h	124;"	d
+scanw	doscur.h	/^#define scanw /;"	d
 scr	dosio.c	/^struct WINDOW scr;$/;"	v	typeref:struct:WINDOW
-screen	bvi.c	/^int		screen, status, statsize;$/;"	v
-screen_home	bmore.c	/^off_t	screen_home, filesize;$/;"	v
+screen	bvi.c	/^int		screen, status, statsize;$/;"	v	typeref:typename:int
+screen_home	bmore.c	/^off_t	screen_home, filesize;$/;"	v	typeref:typename:off_t
 scrolldown	edit.c	/^scrolldown(lns)$/;"	f
-scrollok	doscur.h	142;"	d
+scrollok	doscur.h	/^#define scrollok(/;"	d
 scrollup	edit.c	/^scrollup(lns)$/;"	f
-search_pat	re.c	/^char	search_pat[BUFFER];	\/* \/ or ? command *\/$/;"	v
+search_pat	re.c	/^char	search_pat[BUFFER];	\/* \/ or ? command *\/$/;"	v	typeref:typename:char[]
 searching	re.c	/^searching(ch, line, startpos, endpos, flag)$/;"	f
-set_tty	bm_dos.c	/^set_tty ()$/;"	f
-set_tty	bm_unix.c	/^set_tty()$/;"	f
-setcur	edit.c	/^setcur()$/;"	f
+set_tty	bm_dos.c	/^set_tty ()$/;"	f	typeref:typename:void
+set_tty	bm_unix.c	/^set_tty()$/;"	f	typeref:typename:void
+setcur	edit.c	/^setcur()$/;"	f	typeref:typename:void
 setpage	edit.c	/^setpage(addr)$/;"	f
-shell	bvi.c	/^char	*shell;$/;"	v
-shortname	set.h	/^	char	*shortname;	\/* permissible abbreviation *\/$/;"	m	struct:param
+shell	bvi.c	/^char	*shell;$/;"	v	typeref:typename:char *
+shortname	set.h	/^	char	*shortname;	\/* permissible abbreviation *\/$/;"	m	struct:param	typeref:typename:char *
 showparms	set.c	/^showparms(all)$/;"	f
-sig	bm_dos.c	/^sig()$/;"	f
+sig	bm_dos.c	/^sig()$/;"	f	typeref:typename:void
 sig	bm_unix.c	/^sig(sig)$/;"	f
-size	bvi.c	/^off_t	size;$/;"	v
-slow_tty	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v
-smode	bmore.c	/^static	int		smode;$/;"	v	file:
-smode	recomp.c	/^int		smode;$/;"	v
+size	bvi.c	/^off_t	size;$/;"	v	typeref:typename:off_t
+slow_tty	bm_unix.c	/^int     fnum, no_intty, no_tty, slow_tty;$/;"	v	typeref:typename:int
+smode	bmore.c	/^static	int		smode;$/;"	v	typeref:typename:int	file:
+smode	recomp.c	/^int		smode;$/;"	v	typeref:typename:int
 smsg	comm.c	/^smsg(s)$/;"	f
-spos	bvi.c	/^PTR		spos;$/;"	v
-sstring	bmore.c	/^char	sstring[MAXCMD] = "";	\/* string for search *\/$/;"	v
-standend	doscur.h	89;"	d
-standout	doscur.h	88;"	d
-start_addr	comm.c	/^PTR		start_addr;$/;"	v
-statpos	edit.c	/^statpos()$/;"	f
-statsize	bvi.c	/^int		screen, status, statsize;$/;"	v
-status	bvi.c	/^int		screen, status, statsize;$/;"	v
-stdscr	dosio.c	/^int	stdscr = 0;$/;"	v
-strcasecmp	bmore.h	109;"	d
-strcasecmp	bvi.h	125;"	d
+spos	bvi.c	/^PTR		spos;$/;"	v	typeref:typename:PTR
+sstring	bmore.c	/^char	sstring[MAXCMD] = "";	\/* string for search *\/$/;"	v	typeref:typename:char[]
+standend	doscur.h	/^#define standend(/;"	d
+standout	doscur.h	/^#define standout(/;"	d
+start_addr	comm.c	/^PTR		start_addr;$/;"	v	typeref:typename:PTR
+statpos	edit.c	/^statpos()$/;"	f	typeref:typename:void
+statsize	bvi.c	/^int		screen, status, statsize;$/;"	v	typeref:typename:int
+status	bvi.c	/^int		screen, status, statsize;$/;"	v	typeref:typename:int
+stdscr	dosio.c	/^int	stdscr = 0;$/;"	v	typeref:typename:int
+strcasecmp	bmore.h	/^#   define  strcasecmp	/;"	d
+strcasecmp	bvi.h	/^#   define  strcasecmp	/;"	d
 strdup	io.c	/^strdup(s)$/;"	f
-string	bmore.c	/^char	string[MAXCMD];$/;"	v
-string	bvi.c	/^char	string[MAXCMD+1];$/;"	v
-strncasecmp	bmore.h	108;"	d
-strncasecmp	bvi.h	124;"	d
-stty	bm_unix.c	34;"	d	file:
+string	bmore.c	/^char	string[MAXCMD];$/;"	v	typeref:typename:char[]
+string	bvi.c	/^char	string[MAXCMD+1];$/;"	v	typeref:typename:char[]
+strncasecmp	bmore.h	/^#   define  strncasecmp /;"	d
+strncasecmp	bvi.h	/^#   define  strncasecmp /;"	d
+stty	bm_unix.c	/^#define stty(/;"	d	file:
 stuffin	edit.c	/^stuffin(s)$/;"	f
-svalue	set.h	/^	char	*svalue;$/;"	m	struct:param
+svalue	set.h	/^	char	*svalue;$/;"	m	struct:param	typeref:typename:char *
 sysemsg	comm.c	/^sysemsg(s)$/;"	f
-terminal	dosio.c	/^char	*terminal = "ansi";$/;"	v
-terminal	io.c	/^char	*terminal;$/;"	v
-tmpbuf	edit.c	/^char tmpbuf[10];$/;"	v
-to_print	bmore.c	/^int		corr = 0, do_header = 0, to_print;$/;"	v
-toggle	edit.c	/^toggle()$/;"	f
-trunc_cur	bvi.c	/^trunc_cur()$/;"	f
-undo_buf	bvi.c	/^char	*undo_buf = NULL;$/;"	v
-undo_count	bvi.c	/^off_t	undo_count;$/;"	v
-undo_start	bvi.c	/^PTR		undo_start;$/;"	v
-undosize	bvi.c	/^off_t	filesize, memsize, undosize;$/;"	v
-usage	bmore.c	/^usage()$/;"	f
-usage	bvi.c	/^usage()$/;"	f
-vgetc	bm_dos.c	/^vgetc()$/;"	f
-vgetc	bm_unix.c	/^vgetc()$/;"	f
-vgetc	edit.c	/^vgetc()$/;"	f
-waddch	doscur.h	94;"	d
-waddstr	doscur.h	98;"	d
+terminal	dosio.c	/^char	*terminal = "ansi";$/;"	v	typeref:typename:char *
+terminal	io.c	/^char	*terminal;$/;"	v	typeref:typename:char *
+tmpbuf	edit.c	/^char tmpbuf[10];$/;"	v	typeref:typename:char[10]
+to_print	bmore.c	/^int		corr = 0, do_header = 0, to_print;$/;"	v	typeref:typename:int
+toggle	edit.c	/^toggle()$/;"	f	typeref:typename:void
+trunc_cur	bvi.c	/^trunc_cur()$/;"	f	typeref:typename:void
+undo_buf	bvi.c	/^char	*undo_buf = NULL;$/;"	v	typeref:typename:char *
+undo_count	bvi.c	/^off_t	undo_count;$/;"	v	typeref:typename:off_t
+undo_start	bvi.c	/^PTR		undo_start;$/;"	v	typeref:typename:PTR
+undosize	bvi.c	/^off_t	filesize, memsize, undosize;$/;"	v	typeref:typename:off_t
+usage	bmore.c	/^usage()$/;"	f	typeref:typename:void
+usage	bvi.c	/^usage()$/;"	f	typeref:typename:void
+vgetc	bm_dos.c	/^vgetc()$/;"	f	typeref:typename:int
+vgetc	bm_unix.c	/^vgetc()$/;"	f	typeref:typename:int
+vgetc	edit.c	/^vgetc()$/;"	f	typeref:typename:int
+waddch	doscur.h	/^#define waddch(/;"	d
+waddstr	doscur.h	/^#define waddstr(/;"	d
 wait_return	comm.c	/^wait_return(flag)$/;"	f
-wclear	doscur.h	82;"	d
-wclrtoeol	doscur.h	78;"	d
-wdeleteln	doscur.h	109;"	d
-werase	doscur.h	80;"	d
-wgetch	doscur.h	113;"	d
-wgetstr	doscur.h	116;"	d
-winsertln	doscur.h	107;"	d
-wmove	doscur.h	90;"	d
+wclear	doscur.h	/^#define wclear(/;"	d
+wclrtoeol	doscur.h	/^#define wclrtoeol(/;"	d
+wdeleteln	doscur.h	/^#define wdeleteln(/;"	d
+werase	doscur.h	/^#define werase(/;"	d
+wgetch	doscur.h	/^#define wgetch(/;"	d
+wgetstr	doscur.h	/^#define wgetstr(/;"	d
+winsertln	doscur.h	/^#define winsertln(/;"	d
+wmove	doscur.h	/^#define wmove(/;"	d
 wordsearch	re.c	/^wordsearch(start, mode)$/;"	f
-wprintw	doscur.h	102;"	d
-wrefresh	doscur.h	135;"	d
-wrstat	bvi.c	/^static	int		wrstat = 1;$/;"	v	file:
-wscanw	doscur.h	123;"	d
-x	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v
-xpos	edit.c	/^xpos()$/;"	f
-xx	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v
-y	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v
-yank_buf	bvi.c	/^char	*yank_buf = NULL;$/;"	v
-yanked	bvi.c	/^off_t	yanked = 0L;$/;"	v
-yd_addr	comm.c	/^yd_addr()$/;"	f
+wprintw	doscur.h	/^#define wprintw(/;"	d
+wrefresh	doscur.h	/^#define wrefresh(/;"	d
+wrstat	bvi.c	/^static	int		wrstat = 1;$/;"	v	typeref:typename:int	file:
+wscanw	doscur.h	/^#define wscanw(/;"	d
+x	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v	typeref:typename:int
+xpos	edit.c	/^xpos()$/;"	f	typeref:typename:int
+xx	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v	typeref:typename:int
+y	bvi.c	/^int		maxx, maxy, x, xx, y;$/;"	v	typeref:typename:int
+yank_buf	bvi.c	/^char	*yank_buf = NULL;$/;"	v	typeref:typename:char *
+yanked	bvi.c	/^off_t	yanked = 0L;$/;"	v	typeref:typename:off_t
+yd_addr	comm.c	/^yd_addr()$/;"	f	typeref:typename:off_t

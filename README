@@ -1,6 +1,6 @@
 BVI - Binary visual editor
 ==========================
-http://bvi.sourceforge.net/
+https/bvi.sourceforge.net/
 
 This editor for binary files was written by Gerhard Buergmann
 and is distributed under the GPL (GNU Public License).
@@ -13,8 +13,8 @@ How to compile
 	https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
 
 
-	gunzip -c bvi-1.4.1.src.tar.gz | tar xvf -
-	cd bvi-1.4.1
+	gunzip -c bvi-1.4.2.src.tar.gz | tar xvf -
+	cd bvi-1.4.2
 	./configure
 	make
 	make install

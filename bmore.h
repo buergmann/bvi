@@ -11,10 +11,11 @@
  * 2003-02-20  V 1.3.2
  * 2010-03-28  V 1.3.4
  * 2019-01-22  V 1.4.1
+ * 2022-03-07  V 1.4.2
  *
  *  NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2023 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -49,20 +50,23 @@
 #	include "patchlevel.h"
 #	include "config.h"
 #	include <unistd.h>
-# if HAVE_NCURSES_H
-#   include <ncurses.h>
-# else
-#   include <curses.h>
-# endif 
-# if HAVE_TERM_H
-#	include <term.h>
-# else
-#  if HAVE_NCURSES_TERM_H
-#	include <ncurses/term.h>
-#  else 
-#	include <term.h>
-#  endif
-# endif
+#   if defined HAVE_NCURSESW_CURSES_H
+#     include <ncursesw/curses.h>
+#     include <ncursesw/term.h>
+#   elif defined HAVE_NCURSESW_H
+#     include <ncursesw.h>
+#   elif defined HAVE_NCURSES_CURSES_H
+#     include <ncurses/curses.h>
+#   elif defined HAVE_NCURSES_H
+#     include <ncurses.h>
+#   elif defined HAVE_CURSES_H
+#     include <curses.h>
+#   else
+#      error "SysV or X/Open-compatible Curses header file required"
+#   endif
+#   if HAVE_TERM_H
+#	  include <term.h>
+#   endif
 #endif
 
 
@@ -135,17 +139,17 @@ extern	int		no_tty, no_intty;
 #ifdef ANSI
 	void	initterm(void), set_tty(void), reset_tty(void);
 	void	cleartoeol(void), clearscreen(void), highlight(void);
-	void	normal(void), bmbeep(void), home(void), sig(void);
+	void	normal(void), bmbeep(void), home(void), sig(int);
 	void	doshell(char *), emsg(char *);
 	void	do_next(int);
 	void	bmsearch(int);
 	void	pushback(int, char *);
-	int		open_file(void);
-	int		printout(int), rdline(int, char *);
-	int		nextchar(void), vgetc(void);
+	int	open_file(char *);
+	int	printout(int), rdline(int, char *);
+	int	nextchar(void), vgetc(void);
 	int     sbracket(int, char *, int);
 	int     bmregexec(char *);
-	int		ascii_comp(char *, char *), hex_comp(char *, char *);
+	int	ascii_comp(char *, char *), hex_comp(char *, char *);
 	void    putline(char *, int);
 #else
 	void	initterm(), set_tty(), reset_tty();

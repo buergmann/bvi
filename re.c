@@ -11,8 +11,9 @@
  * 2010-06-02 V 1.3.4
  * 2013-08-24 V 1.4.0
  * 2019-01-28 V 1.4.1
+ * 2023-03-07 V 1.4.2
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2023 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -312,7 +313,7 @@ do_substitution(delim, line, startpos, endpos)
 	refresh();
 
 	if (global) {
-		if ((undo_count = alloc_buf(endpos - startpos, &undo_buf))) {
+		if ((undo_count = alloc_buf((off_t)(endpos - startpos), &undo_buf))) {
 			memcpy(undo_buf, startpos + 1, undo_count);
 		}
 		undo_start = startpos + 1;
@@ -350,7 +351,7 @@ AGAIN:
 		repl_count++;
 		current_start = pagepos + y * Anzahl + xpos();
 		if (!global) {
-			if ((undo_count = alloc_buf(pat_len, &undo_buf))) {
+			if ((undo_count = alloc_buf((off_t)pat_len, &undo_buf))) {
 				memcpy(undo_buf, current_start, undo_count);
 			}
 			undo_start = current_start;

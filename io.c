@@ -11,10 +11,11 @@
  * 2010-06-02 V 1.3.4
  * 2014-05-03 V 1.4.0
  * 2019-01-27 V 1.4.1
+ * 2022-03-09 V 1.4.2
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2022 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -54,6 +55,20 @@
 #ifdef HAVE_FCNTL_H
 #	include <fcntl.h>
 #endif
+
+
+//@ read on linux has a limit of 0x7ffff000 bytes (see `man read`)
+//@ this function calls recursively read until all `count` characters are read.
+static ssize_t
+read_to_end(int fd, void *buf, size_t count) {
+	size_t read_bytes = 0;
+	while(read_bytes < count) {
+		const ssize_t ret = read(fd, ((char*)buf)+read_bytes, count-read_bytes);
+		if(ret <= 0) return ret;
+		read_bytes += ret;
+	}
+	return read_bytes;
+}
 
 int		filemode;
 static	struct	stat	buf;
@@ -261,7 +276,7 @@ load(fname)
 			sysemsg(fname);
 			filemode = ERROR;
 		} else {
-			if ((filesize = read(fd, mem, block_size)) == 0) {
+			if ((filesize = read_to_end(fd, mem, block_size)) == 0) {
 				sprintf(fname_buf, "\"%s\" Empty file", fname);
 				filemode = ERROR;
 			} else {
@@ -278,7 +293,7 @@ load(fname)
 		}
 	} else if ((filemode == REGULAR) || (filemode == DIRECTORY)) {
 		filesize = buf.st_size;
-		if (read(fd, mem, filesize) != filesize) {
+		if (read_to_end(fd, mem, filesize) != filesize) {
             sysemsg(fname);
 			filemode = ERROR;
 		}
@@ -478,7 +493,7 @@ addfile(fname)
 	}
 	oldsize = filesize;
 	if (enlarge(buf.st_size)) return 1;
-	if (read(fd, mem + filesize, buf.st_size) == -1) {
+	if (read_to_end(fd, mem + filesize, buf.st_size) == -1) {
 		sysemsg(fname);
 		return 1;
 	}
@@ -488,3 +503,4 @@ addfile(fname)
 	setpage(mem + oldsize);
 	return 0;
 }
+

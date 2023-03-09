@@ -1,3 +1,22 @@
+New in release 1.4.2
+====================
+This release is dedicated to Sven Guckes (*1967-04-06 +2022-02-20).
+Sven was an enthusiastic Linux explainer, his particular passion was the console tools. 
+I met Sven a couple of times. He always showed interest in the further development of
+the bvi and liked to discuss new ideas. 
+R.I.P. Sven
+
+* :wq bug fixed
+* Error-message if input no terminal
+* Mixed licenses (SF bug #10)
+* Segmentation fault occurs on undo (SF bug #11)
+* Segmentation fault occurs on substitution in 32-bit systems (SF bug #12)
+* ncursesw support
+* Handling inputs larger than 2^31 bytes (SF bug #13)
+* Some incorrect function prototypes in ANSI mode fixed (SF bug #14)
+* Minor fixes
+
+
 New in release 1.4.1
 ====================
 

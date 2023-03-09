@@ -14,10 +14,11 @@
  * 2010-06-02 V 1.3.4
  * 2014-01-28 V 1.4.0
  * 2019-01-27 V 1.4.1
+ * 2023-03-06 V 1.4.2
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2023 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -87,7 +88,7 @@ extern	char	**files;		/* used for "next" and "rewind" */
 extern	int		numfiles, curfile;
 extern	int		errno;
 
-static	char	oldbuf[CMDSZ];		/** for :!! command **/
+static	char	oldbuf[CMDSZ + 3];		/** for :!! command **/
 
 
 /*
@@ -308,7 +309,7 @@ docmdline(cmdline)
 				else	ok = save(c_argv[0], start_addr, end_addr, saveflag);
 		} else {
 			if (c_argc == 0) {
-				save_chk(name, start_addr, end_addr, saveflag);
+				ok = save_chk(name, start_addr, end_addr, saveflag);
 			} else {
 				if (!stat(c_argv[0], &buf)) {
 					if (saveflag == WRITE) {

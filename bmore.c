@@ -8,8 +8,9 @@
  * 2004-01-09  V 1.3.2
  * 2013-08-23  V 1.4.0
  * 2019-01-22  V 1.4.1
+ * 2023-03-06  V 1.4.2
  *
- * Copyright 1990-2019 by Gerhard Buergmann
+ * Copyright 1990-2023 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * NOTE: Edit this file with tabstop=4 !
@@ -49,7 +50,7 @@
 
 #include "bmore.h"
 
-char	*copyright  = "GPL (C) 1990-2019 by Gerhard Buergmann";
+char	*copyright  = "GPL (C) 1990-2022 by Gerhard Buergmann";
 
 int		maxx, maxy;
 int		mymaxx = 0, mymaxy = 0;
@@ -85,7 +86,7 @@ int		prompt = 1;
 char	helppath[MAXCMD];
 
 static	char	progname[10];
-static	char	cmdbuf[MAXCMD];
+static	char	cmdbuf[2 * MAXCMD];
 static	int		cnt = 0;
 static	int		icnt = 0;
 static	int		smode;

@@ -12,10 +12,11 @@
  * 2010-08-04  V 1.3.4
  * 2014-10-01  V 1.4.0
  * 2019-01-28  V 1.4.1
+ * 2023-03-07  V 1.4.2
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2023 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -50,11 +51,19 @@
 #else
 #	include "patchlevel.h"
 #	include "config.h"
-#if HAVE_NCURSES_H
-#   include <ncurses.h>
-#else
-#   include <curses.h>
-#endif
+#if defined HAVE_NCURSESW_CURSES_H
+  #  include <ncursesw/curses.h>
+  #elif defined HAVE_NCURSESW_H
+  #  include <ncursesw.h>
+  #elif defined HAVE_NCURSES_CURSES_H
+  #  include <ncurses/curses.h>
+  #elif defined HAVE_NCURSES_H
+  #  include <ncurses.h>
+  #elif defined HAVE_CURSES_H
+  #  include <curses.h>
+  #else
+  #  error "SysV or X/Open-compatible Curses header file required"
+  #endif
 #endif
 
 /* defines for filemode */
@@ -215,7 +224,7 @@ extern  off_t   block_begin, block_end, block_size;
 	void	docmdline(char *), do_over(PTR, off_t, PTR), do_put(PTR, off_t, PTR);
 	void	jmpproc(int), printline(PTR, int);
 	int		addfile(char *);
-	int		bregexec(PTR, char *);
+	PTR		bregexec(PTR, char *);
 	int		chk_comm(int);
 	int		doecmd(char *, int);
 	int		do_append(off_t, char *), do_logic(int, char *);

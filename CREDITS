@@ -22,6 +22,10 @@ Josef Hinteregger <joehtg@joehtg.co.at> ZZ write bug, lfs
 Richard Yao <ryao@gentoo.org> Buffer overflow at terminals > 255, ncurses with tinfo, configure fixed
 <elo3456@sbcglobal.net> ~ operator dumps core
 Dave Keaton <davek@gmail.com> ASCII_DEL patch
+Udo Hertrich-Jeromin <udo.hertrich-jeromin@tuwien.ac.at> ncursesw for tinycorelinux
+Takashi Yano Segmentation fault occurs on undo, Segmentation fault occurs on substitution in 32-bit systems
+Dominik Köppl <dkppl@dkppl.de> Handling inputs larger than 2^31 bytes
+Christopher Head Some incorrect function prototypes in ANSI mode
 
 
 Packages:
