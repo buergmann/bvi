@@ -161,7 +161,11 @@ doshell(cmd)
 {
 	int	ret;
 #ifndef DJGPP
+#ifdef __STDC__
+	char	*getenv(const char *);
+#else
 	char	*getenv();
+#endif
 	char	*shell;
 	char	cline[128];
 #endif

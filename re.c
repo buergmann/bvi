@@ -36,7 +36,11 @@
 #include	"bvi.h"
 #include	"set.h"
 
+#ifdef __STDC__
+static	int sbracket(int, char *, int);
+#else
 static	int sbracket();
+#endif
 
 char	act_pat[MAXCMD];  /* found pattern */
 char	pattern[MAXCMD + 1];

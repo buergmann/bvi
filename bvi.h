@@ -214,7 +214,7 @@ extern  off_t   block_begin, block_end, block_size;
 	void	d_memmove(PTR, PTR, off_t);
 #endif
 
-#ifdef ANSI
+#if defined(ANSI) || defined(__STDC__)
 	off_t	alloc_buf(off_t, char **), yd_addr(void);
 	off_t	range(int);
 	void	do_dot(void), do_exit(void), do_shell(void), do_undo(void);

@@ -136,7 +136,7 @@ extern	int		no_tty, no_intty;
 
 
 
-#ifdef ANSI
+#if defined(ANSI) || defined(__STDC__)
 	void	initterm(void), set_tty(void), reset_tty(void);
 	void	cleartoeol(void), clearscreen(void), highlight(void);
 	void	normal(void), bmbeep(void), home(void), sig(int);
