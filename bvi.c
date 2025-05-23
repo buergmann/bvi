@@ -756,13 +756,13 @@ calc_size(arg)
 	switch (*poi) {
 	case 'k':
 	case 'K':	val *= 1024;
-			 	break;
+			break;
 	case 'm':
 	case 'M':	val *= 1048576;
-			 	break;
+			break;
 	case 'g':
-	case 'G':   val *= 1024*1024*1024LL;
-				break;
+	case 'G':	val *= 1024*1024*1024LL;
+			break;
 	case '\0':	break;
 	default:	usage();
 	}
@@ -1051,9 +1051,9 @@ range(ch)
 		}
 		end_addr = markbuf[mark - 'a'];
 		if (end_addr == NULL) {
-	        beep();
+			beep();
 			return 0;
-	    }
+		}
 		if (end_addr < current) {
 			return(end_addr - current);
 		} else {

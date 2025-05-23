@@ -332,9 +332,9 @@ AGAIN:
 				emsg(notfound);
 			} else {
 				if (P(P_TE))
-				  sprintf(string, "No match to %s", direct == FORWARD ? "BOTTOM" : "TOP");
+					sprintf(string, "No match to %s", direct == FORWARD ? "BOTTOM" : "TOP");
 				else
-				  sprintf(string, "Address search hit %s without matching pattern",
+					sprintf(string, "Address search hit %s without matching pattern",
 						direct == FORWARD ? "BOTTOM" : "TOP");
 				emsg(string);
 			}
@@ -455,9 +455,9 @@ searching(ch, line, startpos, endpos, flag)
 			emsg(notfound);
 		} else {
 			if (P(P_TE)) {
-			  sprintf(string, "No match to %s", sdir == FORWARD ? "BOTTOM" : "TOP");
+				sprintf(string, "No match to %s", sdir == FORWARD ? "BOTTOM" : "TOP");
 			} else {
-			  sprintf(string, "Address search hit %s without matching pattern",
+				sprintf(string, "Address search hit %s without matching pattern",
 					sdir == FORWARD ? "BOTTOM" : "TOP");
 			}
 			emsg(string);

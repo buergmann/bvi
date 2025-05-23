@@ -298,7 +298,7 @@ do_ft(ch, flag)
 	switch (ch) {
 		/*
 		case 1:		beep();
-					return NULL;					 no previous command
+					return NULL;					no previous command
 		case -1:	if (chp == 'f' || chp == 't') dir = BACKWARD;
 						else dir = FORWARD;
 					break;
@@ -544,44 +544,44 @@ printline(mempos, scpos)
 	mv_pos = AnzAdd;
 	*linbuf = '\0';
 	if (hl_spat) {
-	    f_start = (mempos - Anzahl) < mem ? mem : (mempos - Anzahl);
-	    f_end = mempos + (2 * Anzahl);
-	    hl_start = fsearch_end(f_start, f_end, search_pat, &hl_end);
+		f_start = (mempos - Anzahl) < mem ? mem : (mempos - Anzahl);
+		f_end = mempos + (2 * Anzahl);
+		hl_start = fsearch_end(f_start, f_end, search_pat, &hl_end);
 	}
 
 	for (print_pos = 0; print_pos < Anzahl; print_pos++) {
 		if (hl_spat) {
-		    while (hl_start != NULL) {
-		        if (hl_start < mempos) {
-		            if (hl_end < mempos) {
-		                f_start = hl_start + 1;
-		                hl_start = fsearch_end(f_start, f_end, search_pat, &hl_end);
-		            } else {
-		                attrset(A_STANDOUT); /* start out highlighted */
-		                break;
-		            }
-		        } else if (hl_start >= mempos) {
-		            break;
-		        }
-		    }
-		    if (hl_start != NULL) {
-		        if ((hl_start - mempos) == print_pos) {
-		            mvaddstr(scpos, mv_pos, linbuf);
-		            mv_pos = AnzAdd + (3 * print_pos);
-		            *linbuf = '\0';
-		            attrset(A_STANDOUT);
-		        }
-		        if ((hl_end - mempos) == print_pos) {
-		            mvaddstr(scpos, mv_pos, linbuf);
-		            *linbuf = '\0';
-		            mv_pos = AnzAdd + (3 * print_pos);
-		            f_start = hl_end;
-		            hl_start = fsearch_end(f_start, f_end, search_pat, &hl_end);
-		            if (f_start != hl_start) {
-		                attrset(A_NORMAL);
-		            }
-		        }
-		    }
+			while (hl_start != NULL) {
+				if (hl_start < mempos) {
+					if (hl_end < mempos) {
+						f_start = hl_start + 1;
+						hl_start = fsearch_end(f_start, f_end, search_pat, &hl_end);
+					} else {
+						attrset(A_STANDOUT); /* start out highlighted */
+						break;
+					}
+				} else if (hl_start >= mempos) {
+					break;
+				}
+			}
+			if (hl_start != NULL) {
+				if ((hl_start - mempos) == print_pos) {
+					mvaddstr(scpos, mv_pos, linbuf);
+					mv_pos = AnzAdd + (3 * print_pos);
+					*linbuf = '\0';
+					attrset(A_STANDOUT);
+				}
+				if ((hl_end - mempos) == print_pos) {
+					mvaddstr(scpos, mv_pos, linbuf);
+					*linbuf = '\0';
+					mv_pos = AnzAdd + (3 * print_pos);
+					f_start = hl_end;
+					hl_start = fsearch_end(f_start, f_end, search_pat, &hl_end);
+					if (f_start != hl_start) {
+						attrset(A_NORMAL);
+					}
+				}
+			}
 		}
 		if (mempos + print_pos >= maxpos) {
 			sprintf(tmpbuf, "   ");
@@ -609,10 +609,10 @@ printline(mempos, scpos)
 						addstr(string);
 						attrset(A_NORMAL);
 					} else {
-			    		addstr(".");
+						addstr(".");
 					}
 				} else {
-			    	addstr(".");
+					addstr(".");
 				}
 			}
 		} else {
@@ -945,15 +945,15 @@ do_ins_chg(start, arg, mode)
 		if (base == 1) {			/* ASCII */
 			while (*poi != '\0') {
 				if (*poi == '\\') {
-					 switch (*(++poi)) {
-		                 case 'n': val = '\n'; break;
-		                 case 'r': val = '\r'; break;
-		                 case 't': val = '\t'; break;
-		                 case '0': val = '\0'; break;
-		                 case '\\': val = '\\'; break;
-		                 default : val = '\\'; poi--;
-	                 }
-					 poi++;
+					switch (*(++poi)) {
+						case 'n': val = '\n'; break;
+						case 'r': val = '\r'; break;
+						case 't': val = '\t'; break;
+						case '0': val = '\0'; break;
+						case '\\': val = '\\'; break;
+						default : val = '\\'; poi--;
+					}
+					poi++;
 				} else {
 					val = *poi++;
 				}
@@ -993,7 +993,7 @@ do_ins_chg(start, arg, mode)
 	case U_APPEND:
 		if ((undo_count = alloc_buf(count, &undo_buf)) == 0L) {
 			repaint();
-		    goto mfree;
+			goto mfree;
 		}
 		do_append((off_t)count, tempbuf);
 		memcpy(undo_buf, tempbuf, count);

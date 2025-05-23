@@ -141,14 +141,14 @@ save(char *fname, PTR start, PTR end, int flags)
 	if (!fname) {
 		emsg("No file|No current filename");
 		return 0;
-		}
+	}
 	if (stat(fname, &buf) == -1) {
 		newstr = "[New file] ";
-	 } else {
-		 if (S_ISDIR(buf.st_mode)) {
-			 sprintf(string, "\"%s\" Is a directory", fname);
-			 msg(string);
-			 return 0;
+	} else {
+		if (S_ISDIR(buf.st_mode)) {
+			sprintf(string, "\"%s\" Is a directory", fname);
+			msg(string);
+			return 0;
 		}
 		newstr = "";
 	}
@@ -159,20 +159,20 @@ save(char *fname, PTR start, PTR end, int flags)
 		return 0;
 	}
 	if (filemode == PARTIAL) {
-        if (block_read) {
-            filesize = block_read;
-            sprintf(string, "\"%s\" range %lu-%lu", fname,
-                (unsigned long)block_begin,
-                (unsigned long)(block_begin - 1 + filesize));
-            if (lseek(fd, block_begin, SEEK_SET) < 0) {
-                sysemsg(fname);
-                return 0;
-            }
-        } else {
-            msg("Null range");
-            return 0;
-        }
-    } else {
+		if (block_read) {
+			filesize = block_read;
+			sprintf(string, "\"%s\" range %lu-%lu", fname,
+					(unsigned long)block_begin,
+					(unsigned long)(block_begin - 1 + filesize));
+			if (lseek(fd, block_begin, SEEK_SET) < 0) {
+				sysemsg(fname);
+				return 0;
+			}
+		} else {
+			msg("Null range");
+			return 0;
+		}
+	} else {
 		filesize = end - start + 1L;
 		sprintf(string, "\"%s\" %s%lu@bytes", fname, newstr, (long)filesize);
 	}
@@ -228,7 +228,7 @@ load(char *fname)
 	} else if (filemode == REGULAR) {
 		memsize = buf.st_size + 100;
 	} else {
-		 memsize = 1000;
+		memsize = 1000;
 	}
 
 	if (farcoreleft() < memsize) {
@@ -255,18 +255,18 @@ load(char *fname)
 				filesize += (off_t)n;
 			} while (filesize < buf.st_size);
 			if ((filesize == 0) {
-                sprintf(string, "\"%s\" No such range: %lu-%lu", fname,
-                    (unsigned long)block_begin, (unsigned long)(block_end));
-            } else {
-                sprintf(string, "\"%s\" range %lu-%lu", fname,
-                    (unsigned long)block_begin,
-                    (unsigned long)(block_begin + filesize - 1));
-            }
-            filemode = PARTIAL;
-            block_read = filesize;
-            msg(string);
-            P(P_OF) = block_begin;
-            params[P_OF].flags |= P_CHANGED;
+				sprintf(string, "\"%s\" No such range: %lu-%lu", fname,
+						(unsigned long)block_begin, (unsigned long)(block_end));
+			} else {
+				sprintf(string, "\"%s\" range %lu-%lu", fname,
+					(unsigned long)block_begin,
+					(unsigned long)(block_begin + filesize - 1));
+			}
+			filemode = PARTIAL;
+			block_read = filesize;
+			msg(string);
+			P(P_OF) = block_begin;
+			params[P_OF].flags |= P_CHANGED;
 		}
 	} else if (filemode == REGULAR) {
 		chunk = buf.st_size > 0xfffe ? 0xfffe : buf.st_size;

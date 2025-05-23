@@ -12,13 +12,13 @@ dnl On SunOS4 systems you have to use the /usr/5bin/cc compiler
 dnl to get the SYSV curses library:
 case "$host_os" in
 sunos4*)
-	AC_MSG_RESULT("using /usr/5bin/cc")
-	CC="/usr/5bin/cc"
-	ac_objext="o"
-	;;
+    AC_MSG_RESULT("using /usr/5bin/cc")
+    CC="/usr/5bin/cc"
+    ac_objext="o"
+    ;;
 *)
-	AC_PROG_CC
-	;;
+    AC_PROG_CC
+    ;;
 esac
 
 
@@ -26,11 +26,11 @@ dnl Some curses specials
 dnl Solaris needs for tputs 'putc(char)' instead of 'putc(int)'
 case "$host_os" in
 solaris*)
-	CPPFLAGS="${CPPFLAGS} -D_MSE_INT_H"
-	AC_DEFINE(NEED_PUTC_CHAR)
-	;;
+    CPPFLAGS="${CPPFLAGS} -D_MSE_INT_H"
+    AC_DEFINE(NEED_PUTC_CHAR)
+    ;;
 hpux9*) DEFS=${DEFS-"-DMINICURSES"}
-	;;
+    ;;
 esac
 
 
@@ -65,21 +65,21 @@ AC_ARG_WITH(ncurses,
 AC_CHECK_HEADER([ncurses.h],[
     AC_SEARCH_LIBS([initscr], [ncurses], [
         AC_DEFINE(HAVE_NCURSES_H)
-	    AC_SEARCH_LIBS([tputs], [tinfo])],[
+        AC_SEARCH_LIBS([tputs], [tinfo])],[
         AC_SEARCH_LIBS([initscr], [curses],[
                 AC_DEFINE(HAVE_CURSES_H)
                 AC_SEARCH_LIBS([tputs], [tinfo])],[
-	            AC_MSG_ERROR([bvi requires a curses library])])])
- ],[
+                AC_MSG_ERROR([bvi requires a curses library])])])
+  ],[
     AC_CHECK_HEADER([curses.h],[
-    	AC_SEARCH_LIBS([initscr], [curses], [
-		    AC_DEFINE(HAVE_CURSES_H)],[
-		    AC_MSG_ERROR([bvi requires a curses library])])],[
+        AC_SEARCH_LIBS([initscr], [curses], [
+            AC_DEFINE(HAVE_CURSES_H)],[
+            AC_MSG_ERROR([bvi requires a curses library])])],[
        AC_CHECK_HEADER([ncursesw/curses.h], [
-    	   AC_SEARCH_LIBS([initscr], [ncursesw], [
-		       AC_DEFINE(HAVE_NCURSESW_CURSES_H)],[
-		       AC_MSG_ERROR([bvi requires a curses library])])],[
-		   AC_MSG_ERROR([bvi requires a curses library])])])])
+           AC_SEARCH_LIBS([initscr], [ncursesw], [
+               AC_DEFINE(HAVE_NCURSESW_CURSES_H)],[
+               AC_MSG_ERROR([bvi requires a curses library])])],[
+           AC_MSG_ERROR([bvi requires a curses library])])])])
 
 dnl Checks for typedefs, structures, and compiler characteristics.
 dnl AC_TYPE_SIZE_T

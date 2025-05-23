@@ -43,7 +43,7 @@
 #if defined(__MSDOS__) && !defined(DJGPP)
 #	include "patchlev.h"
 #	include "dosconf.h"
-#   include <alloc.h>
+#	include <alloc.h>
 #	include <conio.h>
 #	include <bios.h>
 #else
@@ -51,21 +51,21 @@
 #	include "config.h"
 #	include <unistd.h>
 #   if defined HAVE_NCURSESW_CURSES_H
-#     include <ncursesw/curses.h>
-#     include <ncursesw/term.h>
+#	include <ncursesw/curses.h>
+#	include <ncursesw/term.h>
 #   elif defined HAVE_NCURSESW_H
-#     include <ncursesw.h>
+#	include <ncursesw.h>
 #   elif defined HAVE_NCURSES_CURSES_H
-#     include <ncurses/curses.h>
+#	include <ncurses/curses.h>
 #   elif defined HAVE_NCURSES_H
-#     include <ncurses.h>
+#	include <ncurses.h>
 #   elif defined HAVE_CURSES_H
-#     include <curses.h>
+#	include <curses.h>
 #   else
-#      error "SysV or X/Open-compatible Curses header file required"
+#	error "SysV or X/Open-compatible Curses header file required"
 #   endif
 #   if HAVE_TERM_H
-#	  include <term.h>
+#	include <term.h>
 #   endif
 #endif
 

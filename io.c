@@ -235,7 +235,7 @@ load(fname)
 					params[P_RO].flags |= P_CHANGED;
 				}
 			} else {
-	            sysemsg(fname);
+				sysemsg(fname);
 				filemode = ERROR;
 			}
 		}
@@ -432,7 +432,7 @@ strdup(s)
 	char	*s;
 {
 	char    *p;
-	size_t	 n;
+	size_t	n;
 
 	n = strlen(s) + 1;
 	if ((p = (char *)malloc(n)) != NULL)

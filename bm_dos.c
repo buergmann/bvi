@@ -126,7 +126,7 @@ cleartoeol()
 int
 vgetc()
 {
-	 return ((char)bioskey(0));
+	return ((char)bioskey(0));
 }
 
 

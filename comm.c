@@ -290,18 +290,18 @@ docmdline(cmdline)
 			emsg(ambigous);
 			return; }
 		if (c_argc == 1) {
-		    /* change '%' to Filename */
-		    while ((p = strchr(c_argv[0], '%')) != NULL && *(p-1) != '\\') {
-		        if (name == NULL) {
-		            emsg("No filename@to substitute for %");
-		            return;
-		        }
-		        *p = '\0';
-		        strcpy (oldbuf, c_argv[0]);
-		        strcat (oldbuf, name);
-		        strcat (oldbuf, p + 1);
+			/* change '%' to Filename */
+			while ((p = strchr(c_argv[0], '%')) != NULL && *(p-1) != '\\') {
+				if (name == NULL) {
+					emsg("No filename@to substitute for %");
+					return;
+				}
+				*p = '\0';
+				strcpy (oldbuf, c_argv[0]);
+				strcat (oldbuf, name);
+				strcat (oldbuf, p + 1);
 				c_argv[0] = oldbuf;
-		    }
+			}
 		}
 		if (name == NULL && c_argc != 0) name = strdup(c_argv[0]);
 		if (force) {

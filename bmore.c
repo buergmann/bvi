@@ -493,7 +493,7 @@ main(argc, argv)
 						break;
 					}
 					while ((ch1 = getc(help_file)) != EOF)
-					    putchar(ch1);
+						putchar(ch1);
 					fclose(help_file);
 					to_print = 0;
 					break;
@@ -649,10 +649,10 @@ putline(buf, num)
 	if (!ascii_flag) {
 		for (print_pos = 0; print_pos < num; print_pos++) {
 			ch = buf[print_pos];
-		    PRINTF("%02X ", ch);
+			PRINTF("%02X ", ch);
 		}
 		for (; print_pos < out_len; print_pos++) {
-		    PRINTF("   ");
+			PRINTF("   ");
 		}
 		PRINTF(" ");
 	}
@@ -662,18 +662,18 @@ putline(buf, num)
 		++bytepos;
 		ch = buf[print_pos];
 		if ((ch > 31) && (ch < 127)) {
-		    PRINTF("%c", ch);
+			PRINTF("%c", ch);
 		} else {
 			if (r_flag) {
 				if ((ch & 128) && ((ch > 159) && (ch < 255))) {
 					if (!no_tty) highlight();
-		    		PRINTF("%c", ch & 127);
+					PRINTF("%c", ch & 127);
 					if (!no_tty) normal();
 				} else {
-		    		PRINTF(".");
+					PRINTF(".");
 				}
 			} else {
-		    	PRINTF(".");
+				PRINTF(".");
 			}
 		}
 	}
@@ -869,7 +869,7 @@ bmregexec(scan)
 						pushback(1, --act);
 						l--;
 					}
-				} else {	 /* ".*"  */
+				} else {	/* ".*"  */
 					do {
 						if ((test = nextchar()) == -1) return -5;
 						*act++ = test;

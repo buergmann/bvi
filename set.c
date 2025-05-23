@@ -139,10 +139,10 @@ doset(arg)
 					} else {
 						Anzahl = P(P_CM) = ((COLS - AnzAdd - 1) / 4);
 					}
-				    maxx = Anzahl * 4 + AnzAdd + 1;
-				    Anzahl3 = Anzahl * 3;
-				    status = Anzahl3 + Anzahl - 17;
-				    screen = Anzahl * (maxy - 1);
+					maxx = Anzahl * 4 + AnzAdd + 1;
+					Anzahl3 = Anzahl * 3;
+					status = Anzahl3 + Anzahl - 17;
+					screen = Anzahl * (maxy - 1);
 					did_window++;
 					stuffin("H");	/* set cursor at HOME */
 				}

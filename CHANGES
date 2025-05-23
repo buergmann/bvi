@@ -128,9 +128,9 @@ New in release 1.3.0
 * Reading of Block Special Files
 * New Command line options:
      +cmd
-	 -b begin  \
-	 -e end     > for partial file read
-	 -s size   /
+	-b begin  \
+	-e end     > for partial file read
+	-s size   /
 * :e# bug fixed
 * Debian bug #68436 (Buffer overflow in io.c) fixed
 
