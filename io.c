@@ -333,7 +333,7 @@ load(fname)
 }
 
 
-/* argument "dir" not used! 
+/* argument "dir" not used!
  * Needed for DOS version only
  */
 void
@@ -352,7 +352,7 @@ bvi_init(dir)
 		docmdline(initstr);
 		return;
 	}
-	
+
 #ifdef DJGPP
 	strcpy(rcpath, "c:");
 	strcpy(rcpath, dir);

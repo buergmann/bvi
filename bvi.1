@@ -79,9 +79,9 @@
 'br\}
 .\"	If the F register is turned on, we'll generate
 .\"	index entries out stderr for the following things:
-.\"		TH	Title 
+.\"		TH	Title
 .\"		SH	Header
-.\"		Sh	Subsection 
+.\"		Sh	Subsection
 .\"		Ip	Item
 .\"		X<>	Xref  (embedded
 .\"	Of course, you have to process the output yourself
@@ -203,10 +203,10 @@ bvi-1.4.1
 .IX Header "OPTIONS"
 .Ip "\fIfile\fR..." 4
 .IX Item "\fIfile\fR..."
-A  list  of  filenames.  The first one will be the current file and 
-will be read  
+A  list  of  filenames.  The first one will be the current file and
+will be read
 into  the  buffer.  The  cursor  will  be  positioned on the first line of
-the buffer.  You can get to the other files with the ":next" command.  
+the buffer.  You can get to the other files with the ":next" command.
 .Ip "\fB\-R\fR" 4
 .IX Item "\fB\-R\fR"
 \*(L"Readonly": The readonly flag is set for all the files,
@@ -261,7 +261,7 @@ The byte offset (extreme left), the hex pane (middle),
 and an ascii pane (right) which shows as printable characters
 those bytes in the hex pane.
 On an 80 column terminal there will be sixteen hex values
-and their ASCII values on each screen line. 
+and their ASCII values on each screen line.
 Note that (as one would expect) the first byte has the offset \*(L'0\*(R' (zero).
 .PP
 You can toggle between the hex and ascii windows with the tab key (TAB).
@@ -270,7 +270,7 @@ position (offset) within the file.
 .PP
 No \*(L"lines\*(R" concept:
 Files are treated as one long stream of bytes.  The characters
-\*(L"newline\*(R" and \*(L"carriage return\*(R" are not special, id est they 
+\*(L"newline\*(R" and \*(L"carriage return\*(R" are not special, id est they
 never mark the end of lines.  Therefore the lines on the screen do not
 represent lines in the usual way.  Data is broken across screen lines
 arbitarily.
@@ -319,7 +319,7 @@ Spaces between hex value are optional, so searching
 for \*(L"6775636B6573\*(R" will find \*(L"guckes\*(R".
 .PP
 Changing the length of data (insertion, deletion) moves the data to other addresses;
-this is bad for many cases (eg. databases, program files) and is 
+this is bad for many cases (eg. databases, program files) and is
 thus disabled by default. You can enable this commands by typing
 .PP
 \f(CW	:set memmove\fR
@@ -334,11 +334,11 @@ Use ESC (escape) to cancel a partial (uncompleted) command.
 .PP
 Input Mode:
 .PP
-Input is treated as replacement of current characters or 
+Input is treated as replacement of current characters or
 (after the end of the file) is appended
 to the current file.  This mode is entered from command mode by
 typing one of \*(L'i\*(R', \*(L'I\*(R', \*(L'A\*(R', \*(L'r\*(R', or \*(L'R\*(R'.
-You can enter the characters from the keyboard (in the ASCII window) or 
+You can enter the characters from the keyboard (in the ASCII window) or
 hexadecimal values (in the HEX window).
 Type TAB to switch between these two windows.
 Type ESC to finish the current input and return to command mode.
@@ -346,8 +346,8 @@ Type CTRL\-C to cancel current command abnormally.
 .PP
 Command line mode (Last Line Mode or : mode):
 .PP
-Similar to vi, this mode is entered by typing one of the 
-characters 
+Similar to vi, this mode is entered by typing one of the
+characters
 : / ? \e # !
 The command is terminated and executed by typing a carriage
 return; to cancel a partially typed command, type
@@ -439,10 +439,10 @@ used within the following description of commands.
   You can insert/append/change bytes in ASCII/binary/decimal/
 hexadecimal or octal representation. You can enter several
 (screen) lines of input. A line with only a period (.) in it
-will terminate the command. You must not type in values greater 
+will terminate the command. You must not type in values greater
 than a byte value. This causes an abandonment of the command.
 Pressing the CR key does not insert a newline \- character into
-the file. If you use ASCII mode you can use the special characters 
+the file. If you use ASCII mode you can use the special characters
 \en, \er, \et and \e0.
 .PP
 .Vb 3
@@ -507,7 +507,7 @@ the file. If you use ASCII mode you can use the special characters
   `\fIx\fR      move cursor to mark \fIx\fR in HEX section
   \*(L'\*(R'      move cursor to previous context in ASCII section
   ``      move cursor to previous context in HEX section
- 
+
 \fBLine positioning:\fR
   H           jump to first      line on screen ("top")
   L           jump to last       line on screen ("low")
@@ -583,7 +583,7 @@ the file. If you use ASCII mode you can use the special characters
 \&  columns    cm=16    on an 80 character wide terminal
 \&  ignorecase noic     Ignores letter case in searching
 \&  magic      nomagic  Makes . [ * special in patterns
-\&  memmove    nomm     enables insert and delete commands 
+\&  memmove    nomm     enables insert and delete commands
 \&  offset     of=0     adds an offset to the diplayed addresses
 \&  readonly   noro     If set, write fails unless you use ! after command
 \&  reverse    nore     display otherwise-printable characters with their

@@ -117,7 +117,7 @@ edit(mode)
 			setcur();
 			continue;
 		}
-		if (ch == KEY_BACKSPACE 
+		if (ch == KEY_BACKSPACE
 				|| ch == ASCII_DEL
 				|| ch == BVICTRL('H')) {
 			if (count > 0) {
@@ -483,7 +483,7 @@ statpos()
 		}
 	}
 	bin_val[8] = '\0';
-	
+
 	sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
 		(long long)(bytepos + P(P_OF)), bin_val, Char1, Char1, Char1);
 	attrset(A_BOLD);
@@ -788,8 +788,8 @@ fileinfo(fname)
 	if (edits) strcat(string, "[Modified] ");
 	if (filesize) {
 		bytepos = (pagepos + y * Anzahl + xpos()) - mem + 1L;
-		sprintf(fstatus, "byte %llu of %llu --%llu%%--", 
-			(unsigned long long)bytepos, 
+		sprintf(fstatus, "byte %llu of %llu --%llu%%--",
+			(unsigned long long)bytepos,
 			(unsigned long long)filesize,
 			(unsigned long long)(bytepos * 100L / filesize));
 		strcat(string, fstatus);
@@ -960,7 +960,7 @@ do_ins_chg(start, arg, mode)
 				*(tempbuf + count++) = val;
 			}
 		} else {
-			while (isspace(cmdstr[strlen(cmdstr) - 1])) 
+			while (isspace(cmdstr[strlen(cmdstr) - 1]))
 				cmdstr[strlen(cmdstr) - 1] = '\0';
 			while (*poi != '\0') {
 				val = strtol(poi, &epoi, base);
@@ -1025,7 +1025,7 @@ do_mark(mark, addr)
 	int		mark;
 	PTR		addr;
 {
-	if (mark < 'a' || mark > 'z' || current >= maxpos) 
+	if (mark < 'a' || mark > 'z' || current >= maxpos)
 		return;
 	markbuf[mark - 'a'] = addr;
 }

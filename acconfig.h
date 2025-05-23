@@ -10,4 +10,4 @@
 
 #undef NEED_PUTC_CHAR
 
-#undef HAVE_NCURSES_TERM_H 
+#undef HAVE_NCURSES_TERM_H

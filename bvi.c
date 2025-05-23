@@ -2,7 +2,7 @@
  *
  * 1996-02-28  V 1.0.0
  * 1999-01-27  V 1.1.0
- * 1999-04-22  V 1.1.1 
+ * 1999-04-22  V 1.1.1
  * 1999-07-01  V 1.2.0 beta
  * 1999-10-22  V 1.2.0 final
  * 2000-05-10  V 1.3.0 alpha
@@ -310,7 +310,7 @@ main(argc, argv)
 	if (*cmdstr != '\0')
 		docmdline(cmdstr);
 	msg(fname_buf);
-	
+
 	/* main loop */
 	do {
 		setjmp(env);
@@ -491,9 +491,9 @@ main(argc, argv)
 					break;
 		case ';':	do_ft(0, 0);
 					break;
-		case 'F':	
-		case 'f':	
-		case 't':	
+		case 'F':
+		case 'f':
+		case 't':
 		case 'T':	do_ft(ch, 0);
 					break;
 		case 'G':   last_motion = current;
@@ -501,10 +501,10 @@ main(argc, argv)
 						if ((precount < P(P_OF)) ||
 								(precount - P(P_OF)) > (filesize - 1L)) {
 							beep();
-						} else { 
+						} else {
 							setpage((PTR)(mem + precount - P(P_OF)));
 						}
-					} else { 
+					} else {
 						setpage((PTR)(mem + filesize - 1L));
 					}
 					break;
@@ -1033,7 +1033,7 @@ range(ch)
 				- (off_t)P(P_OF)) > (filesize - 1L)) {
 			beep();
 			return 0;
-		} else { 
+		} else {
 			if (mem + count < current) {
 				return(mem + count - current);
 			} else {

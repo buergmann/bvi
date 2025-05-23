@@ -116,7 +116,7 @@ initterm()
 
 	no_intty = tcgetattr(fileno(stdin), &ostate);
 	tcgetattr(fileno(stderr), &ostate);
-	  
+
 	nstate = ostate;
 	if (!no_tty) {
 		ostate.c_lflag &= ~(ICANON|ECHO);

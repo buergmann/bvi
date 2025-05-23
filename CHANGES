@@ -1,9 +1,9 @@
 New in release 1.4.2
 ====================
 This release is dedicated to Sven Guckes (*1967-04-06 +2022-02-20).
-Sven was an enthusiastic Linux explainer, his particular passion was the console tools. 
+Sven was an enthusiastic Linux explainer, his particular passion was the console tools.
 I met Sven a couple of times. He always showed interest in the further development of
-the bvi and liked to discuss new ideas. 
+the bvi and liked to discuss new ideas.
 R.I.P. Sven
 
 * :wq bug fixed
@@ -29,7 +29,7 @@ New in release 1.4.1rc
 * Compile warning: implicit declaration of function ‘save_chk’ fixed (SF bug #9)
 * bmore seg fault on file not found fixed
 * set columns prevents filename display on the commandline fixed (SF bug #8)
-* bmore new option -r 
+* bmore new option -r
   bvi new setting: set reverse
   Characters between 160 - 254 are displayed as "reverse video text" as used in
   some legacy systems (Atari, Commodore, Apple II, etc).

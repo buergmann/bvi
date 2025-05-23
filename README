@@ -9,7 +9,7 @@ and is distributed under the GPL (GNU Public License).
 How to compile
 ==============
 
-	You need the curses (ncurses) library for cursor movement on your system. 
+	You need the curses (ncurses) library for cursor movement on your system.
 	https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
 
 
@@ -37,7 +37,7 @@ Subscribe to the bvi mailing for support, updates and other news:
 
 	Send a blank email to bvi-subscribe@yahoogroups.com. You will receive a
 	subscription confirmation message. Simply reply this message and your
-	subscription will be complete. 
+	subscription will be complete.
 
 
 ---------------------------------------------------------------------------

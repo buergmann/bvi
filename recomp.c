@@ -26,7 +26,7 @@
 /* You cannot use a common regexp subroutine, because \0 is a regular
  * character in a binary string !
  */
- 
+
 
 #include	"bvi.h"
 #include	"set.h"

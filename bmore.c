@@ -141,7 +141,7 @@ main(argc, argv)
 #endif
 
 	poi = strrchr(argv[0], DELIM);
- 
+
 	if (poi) strncpy(progname, ++poi, 9);
 	else strncpy(progname, argv[0], 9);
 	strtok(progname, ".");
@@ -177,7 +177,7 @@ main(argc, argv)
 								break;
 					case 'r':	r_flag++;
 								break;
-					default:		
+					default:
 								usage();
 					}
 					i++;
@@ -340,7 +340,7 @@ main(argc, argv)
 					fclose(curr_file);
 					reset_tty();
 					exit(exval);
-		case ':' :	
+		case ':' :
 					switch (colon) {
 					case 'f':
 						prompt = 0;
@@ -449,7 +449,7 @@ main(argc, argv)
 					bytepos = screen_home;
 					to_print = maxy;
 					break;
-		case '\\':  
+		case '\\':
 					if (ascii_flag) {
 						bmbeep();
 						break;
@@ -460,13 +460,13 @@ main(argc, argv)
 						if (rdline(ch, sstring)) break;
 					}
 		case 'n': 		/**** Search Next ****/
-		case 'N':   
+		case 'N':
 					bmsearch(ch);
 					/*
 					to_print--;
 					*/
 					break;
-		case '\'':   
+		case '\'':
 					if (no_intty) {
 						bmbeep();
 					} else {
@@ -502,13 +502,13 @@ main(argc, argv)
 					if (!no_intty) {
 						cleartoeol();
 						if (ch == 'v') {
-							sprintf(string, "bvi +%lu %s", 
-								(unsigned long)(screen_home + 
+							sprintf(string, "bvi +%lu %s",
+								(unsigned long)(screen_home +
 								(maxy + 1) / 2 * out_len), name);
 						} else {
 							if (precount < 1) precount = bytepos - screen_home;
 							sprintf(string, "bvi -b %lu -s %lu %s",
-								(unsigned long)screen_home, 
+								(unsigned long)screen_home,
 								(unsigned long)precount, name);
 						}
 						doshell(string);
@@ -656,7 +656,7 @@ putline(buf, num)
 		}
 		PRINTF(" ");
 	}
-	
+
 	// ASCII section
 	for (print_pos = 0; print_pos < num; print_pos++) {
 		++bytepos;
@@ -695,7 +695,7 @@ printout(lns)
 	int			c, num;
 	int			doub = 0;
 	static		int		flag;
-	
+
 	if (c_flag) {
 		clearscreen();
 	}
