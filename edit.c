@@ -12,8 +12,9 @@
  * 2006-04-05 V 1.3.3 alpha - binary representation
  * 2014-09-30 V 1.4.0
  * 2019-10-12 V 1.4.1
+ * 2025-05-23 
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -484,10 +485,18 @@ statpos()
 	}
 	bin_val[8] = '\0';
 
-	sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
-		(long long)(bytepos + P(P_OF)), bin_val, Char1, Char1, Char1);
 	attrset(A_BOLD);
 	status = maxx - 1 - statsize;
+	if (status > 0) {
+		sprintf(string, "%08llX %s \\%03o 0x%02X %3d ",
+			(long long)(bytepos + P(P_OF)), bin_val, Char1, Char1, Char1);
+	} else {
+		sprintf(string, "%08llX %3d ",
+			(long long)(bytepos + P(P_OF)), Char1);
+		mvaddstr(maxy, 0, string);
+		attrset(A_NORMAL);
+		return;
+	}
 	mvaddstr(maxy, status, string);
 
 	if (isprint(Char1)) {
@@ -519,6 +528,7 @@ statpos()
 	}
 	attrset(A_NORMAL);
 }
+
 
 
 void

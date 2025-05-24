@@ -14,10 +14,11 @@
  * 2014-10-07  V 1.4.0
  * 2019-10-12  V 1.4.1
  * 2023-03-06  V 1.4.2
+ * 2025-05-24  V 1.4.3
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2023 by Gerhard Buergmann
+ * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -44,7 +45,7 @@
 #endif
 
 
-char	*copyright  = "(C) GPL 1996-2023 by Gerhard Buergmann";
+char	*copyright  = "(C) GPL 1996-2025 by Gerhard Buergmann";
 
 jmp_buf	env;        /* context for `longjmp' function   */
 
