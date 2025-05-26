@@ -13,8 +13,8 @@ How to compile
 	https://www.cyberciti.biz/faq/linux-install-ncurses-library-headers-on-debian-ubuntu-centos-fedora/
 
 
-	gunzip -c bvi-1.4.2.src.tar.gz | tar xvf -
-	cd bvi-1.4.2
+	gunzip -c bvi-1.5.0.src.tar.gz | tar xvf -
+	cd bvi-1.5.0
 	./configure
 	make
 	make install
@@ -30,14 +30,6 @@ ftp.gnu.org; install it and then use
 The Control-y key sequence suspends bvi and send it to the background.
 To avoid this behaviour use:
 	stty dsusp undef
-
-
----------------------------------------------------------------------------
-Subscribe to the bvi mailing for support, updates and other news:
-
-	Send a blank email to bvi-subscribe@yahoogroups.com. You will receive a
-	subscription confirmation message. Simply reply this message and your
-	subscription will be complete.
 
 
 ---------------------------------------------------------------------------

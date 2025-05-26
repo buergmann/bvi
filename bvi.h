@@ -13,10 +13,11 @@
  * 2014-10-01  V 1.4.0
  * 2019-01-28  V 1.4.1
  * 2023-03-07  V 1.4.2
+ * 2025-05-24  V 1.5.0
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2023 by Gerhard Buergmann
+ * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -46,8 +47,8 @@
 #if defined(__MSDOS__) && !defined(DJGPP)
 #	include "patchlev.h"
 #	include "dosconf.h"
-#   include "doscur.h"
-#   include <alloc.h>
+#	include "doscur.h"
+#	include <alloc.h>
 #else
 #	include "patchlevel.h"
 #	include "config.h"
@@ -129,14 +130,14 @@
 #	define ANSI
 #	define PTR		char huge *
 #	define off_t	long
-#   define DELIM	'\\'
-#   define  strncasecmp strnicmp
-#   define  strcasecmp	stricmp
+#	define DELIM	'\\'
+#	define  strncasecmp strnicmp
+#	define  strcasecmp	stricmp
 #	define	memcpy	d_memcpy
 #	define	memmove	d_memmove
 #else
 #	define PTR		char *
-#   define DELIM	'/'
+#	define DELIM	'/'
 #endif
 
 #define MAXCMD	255
@@ -164,27 +165,27 @@ extern	char	search_pat[];
 extern	long	hl_spat;
 extern	char    pattern[];
 extern	char    rep_buf[];
-extern	int		maxx, maxy, x, y;
-extern	int		filemode, loc;
-extern	int		edits, new;
-extern	int		AnzAdd;
-extern	int		Anzahl, Anzahl3;
-extern	int		addr_flag;
-extern	int		ignore_case, magic;
-extern	int		screen, status, statsize;
-extern	PTR		mem;
-extern	PTR		maxpos;
-extern	PTR		pagepos;
-extern	PTR		undo_start;
-extern	PTR		current_start;
-extern  PTR		curpos;
-extern	PTR		current;
-extern	PTR		start_addr;
-extern	PTR		end_addr;
+extern	int	maxx, maxy, x, y;
+extern	int	filemode, loc;
+extern	int	edits, new;
+extern	int	AnzAdd;
+extern	int	Anzahl, Anzahl3;
+extern	int	addr_flag;
+extern	int	ignore_case, magic;
+extern	int	screen, status, statsize;
+extern	PTR	mem;
+extern	PTR	maxpos;
+extern	PTR	pagepos;
+extern	PTR	undo_start;
+extern	PTR	current_start;
+extern  PTR	curpos;
+extern	PTR	current;
+extern	PTR	start_addr;
+extern	PTR	end_addr;
 extern	char	*name, cmdstr[];
 extern	off_t	filesize, memsize;
-extern	PTR		markbuf[];
-extern  PTR		last_motion;
+extern	PTR	markbuf[];
+extern  PTR	last_motion;
 extern	off_t	undo_count;
 extern	off_t	yanked;
 extern	off_t	undosize;
@@ -192,14 +193,16 @@ extern	char	*copyright, *notfound;
 extern	char	*terminal;
 extern	char	*undo_buf;
 extern	char	*yank_buf;
-extern	int		repl_count;
+extern	int	repl_count;
 extern	char	string[];
 extern	char	*shell;
 extern	char	*poi;
-extern	int		smode;
-extern	int		again;
+extern	int	smode;
+extern	int	again;
 extern  int     block_flag;
 extern  off_t   block_begin, block_end, block_size;
+extern	int	statusflag;
+extern	int	space;
 
 #ifndef S_ISDIR				/* POSIX 1003.1 file type tests. */
 #define	S_ISDIR(m)	((m & 0170000) == 0040000)	/* directory */
@@ -223,26 +226,26 @@ extern  off_t   block_begin, block_end, block_size;
 	void	do_mark(int, PTR), badcmd(char *), movebyte(void);
 	void	docmdline(char *), do_over(PTR, off_t, PTR), do_put(PTR, off_t, PTR);
 	void	jmpproc(int), printline(PTR, int);
-	int		addfile(char *);
-	PTR		bregexec(PTR, char *);
-	int		chk_comm(int);
-	int		doecmd(char *, int);
-	int		do_append(off_t, char *), do_logic(int, char *);
-	int		do_delete(off_t, PTR);
-	int		doset(char *);
-	int		do_substitution(int, char *, PTR, PTR);
-	int		hexchar(void);
-	int		outmsg(char *);
-	int		save_chk(char *, char *, char *, int);
-	PTR		searching(int, char *, PTR, PTR, int);
-	PTR		wordsearch(PTR, char);
-	PTR		backsearch(PTR, char);
-	PTR		fsearch(PTR, PTR, char *);
-	PTR		fsearch_end(PTR, PTR, char *, PTR *);
-	PTR		rsearch(PTR, PTR, char *);
-	PTR		end_word(PTR);
-	PTR		calc_addr(char **, PTR);
-	PTR		do_ft(int, int);
+	int	addfile(char *);
+	PTR	bregexec(PTR, char *);
+	int	chk_comm(int);
+	int	doecmd(char *, int);
+	int	do_append(off_t, char *), do_logic(int, char *);
+	int	do_delete(off_t, PTR);
+	int	doset(char *);
+	int	do_substitution(int, char *, PTR, PTR);
+	int	hexchar(void);
+	int	outmsg(char *);
+	int	save_chk(char *, char *, char *, int);
+	PTR	searching(int, char *, PTR, PTR, int);
+	PTR	wordsearch(PTR, char);
+	PTR	backsearch(PTR, char);
+	PTR	fsearch(PTR, PTR, char *);
+	PTR	fsearch_end(PTR, PTR, char *, PTR *);
+	PTR	rsearch(PTR, PTR, char *);
+	PTR	end_word(PTR);
+	PTR	calc_addr(char **, PTR);
+	PTR	do_ft(int, int);
 	char	*patcpy(char *, char *, char);
 	void	setpage(PTR), msg(char *), emsg(char *), smsg(char *);
 	void	usage(void), bvi_init(char *), statpos(void), setcur(void);
@@ -253,43 +256,43 @@ extern  off_t   block_begin, block_end, block_size;
 	off_t	edit(int), load(char *);
 	off_t	calc_size(char *);
 	int     ascii_comp(char *, char *), hex_comp(char *, char *);
-	int		cur_forw(int), cur_back(void);
-	int		lineout(void), save(char *, PTR, PTR, int);
-	int		at_least(char *, char *, int);
-	int		vgetc(void), xpos(void), enlarge(off_t);
-	int		getcmdstr(char *, int), read_rc(char *);
-	int		wait_return(int);
+	int	cur_forw(int), cur_back(void);
+	int	lineout(void), save(char *, PTR, PTR, int);
+	int	at_least(char *, char *, int);
+	int	vgetc(void), xpos(void), enlarge(off_t);
+	int	getcmdstr(char *, int), read_rc(char *);
+	int	wait_return(int);
 #else
-	int		addfile();
+	int	addfile();
 	off_t	alloc_buf(), yd_addr();
 	off_t	range();
 	off_t	calc_size();
 	void	do_mark(), badcmd(), movebyte();
 	void	do_back(), do_ins_chg();
 	void	jmpproc(), printline();
-	int		chk_comm();
+	int	chk_comm();
 	void	docmdline(), do_over(), do_put();
-	int		doecmd();
+	int	doecmd();
 	void	do_dot(), do_exit(), do_shell(), do_undo();
 	void	do_tilde(), trunc_cur();
-	int		do_append(), do_logic();
-	int		do_delete();
-	int		doset();
-	int		do_substitution();
-	int		hexchar();
-	int		outmsg();
-	int		save_chk();
-	PTR		searching();
-	PTR		wordsearch();
-	PTR		backsearch();
+	int	do_append(), do_logic();
+	int	do_delete();
+	int	doset();
+	int	do_substitution();
+	int	hexchar();
+	int	outmsg();
+	int	save_chk();
+	PTR	searching();
+	PTR	wordsearch();
+	PTR	backsearch();
 	/*	int		bregexec();	*/
-	PTR		bregexec();
-	PTR		fsearch();
-	PTR		fsearch_end();
-	PTR		rsearch();
-	PTR		end_word();
-	PTR		calc_addr();
-	PTR		do_ft();
+	PTR	bregexec();
+	PTR	fsearch();
+	PTR	fsearch_end();
+	PTR	rsearch();
+	PTR	end_word();
+	PTR	calc_addr();
+	PTR	do_ft();
 	char	*patcpy();
 	void	setpage(), msg(), emsg(), smsg();
 	void	usage(), bvi_init(), statpos(), setcur();
@@ -299,9 +302,9 @@ extern  off_t   block_begin, block_end, block_size;
 	void	quit(), sysemsg(), do_z(), stuffin();
 	off_t	edit(), load();
 	int     ascii_comp(), hex_comp();
-	int		cur_forw(), cur_back();
-	int		lineout(), save(), at_least(), read_rc();
-	int		getcmdstr(), enlarge();
-	int		vgetc(), xpos();
-	int		wait_return();
+	int	cur_forw(), cur_back();
+	int	lineout(), save(), at_least(), read_rc();
+	int	getcmdstr(), enlarge();
+	int	vgetc(), xpos();
+	int	wait_return();
 #endif

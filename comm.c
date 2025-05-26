@@ -15,10 +15,11 @@
  * 2014-01-28 V 1.4.0
  * 2019-01-27 V 1.4.1
  * 2023-03-06 V 1.4.2
+ * 2025-05-24 V 1.5.0
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2023 by Gerhard Buergmann
+ * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
@@ -72,8 +73,8 @@ static	char	*c_argv[9];
 
 char	*nowrtmsg  = "No write@since last change (:%s! overrides)";
 char	*morefiles = "more files@to edit";
-char	*ambigous  = "Ambigous|Too many file names";
-char	*ambvalue  = "Ambigous|Too many values";
+char	*ambigous  = "Ambiguous|Too many file names";
+char	*ambvalue  = "Ambiguous|Too many values";
 char	*extra     = "Extra chars|Extra characters at end of command";
 char	*noaddr    = "No address allowed@on this command";
 char	*noval     = "No value@for binary operation";
@@ -726,22 +727,25 @@ emsg(s)
 	char	*s;
 {
 	int	cnt;
-	int stchar;
+	/*
+	int	stchar;
 
-	if (P(P_EB)) beep();
 	if (P(P_MO)) {
 		stchar = statsize;
 	} else {
 		stchar = 0;
 	}
-
+	*/
+	if (P(P_EB)) beep();
+	statusflag = 0;
 	clearstr();
 	attrset(A_REVERSE);
 	cnt = outmsg(s);
 	attrset(A_NORMAL);
-	if (cnt >= (maxx - stchar)) {
-		addch('\n');
-		wait_return(TRUE); }
+	if (cnt >= (maxx)) {
+		// addch('\n');
+		wait_return(TRUE);
+	}
 }
 
 
@@ -779,16 +783,18 @@ void
 msg(s)
 	char	*s;
 {
+	/*
 	int stchar;
 
 	if (P(P_MO)) {
 		stchar = statsize;
 	} else {
 		stchar = 0;
-	}
+	}o*/
+	statusflag = 0;
 	clearstr();
-	if (outmsg(s) >= (maxx - stchar)) {
-		addch('\n');
+	if (outmsg(s) >= maxx) {
+		// addch('\n');
 		wait_return(TRUE);
 	}
 }
@@ -799,7 +805,7 @@ outmsg(s)
 	char	*s;
 {
 	char	*poi;
-	int		cnt = 0;
+	int	cnt = 0;
 
 	move(maxy, 0);
 	poi = strchr(s, '|');
@@ -811,7 +817,7 @@ outmsg(s)
 			cnt++;
 		}
 	} else {
-    	if (poi) poi++;
+    		if (poi) poi++;
 			else poi = s;
 		while (*poi) {
 			if (*poi == '@') addch(' ');

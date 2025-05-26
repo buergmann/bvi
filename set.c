@@ -14,7 +14,7 @@
  * 2010-06-02 V 1.2.4
  * 2014-09-30 V 1.4.0
  * 2019-01-22 V 1.4.1
- * 2025-05.24 V 1.4.3
+ * 2025-05.24 V 1.5.0
  *
  * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
@@ -35,46 +35,48 @@
 #include "bvi.h"
 #include "set.h"
 
-static	int		from_file = 0;
+static	int	from_file = 0;
 static	FILE	*ffp;
 static	char	fbuf[MAXCMD+1];
 static	char	buf[MAXCMD+1];
 
 struct	param	params[] = {
 	{ "autowrite",	"aw",		FALSE,	"",	P_BOOL },
-	{ "columns",	"cm",		16,		"",	P_NUM },
+	{ "columns",	"cm",		0,	"",	P_NUM },
 	{ "errorbells",	"eb",		FALSE,	"",	P_BOOL },
 	{ "ignorecase",	"ic",		FALSE,	"",	P_BOOL },
-	{ "magic",		"ma",		TRUE,	"",	P_BOOL },
+	{ "magic",	"ma",		TRUE,	"",	P_BOOL },
 	{ "memmove",	"mm",		FALSE,  "",	P_BOOL },
-	{ "offset",		"of",		0,		"",	P_NUM },
+	{ "offset",	"of",		0,	"",	P_NUM },
 	{ "readonly",	"ro",		FALSE,	"",	P_BOOL },
-	{ "scroll",		"scroll",	12,		"",	P_NUM },
+	{ "scroll",	"scroll",	12,	"",	P_NUM },
 	{ "showmode",	"mo",		TRUE,	"",	P_BOOL },
-	{ "term",		"term",		0,		"",	P_TEXT },
-	{ "terse",		"terse",	FALSE,	"",	P_BOOL },
+	{ "term",	"term",		0,	"",	P_TEXT },
+	{ "terse",	"terse",	FALSE,	"",	P_BOOL },
 	{ "unixstyle",	"us",		FALSE,	"",	P_BOOL },
-	{ "window",		"window",	25,		"",	P_NUM },
-	{ "wordlength",	"wl",		4,		"",	P_NUM },
+	{ "window",	"window",	0,	"",	P_NUM },
+	{ "wordlength",	"wl",		4,	"",	P_NUM },
 	{ "wrapscan",	"ws",		TRUE,	"",	P_BOOL },
-	{ "highlight",  "hl",       TRUE,   "", P_BOOL },
-	{ "reverse",    "re",       FALSE,  "", P_BOOL },
+	{ "highlight",  "hl",		TRUE,   "",	P_BOOL },
+	{ "reverse",    "re",		FALSE,  "",	P_BOOL },
 #if defined(__MSDOS__) && !defined(DJGPP)
-	{ "color",		"co",		7,		"",	P_NUM  },
+	{ "color",	"co",		7,	"",	P_NUM  },
 #endif
-	{ "",			"",			0,		"",	0, }		/* end marker */
+	{ "",		"",		0,	"",	0, }		/* end marker */
 
 };
+
 
 int
 doset(arg)
 	char	*arg;		/* parameter string */
 {
-	int		i;
+	int	i;
 	char	*s;
-	int		did_window = FALSE;
-	int		state = TRUE;		/* new state of boolean parms. */
+	int	did_window = FALSE;
+	int	state = TRUE;		/* new state of boolean parms. */
 	char	string[80];
+	off_t	val;
 
 	if (arg == NULL) {
 		showparms(FALSE);
@@ -112,20 +114,38 @@ doset(arg)
 			return 0;
 		}
 		if (!strcmp(params[i].fullname, "term")) {
-			emsg("Can't change type of terminal from within bvi");
+			emsg("Can't change@type of terminal from within bvi");
 			return 1;
 		}
 		if (params[i].flags & P_NUM) {
-			if ((i == P_LI) || (i == P_OF)) did_window++;
+			if ((i == P_LI) || (i == P_OF) || (i == P_CM)) did_window++;
 			if (arg[strlen(s)] != '=' || state == FALSE) {
-				sprintf(string, "Option %s is not a toggle",
-						params[i].fullname);
+				sprintf(string, "Option %s is not a toggle", params[i].fullname);
 				emsg(string);
 				return 1;
 			} else {
 				s = arg + strlen(s) + 1;
-				params[i].nvalue = strtoll(s, &s, 0);
+				val = strtoll(s, &s, 0);
+				if ((i == P_CM || i == P_LI) && (!strcmp("auto", s) || (val == 0))) {
+					if (i == P_CM) {
+						params[i].nvalue = 0;
+						Anzahl = ((COLS - AnzAdd - space) / 4);
+					} else {
+						params[i].nvalue = 0;
+						maxy = LINES - 1;
+					}
+				} else {
+					params[i].nvalue = val;
+					if (i == P_CM) {
+						Anzahl = val;
+					} else {
+						maxy = val;
+					}
+				}
 				params[i].flags |= P_CHANGED;
+				if (i == P_LI) params[P_SS].nvalue = val / 2;
+
+
 #if defined(__MSDOS__) && !defined(DJGPP)
 				if (i == P_CO) {
 					textcolor(P(P_CO) & 0x07);
@@ -135,22 +155,23 @@ doset(arg)
 				}
 #endif
 				if (i == P_CM) {
+					/*
 					if (((COLS - AnzAdd - 1) / 4) >= P(P_CM)) {
 						Anzahl = P(P_CM);
 					} else {
-						Anzahl = P(P_CM) = ((COLS - AnzAdd - 1) / 4);
+						Anzahl = ((COLS - AnzAdd - 1) / 4);
 					}
+					*/
 					maxx = Anzahl * 4 + AnzAdd + 1;
 					Anzahl3 = Anzahl * 3;
-					status = Anzahl3 + Anzahl - 17;
+					status = Anzahl3 + Anzahl - statsize;
 					screen = Anzahl * (maxy - 1);
-					did_window++;
 					stuffin("H");	/* set cursor at HOME */
 				}
 			}
 		} else {		/* boolean */
 			if (arg[strlen(s)] == '=') {
-				emsg("Invalid set of boolean parameter");
+				emsg("Invalid set@of boolean parameter");
 				return 1;
 			} else {
 				params[i].nvalue = state;
@@ -170,7 +191,10 @@ doset(arg)
 	}
 
 	if (did_window) {
+		/*
 		maxy = P(P_LI) - 1;
+		maxy = LINES - 1;
+		*/
 		new_screen();
 	}
 
@@ -184,24 +208,30 @@ showparms(all)
 	int	all;
 {
 	struct	param	*p;
-	int		n;
+	int		n, i;
 
+	statusflag = 0;
 	n = 2;
+	i = -1;
 	msg("Parameters:\n");
 	for (p = &params[0]; p->fullname[0] != '\0' ;p++) {
+		i++;
 		if (!all && ((p->flags & P_CHANGED) == 0))
 			continue;
-		if (p->flags & P_BOOL)
-			sprintf(buf, "    %s%s\n",
-				(p->nvalue ? "  " : "no"), p->fullname);
-		else if (p->flags & P_TEXT)
+		if (p->flags & P_BOOL) {
+			sprintf(buf, "    %s%s\n", (p->nvalue ? "  " : "no"), p->fullname);
+		} else if (p->flags & P_TEXT) {
 			sprintf(buf, "      %s=%s\n", p->fullname, p->svalue);
-		else
-			sprintf(buf, "      %s=%lld\n", p->fullname, (long long)p->nvalue);
-
+		} else {
+			if ((p->nvalue == 0) && (i == P_CM || i == P_LI)) {
+				sprintf(buf, "      %s=auto\n", p->fullname);
+			} else {
+				sprintf(buf, "      %s=%lld\n", p->fullname, (long long)p->nvalue);
+			}
+		}
 		msg(buf);
 		n++;
-		if (n == params[P_LI].nvalue) {
+		if (n == maxy) {
 			if (wait_return(FALSE)) return;
 			n = 1;
 		}

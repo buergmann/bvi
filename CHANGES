@@ -1,3 +1,13 @@
+New in release 1.5.0
+====================
+
+* Terminal window resizeable
+* fix build fails with gcc-15/C23
+* fix statusline for small windows
+* various issues caught by lintian solved
+* Minor fixes
+
+
 New in release 1.4.2
 ====================
 This release is dedicated to Sven Guckes (*1967-04-06 +2022-02-20).

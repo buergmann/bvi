@@ -12,7 +12,7 @@
  * 2006-04-05 V 1.3.3 alpha - binary representation
  * 2014-09-30 V 1.4.0
  * 2019-10-12 V 1.4.1
- * 2025-05-23 
+ * 2025-05-24 V 1.5.0
  *
  * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
@@ -460,13 +460,14 @@ setcur()
 void
 statpos()
 {
-	char bin_val [9];
+	char	bin_val [9];
 	unsigned char  Char1;
-	int i;
+	int	i;
 	off_t	bytepos;
 	char	string[MAXCMD+1], str[6];
 
-	if (!P(P_MO)) return;
+	// if (!P(P_MO)) return;
+	if (!statusflag) return;
 	bytepos = current - mem;
 	if (bytepos >= filesize) {
 		// mvaddstr(maxy, status, "                           ");

@@ -14,7 +14,7 @@
  * 2014-10-07  V 1.4.0
  * 2019-10-12  V 1.4.1
  * 2023-03-06  V 1.4.2
- * 2025-05-24  V 1.4.3
+ * 2025-05-24  V 1.5.0
  *
  * NOTE: Edit this file with tabstop=4 !
  *
@@ -49,51 +49,52 @@ char	*copyright  = "(C) GPL 1996-2025 by Gerhard Buergmann";
 
 jmp_buf	env;        /* context for `longjmp' function   */
 
-int		loc;
-int		maxx, maxy, x, xx, y;
-int		screen, status, statsize;
+int	loc;
+int	maxx, maxy, x, xx, y;
+int	screen, status, statsize;
 off_t	size;
-PTR		mem = NULL;
-PTR		curpos;
-PTR		maxpos;
-PTR		pagepos;
-PTR		spos;
+PTR	mem = NULL;
+PTR	curpos;
+PTR	maxpos;
+PTR	pagepos;
+PTR	spos;
 char	*name = NULL;
 char	*shell;
 char	string[MAXCMD+1];
 char	cmdstr[MAXCMD+1] = "";
 FILE	*Ausgabe_Datei;
-int		edits = 0;
-int		AnzAdd, Anzahl, Anzahl3;
+int	edits = 0;
+int	AnzAdd, Anzahl, Anzahl3;
 off_t	filesize, memsize, undosize;
-
+int	statusflag = 1;
+int	space = 2;
 
 long	precount = -1;
 
-int		block_flag = 0;
+int	block_flag = 0;
 
 
 off_t	block_begin, block_end, block_size;
 
 
 char	**files;		/* list of input files */
-int		numfiles;		/* number of input files */
-int		curfile;		/* number of the current file */
+int	numfiles;		/* number of input files */
+int	curfile;		/* number of the current file */
 
-int		arrnum = 0;
+int	arrnum = 0;
 char	numarr[MAXCMD+1];		/* string for collecting number */
 char	rep_buf[BUFFER];
 
-PTR		current;
-PTR		last_motion;
-PTR		current_start;
-PTR		undo_start;
+PTR	current;
+PTR	last_motion;
+PTR	current_start;
+PTR	undo_start;
 off_t	undo_count;
 off_t	yanked = 0L;
 char	*yank_buf = NULL;
 char	*undo_buf = NULL;
 char	*fname_buf = NULL;
-PTR		markbuf[26];
+PTR	markbuf[26];
 
 char	addr_form[15];
 
@@ -101,8 +102,8 @@ char	*nobytes = "No bytes@in the buffer";
 
 static	char	progname[8];
 static	char	line[MAXCMD+1];
-static	int		mark;
-static	int		wrstat = 1;
+static	int	mark;
+static	int	wrstat = 1;
 
 
 void
@@ -249,7 +250,7 @@ main(argc, argv)
 		break;
 	case BLOCK_BEGIN|BLOCK_END|BLOCK_LEN:
 		if (block_end - block_begin != block_size + 1) {
-			fprintf(stderr, "Ambigous block data\n");
+			fprintf(stderr, "Ambiguous block data\n");
 			exit(1);
 		}
 		break;
@@ -268,7 +269,9 @@ main(argc, argv)
 	maxy = LINES;
 	if (params[P_LI].flags & P_CHANGED) maxy = P(P_LI);
 	P(P_SS) = maxy / 2;
+	/* We do not set P(P_LI) and P(P_CM) anymore, because 0 means "auto"
 	P(P_LI) = maxy;
+	*/
 	maxy--;
 	keypad(stdscr, TRUE);
 	scrollok(stdscr, TRUE);
@@ -276,21 +279,21 @@ main(argc, argv)
 	cbreak();
 	noecho();
 
-    /* address column width */
-    /*  default is 8 + 2 blanks  */
-    /* if block_begin has 8 hex digits or more */
-    /* reserve 1 hex digit more than required  */
-    char tmp[sizeof(block_begin) * 2 + 3];
-    AnzAdd = sprintf(tmp, "%llX", (long long unsigned)block_begin) + 1;
-    if (AnzAdd < 8)
-        AnzAdd = 8;
-    if (AnzAdd > sizeof(block_begin) * 2)
-        AnzAdd = sizeof(block_begin) * 2;
-    sprintf(addr_form,  "%%0%dllX  ", AnzAdd);
-    AnzAdd = sprintf(tmp, addr_form, block_begin);
+	/* address column width */
+	/*  default is 8 + 2 blanks  */
+	/* if block_begin has 8 hex digits or more */
+	/* reserve 1 hex digit more than required  */
+	char tmp[sizeof(block_begin) * 2 + 3];
+	AnzAdd = sprintf(tmp, "%llX", (long long unsigned)block_begin) + 1;
+	if (AnzAdd < 8) AnzAdd = 8;
+	if (AnzAdd > sizeof(block_begin) * 2) AnzAdd = sizeof(block_begin) * 2;
+	sprintf(addr_form,  "%%0%dllX  ", AnzAdd);
+	AnzAdd = sprintf(tmp, addr_form, block_begin);
 
-	Anzahl = ((COLS - AnzAdd - 1) / 16) * 4;
+	Anzahl = ((COLS - AnzAdd - space) / 16) * 4;
+	/*
 	P(P_CM) = Anzahl;
+	*/
 	maxx = Anzahl * 4 + AnzAdd + 1;
 	Anzahl3 = Anzahl * 3;
 	statsize = 35;
@@ -329,6 +332,10 @@ main(argc, argv)
 			else precount = -1;
 		lflag = arrnum = 0;
 
+		if (statusflag == 0) {
+			statusflag = 1;
+			clearstr();
+		}
 		switch (ch) {
 		case '^':	x = AnzAdd;
 					loc = HEX;
@@ -427,7 +434,7 @@ main(argc, argv)
 						x = AnzAdd - 1 + Anzahl3 + Anzahl;
 						loc = ASCII; }
 					break;
-		case ':' :	clearstr();
+		case ':' :		clearstr();
 					addch(ch);
 					refresh();
 					getcmdstr(cmdstr, 1);
@@ -468,6 +475,18 @@ main(argc, argv)
 					fileinfo(name);
 					wrstat = 0;
 					break;
+		case KEY_RESIZE:
+					if (P(P_CM) == 0) {
+                                        	Anzahl = ((COLS - AnzAdd - space) / 4);
+                                        	maxx = Anzahl * 4 + AnzAdd + 1;
+                                       		Anzahl3 = Anzahl * 3;
+                                        	status = Anzahl3 + Anzahl - statsize;
+					}
+					if (P(P_LI) == 0) {
+                                      		screen = Anzahl * (maxy - 1);
+						maxy = LINES - 1;
+						P(P_SS) = maxy / 2;
+					}
 		case BVICTRL('L'):   	/*** REDRAW SCREEN ***/
 					new_screen();
 					break;

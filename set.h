@@ -2,8 +2,8 @@
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
- * Gerhard.Buergmann@puon.at
+ * Copyright 1996-2025 by Gerhard Buergmann
+ * gerhard@puon.at
  *
  * 1998-03-14 V 1.0.0
  * 1999-01-14 V 1.1.0
@@ -14,6 +14,7 @@
  * 2010-06-02 V 1.3.4
  * 2013-08-23 V 1.4.0
  * 2019-01-22 V 1.4.1
+ * 2025-05-24 V 1.5.0
  *
  * This program is free software; you can redistribute it and/or modify it
  * under the terms of the GNU General Public License as published by the
@@ -34,7 +35,7 @@ struct	param {
 	char	*shortname;	/* permissible abbreviation */
 	off_t	nvalue;
 	char	*svalue;
-	int		flags;
+	int	flags;
 };
 
 extern	struct	param	params[];

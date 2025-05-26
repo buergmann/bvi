@@ -1,8 +1,8 @@
 .rn '' }`
-''' $RCSfile$$Revision$$Date$
-'''
-''' $Log$
-'''
+.\" $RCSfile$$Revision$$Date$
+.\"
+.\" $Log$
+.\"
 .de Sh
 .br
 .if t .Sp
@@ -31,12 +31,12 @@
 
 .fi
 ..
-'''
-'''
-'''     Set up \*(-- to give an unbreakable dash;
-'''     string Tr holds user defined translation string.
-'''     Bell System Logo is used as a dummy character.
-'''
+.\"
+.\"
+.\"     Set up \*(-- to give an unbreakable dash;
+.\"     string Tr holds user defined translation string.
+.\"     Bell System Logo is used as a dummy character.
+.\"
 .tr \(*W-|\(bv\*(Tr
 .ie n \{\
 .ds -- \(*W-
@@ -45,10 +45,10 @@
 .if (\n(.H=4u)&(1m=20u) .ds -- \(*W\h'-12u'\(*W\h'-8u'-\" diablo 12 pitch
 .ds L" ""
 .ds R" ""
-'''   \*(M", \*(S", \*(N" and \*(T" are the equivalent of
-'''   \*(L" and \*(R", except that they are used on ".xx" lines,
-'''   such as .IP and .SH, which do another additional levels of
-'''   double-quote interpretation
+.\"   \*(M", \*(S", \*(N" and \*(T" are the equivalent of
+.\"   \*(L" and \*(R", except that they are used on ".xx" lines,
+.\"   such as .IP and .SH, which do another additional levels of
+.\"   double-quote interpretation
 .ds M" """
 .ds S" """
 .ds N" """""
@@ -93,7 +93,7 @@
 .nr % 0
 .rr F
 .\}
-.TH BVI 1 "BVI Version 1.4.2" "8/Feb/2022" "User Commands"
+.TH BVI 1 "BVI Version 1.5.0" "31/May/2025" "User Commands"
 .IX Title "BVI 1"
 .UC
 .IX Name "bvi, bview - visual display editor for binary files"
@@ -194,7 +194,7 @@
 bvi, bview \- visual editor for binary files
 .SH "VERSION"
 .IX Header "VERSION"
-bvi-1.4.1
+bvi-1.5.0
 .SH "SYNOPSIS"
 .IX Header "SYNOPSIS"
 \fBbvi\fR\ \ \ [\fB\-R\fR]\ [\fB\-c\fR\ \fIcmd\fR]\ [\fB\-f\fR\ \fIscript\fR]\ [\fB\-s\fR\ \fIskip\fR]\ [\fB\-e\fR\ \fIend\fR]\ [\fB\-n\fR\ \fIlength\fR]\ \fIfile\fR...
@@ -273,7 +273,7 @@ Files are treated as one long stream of bytes.  The characters
 \*(L"newline\*(R" and \*(L"carriage return\*(R" are not special, id est they
 never mark the end of lines.  Therefore the lines on the screen do not
 represent lines in the usual way.  Data is broken across screen lines
-arbitarily.
+arbitrarily.
 As a consequence there are no commands in bvi from ex or vi
 that are based on line numbers, eg \*(L"dd\*(R", \*(L"yy\*(R", \*(L'C\*(R', \*(L'S\*(R', \*(L'o\*(R', \*(L'O\*(R'.
 This also changes the meaning of \*(L"range\*(R" before the \*(L":write\*(R" command
@@ -313,7 +313,7 @@ using these meta sequences:
 .Ve
 Additional search commands:
 Similar to the text search commands there are additional hex-search
-functions \*(L'\e\*(R' and \*(L'#\*(R' which allow to search for any byte value.
+functions \*(L'\e\*(R' and \*(L'#\*(R' which allow one to search for any byte value.
 Example:  \*(L"\e62 76 69\*(R" will search for the string \*(L"bvi\*(R".
 Spaces between hex value are optional, so searching
 for \*(L"6775636B6573\*(R" will find \*(L"guckes\*(R".
@@ -584,7 +584,7 @@ the file. If you use ASCII mode you can use the special characters
 \&  ignorecase noic     Ignores letter case in searching
 \&  magic      nomagic  Makes . [ * special in patterns
 \&  memmove    nomm     enables insert and delete commands
-\&  offset     of=0     adds an offset to the diplayed addresses
+\&  offset     of=0     adds an offset to the displayed addresses
 \&  readonly   noro     If set, write fails unless you use ! after command
 \&  reverse    nore     display otherwise-printable characters with their
 \&                      high bit set as reverse video
@@ -606,7 +606,7 @@ bvi was developed by Gerhard Buergmann, Vienna, Austria
 \fIgerhard@puon.at\fR
 .SH "WWW"
 .IX Header "WWW"
-Bvi\ Homepage:\ \ http://bvi.sourceforge.net/
+Bvi\ Homepage:\ \ https://bvi.sourceforge.net/
 Vi\ Pages:\ \ \ \ \ \ http://www.guckes.net/vi/clones.php3
 \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ (all\ about\ Vi\ and\ its\ clones)
 .SH "FILES"
@@ -614,9 +614,6 @@ Vi\ Pages:\ \ \ \ \ \ http://www.guckes.net/vi/clones.php3
 \fI\ $HOME/.bvirc\fR\ \ \ \ \ \ \ \ \ \ editor\ startup\ file
 .BR
 \fI\ ./.bvirc\fR\ \ \ \ \ \ \ \ \ \ \ \ \ \ editor\ startup\ file
-.SH "BUGS"
-.IX Header "BUGS"
-Bvi does not update the screen when the terminal changes its size.
 .SH "SEE ALSO"
 .IX Header "SEE ALSO"
 \fIbmore\fR\|(1), \fIvi\fR\|(1), \fIstrings\fR\|(1), \fIascii\fR\|(5)
