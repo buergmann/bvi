@@ -99,8 +99,7 @@ static	char	oldbuf[CMDSZ + 3];		/** for :!! command **/
  * the environment variable "BVIINIT" (or eventually .bvirc).
  */
 void
-docmdline(cmdline)
-	char	*cmdline;
+docmdline(char *cmdline)
 {
 	char	buff[CMDSZ];
 	char	cmdbuf[CMDSZ];
@@ -630,11 +629,7 @@ yd_addr()
 
 /*********** Save file if not read only ********************/
 int
-save_chk(fname, start, end, flags)
-   char    *fname;
-   char    *start;
-   char    *end;
-   int     flags;
+save_chk(char *fname, char *start, char *end, int flags)
 {
    if (P(P_RO)) {
        sprintf(string, "\"%s\" File is read only", name);
@@ -658,9 +653,7 @@ do_exit()
 
 
 int
-doecmd(arg, force)
-	char	*arg;
-	int		force;
+doecmd(char *arg, int force)
 {
 	char *tmp;
 
@@ -723,8 +716,7 @@ clearstr()
 
 /**** displays an error message *****/
 void
-emsg(s)
-	char	*s;
+emsg(char *s)
 {
 	int	cnt;
 	/*
@@ -751,8 +743,7 @@ emsg(s)
 
 /*** System error message *****/
 void
-sysemsg(s)
-	char	*s;
+sysemsg(char *s)
 {
 	char	string[256];
 
@@ -768,8 +759,7 @@ sysemsg(s)
 
 /*** displays mode if showmode set *****/
 void
-smsg(s)
-	char	*s;
+smsg(char *s)
 {
 	if (P(P_MO)) {
 		msg(s);
@@ -780,8 +770,7 @@ smsg(s)
 
 /************* displays s on status line *****************/
 void
-msg(s)
-	char	*s;
+msg(char *s)
 {
 	/*
 	int stchar;
@@ -801,8 +790,7 @@ msg(s)
 
 
 int
-outmsg(s)
-	char	*s;
+outmsg(char *s)
 {
 	char	*poi;
 	int	cnt = 0;
@@ -834,8 +822,7 @@ outmsg(s)
  *
  */
 int
-wait_return(flag)
-	int	flag;
+wait_return(int flag)
 {
 	int	c;
 
@@ -858,8 +845,7 @@ wait_return(flag)
 
 
 int
-chk_comm(flag)
-	int flag;
+chk_comm(int flag)
 {
 	if ((flag & NO_ADDR) && (addr_flag > 0)) {
 		emsg(noaddr); return 1; }

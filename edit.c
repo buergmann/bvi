@@ -64,8 +64,7 @@ static  char    *getcnext = NULL;
  * characters (for "." command)
  */
 off_t
-edit(mode)
-	int	mode;
+edit(int mode)
 {
 	int		ch, ch1;
 	size_t	len;
@@ -287,8 +286,7 @@ escape:
  * else setpage()
  */
 PTR
-do_ft(ch, flag)
-	int	ch, flag;
+do_ft(int ch, int flag)
 {
 	static	int	chi;
 	static	int	chp = 1;
@@ -365,8 +363,7 @@ do_ft(ch, flag)
 
 
 void
-do_z(mode)
-	int	mode;
+do_z(int mode)
 {
 	switch (mode) {
 	case '.':	while (y != maxy / 2) {
@@ -402,8 +399,7 @@ do_z(mode)
 
 
 void
-scrolldown(lns)
-	int	lns;
+scrolldown(int lns)
 {
 	while (lns--) {
 		if (maxpos >= (pagepos + Anzahl)) pagepos += Anzahl;
@@ -415,8 +411,7 @@ scrolldown(lns)
 
 
 void
-scrollup(lns)
-	int	lns;
+scrollup(int lns)
 {
 	while (lns--) {
 		if (mem <= (PTR)(pagepos - Anzahl)) pagepos -= Anzahl;
@@ -533,9 +528,7 @@ statpos()
 
 
 void
-printline(mempos, scpos)
-	PTR	mempos;
-	int	scpos;
+printline(PTR mempos, int scpos)
 {
 	PTR			hl_start = 0;
 	PTR			hl_end = 0;
@@ -671,8 +664,7 @@ repaint()	/***** redraw screen *********************/
 
 /******* display an arbitrary address on screen *******/
 void
-setpage(addr)
-	PTR		addr;
+setpage(PTR addr)
 {
 	if ((addr >= pagepos) && ((addr - pagepos) < screen)) {
 		y = (addr - pagepos) / Anzahl;
@@ -695,8 +687,7 @@ setpage(addr)
 
 
 int
-cur_forw(check)
-	int		check;
+cur_forw(int check)
 {
 	if (check) {
 		if (current - mem >= filesize) {
@@ -771,8 +762,7 @@ cur_back()
 
 
 void
-fileinfo(fname)
-	char	*fname;
+fileinfo(char *fname)
 {
 	off_t	bytepos;
 	char	fstatus[MAXCMD];
@@ -841,8 +831,7 @@ vgetc()
 
 
 void
-stuffin(s)
-char    *s;
+stuffin(char *s)
 {
     if (s == NULL) {        /* clear the stuff buffer */
         getcnext = NULL;
@@ -857,9 +846,7 @@ char    *s;
 
 
 void
-do_back(n, start)
-	off_t	n;
-	PTR		start;
+do_back(off_t n, PTR start)
 {
 	if (start - n < mem) {
 		beep();
@@ -881,9 +868,7 @@ do_back(n, start)
 
 
 int
-do_delete(n, start)
-	off_t	n;
-	PTR		start;
+do_delete(off_t n, PTR start)
 {
 	if (n + start > maxpos) {
 		beep();
@@ -913,10 +898,7 @@ do_delete(n, start)
  * The :insert, :append and :change command
  */
 void
-do_ins_chg(start, arg, mode)
-	PTR		start;
-	char	*arg;
-	int		mode;
+do_ins_chg(PTR start, char *arg, int mode)
 {
 	int		base;
 	off_t	buffer = BUFFER;
@@ -1032,9 +1014,7 @@ clear_marks()
 
 
 void
-do_mark(mark, addr)
-	int		mark;
-	PTR		addr;
+do_mark(int mark, PTR addr)
 {
 	if (mark < 'a' || mark > 'z' || current >= maxpos)
 		return;

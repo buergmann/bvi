@@ -64,8 +64,7 @@ putchr(char ch)
 #else
 
 int
-putchr(ch)
-	int ch;
+putchr(int ch)
 {return putchar(ch);}
 
 #endif
@@ -143,8 +142,7 @@ reset_tty()
 
 
 void
-sig(sig)
-	int sig;
+sig(int sig)
 {
 	reset_tty();
 	printf("\r\n");
@@ -156,8 +154,7 @@ sig(sig)
  * doshell() - run a command or an interactive shell
  */
 void
-doshell(cmd)
-	char	*cmd;
+doshell(char *cmd)
 {
 	int	ret;
 #ifndef DJGPP
@@ -281,10 +278,7 @@ vgetc()
  * Copy contents of memory (with possible overlapping).
  */
 char *
-memmove(s1, s2, n)
-	char    *s1;
-	char    *s2;
-	size_t  n;
+memmove(char *s1, char *s2, size_t n)
 {
 	bcopy(s2, s1, n);
 	return(s1);

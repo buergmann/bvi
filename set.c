@@ -68,8 +68,7 @@ struct	param	params[] = {
 
 
 int
-doset(arg)
-	char	*arg;		/* parameter string */
+doset(char *arg)
 {
 	int	i;
 	char	*s;
@@ -204,8 +203,7 @@ doset(arg)
 
 /* show ALL parameters */
 void
-showparms(all)
-	int	all;
+showparms(int all)
 {
 	struct	param	*p;
 	int		n, i;
@@ -242,8 +240,7 @@ showparms(all)
 
 /* reads the init file (.bvirc) */
 int
-read_rc(fn)
-	char *fn;
+read_rc(char *fn)
 {
 	int i;
 
@@ -261,9 +258,7 @@ read_rc(fn)
 
 
 int
-do_logic(mode, str)
-	int		mode;
-	char	*str;
+do_logic(int mode, char *str)
 {
 	int		a, b;
 	int		value;
@@ -349,9 +344,7 @@ do_logic(mode, str)
 
 
 int
-getcmdstr(p, x)
-	char    *p;
-	int		x;
+getcmdstr(char *p, int x)
 {
 	int		c;
 	int		i, n;

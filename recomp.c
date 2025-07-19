@@ -46,9 +46,7 @@ extern	char	*emptyclass;
  *  Compiling an ASCII sequence to a regex string
  */
 int
-ascii_comp(smem, pattern)
-	char	*smem;
-	char	*pattern;
+ascii_comp(char *smem, char *pattern)
 {
 	char	*end;
 	char	*comp;
@@ -167,9 +165,7 @@ ascii_comp(smem, pattern)
  * Compiling a hex expression to a regex string
  */
 int
-hex_comp(smem, pattern)
-	char	*smem;
-	char	*pattern;
+hex_comp(char *smem, char *pattern)
 {
 	char	*end;
 	char	*comp;

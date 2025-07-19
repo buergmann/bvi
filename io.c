@@ -79,11 +79,7 @@ extern	char	*fname_buf;
 
 /*********** Save the patched file ********************/
 int
-save(fname, start, end, flags)
-	char	*fname;
-	char	*start;
-	char	*end;
-	int		flags;
+save(char *fname, char *start, char *end, int flags)
 {
 	int		fd;
 	char	*string;
@@ -167,8 +163,7 @@ save(fname, start, end, flags)
 
 /* loads a file, returns the filesize */
 off_t
-load(fname)
-	char	*fname;
+load(char *fname)
 {
 	int		fd = -1;
 	//char	*string;
@@ -337,8 +332,7 @@ load(fname)
  * Needed for DOS version only
  */
 void
-bvi_init(dir)
-	char *dir;
+bvi_init(char *dir)
 {
 	char    *initstr;
 	char    rcpath[MAXCMD];
@@ -378,8 +372,7 @@ bvi_init(dir)
 
 
 int
-enlarge(add)
-	off_t	add;
+enlarge(off_t add)
 {
 	char	*newmem;
 	off_t	savecur, savepag, savemax, saveundo;
@@ -428,8 +421,7 @@ do_shell()
 
 #ifndef HAVE_STRDUP
 char *
-strdup(s)
-	char	*s;
+strdup(char *s)
 {
 	char    *p;
 	size_t	n;
@@ -447,10 +439,7 @@ strdup(s)
  * Copy contents of memory (with possible overlapping).
  */
 char *
-memmove(s1, s2, n)
-	char	*s1;
-	char	*s2;
-	size_t	n;
+memmove(char *s1, char *s2, size_t n)
 {
 	bcopy(s2, s1, n);
 	return(s1);
@@ -459,9 +448,7 @@ memmove(s1, s2, n)
 
 
 off_t
-alloc_buf(n, buffer)
-	off_t	n;
-	char	**buffer;
+alloc_buf(off_t n, char **buffer)
 {
 	if (*buffer == NULL) {
 		*buffer = (char *)malloc(n);
@@ -477,8 +464,7 @@ alloc_buf(n, buffer)
 
 
 int
-addfile(fname)
-	char	*fname;
+addfile(char *fname)
 {
 	int		fd;
 	off_t	oldsize;

@@ -119,9 +119,7 @@ usage()
 
 
 int
-main(argc, argv)
-	int argc;
-	char *argv[];
+main(int argc, char *argv[])
 {
 	int		ch;
 	int		lflag;
@@ -755,8 +753,7 @@ main(argc, argv)
 
 
 off_t
-calc_size(arg)
-	char	*arg;
+calc_size(char *arg)
 {
 	off_t	val;
 	extern int errno;
@@ -807,9 +804,7 @@ trunc_cur()
 
 
 int
-do_append(count, buf)
-	off_t	count;
-	char	*buf;
+do_append(off_t count, char *buf)
 {
 	if (filesize + count > memsize) {
 		if (enlarge(count + 100L)) return 1;
@@ -826,8 +821,7 @@ do_append(count, buf)
 
 
 void
-do_tilde(count)
-	off_t	count;
+do_tilde(off_t count)
 {
 	if (filesize == 0L) return;
 	undo_start = current;
@@ -913,10 +907,7 @@ do_undo()
 
 
 void
-do_over(loc, n, buf)
-	PTR		loc;
-	off_t	n;
-	PTR		buf;
+do_over(PTR loc, off_t n, PTR buf)
 {
 	if (n < 1L) {
 		emsg(nobytes);
@@ -938,10 +929,7 @@ do_over(loc, n, buf)
 
 
 void
-do_put(loc, n, buf)
-	PTR		loc;
-	off_t	n;
-	PTR		buf;
+do_put(PTR loc, off_t n, PTR buf)
 {
 	if (n < 1L) {
 		emsg(nobytes);
@@ -969,8 +957,7 @@ do_put(loc, n, buf)
 
 /* argument sig not used, because only SIGINT will be catched */
 void
-jmpproc(sig)
-	int	sig;
+jmpproc(int sig)
 {
 	if (P(P_EB)) beep();
 	repaint();
@@ -981,8 +968,7 @@ jmpproc(sig)
 
 
 off_t
-range(ch)
-	int		ch;
+range(int ch)
 {
 	int		ch1;
 	long	count;

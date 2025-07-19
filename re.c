@@ -52,9 +52,7 @@ char	*emptyclass = "Bad character class|Empty byte class '[]' or '[^]' cannot ma
 
 
 PTR
-bregexec(start, scan)
-	PTR		start;
-	char	*scan;
+bregexec(PTR start, char *scan)
 {
 	char	*act;
 	int		count, test;
@@ -129,10 +127,7 @@ bregexec(start, scan)
 
 
 static int
-sbracket(start, scan, count)
-	int		start;
-	char	*scan;
-	int		count;
+sbracket(int start, char *scan, int count)
 {
 	if (*scan++ == '^') {
 		if (!memchr(scan, start, --count)) return 0;
@@ -144,8 +139,7 @@ sbracket(start, scan, count)
 
 
 PTR
-end_word(start)
-	PTR	start;
+end_word(PTR start)
 {
 	PTR	pos;
 
@@ -159,9 +153,7 @@ end_word(start)
 /* wordsearch serves the 'W' and 'w' - command
  */
 PTR
-wordsearch(start, mode)
-	PTR		start;
-	char	mode;
+wordsearch(PTR start, char mode)
 {
 	PTR		found;
 	PTR		pos;
@@ -191,9 +183,7 @@ wordsearch(start, mode)
 /* backsearch serves the 'b' and 'B' command
  */
 PTR
-backsearch(start, mode)
-	PTR		start;
-	char	mode;
+backsearch(PTR start, char mode)
 {
 	PTR		pos;
 	int		ccount;
@@ -220,11 +210,7 @@ backsearch(start, mode)
 /* used by :s
  */
 int
-do_substitution(delim, line, startpos, endpos)
-	int		delim;
-	char	*line;
-	PTR		startpos;
-	PTR		endpos;
+do_substitution(int delim, char *line, PTR startpos, PTR endpos)
 {
 	int		n;
 	char	*found;
@@ -380,12 +366,7 @@ SKIP:
  * return	address found
  */
 PTR
-searching(ch, line, startpos, endpos, flag)
-	int		ch;
-	char	*line;
-	PTR		startpos;
-	PTR		endpos;
-	int		flag;
+searching(int ch, char *line, PTR startpos, PTR endpos, int flag)
 {
 	char	*cmd = NULL;
 	PTR		found;
@@ -489,9 +470,7 @@ searching(ch, line, startpos, endpos, flag)
  * returns pointer to next character
  */
 char *
-patcpy(s1, s2, delim)
-	char	*s1, *s2;
-	char	delim;
+patcpy(char *s1, char *s2, char delim)
 {
 	while (*s2 != '\0' && *s2 != delim) {
 		if (*s2 == '\\' && *(s2 + 1) == delim) s2++;
@@ -504,14 +483,10 @@ patcpy(s1, s2, delim)
 
 
 PTR
-fsearch_end(start, end, smem, s_end)
+fsearch_end(PTR start, PTR end, char *smem, PTR *s_end)
 /*
 fsearch(start, end, smem)
 */
-	PTR		start;
-	PTR		end;
-	char	*smem;
-	PTR		*s_end;
 {
 	PTR	spos;
 
@@ -530,10 +505,7 @@ fsearch(start, end, smem)
 
 
 PTR
-fsearch(start, end, smem)
-   PTR     start;
-   PTR     end;
-   char    *smem;
+fsearch(PTR start, PTR end, char *smem)
 {
    PTR     s_end;
    return fsearch_end(start, end, smem, &s_end);
@@ -541,10 +513,7 @@ fsearch(start, end, smem)
 
 
 PTR
-rsearch(start, end, smem)
-	PTR		start;
-	PTR		end;
-	char	*smem;
+rsearch(PTR start, PTR end, char *smem)
 {
 	PTR	spos;
 
@@ -564,9 +533,7 @@ rsearch(start, end, smem)
  * returns NULL on error or default_address, if nothing found
  */
 PTR
-calc_addr(pointer, def_addr)
-	char	**pointer;
-	PTR		def_addr;
+calc_addr(char **pointer, PTR def_addr)
 {
 	PTR		addr;
 	int		ch, mark;

@@ -113,9 +113,7 @@ usage()
 
 
 int
-main(argc, argv)
-	int argc;
-	char *argv[];
+main(int argc, char *argv[])
 {
 	int		ch, ch1;
 	int		colon = 0, last_ch = 0;
@@ -533,9 +531,7 @@ main(argc, argv)
 
 
 int
-rdline(ch, sstring)
-	int		ch;
-	char	*sstring;
+rdline(int ch, char *sstring)
 {
 	int		i = 0;
 	int		ch1 = 0;
@@ -587,8 +583,7 @@ rdline(ch, sstring)
 
 
 void
-do_next(n)
-	int	n;
+do_next(int n)
 {
 	if (numfiles) {
 		if (n == 1 && file_nr == numfiles) {
@@ -614,8 +609,7 @@ do_next(n)
 
 
 int
-open_file(name)
-	char *name;
+open_file(char *name)
 {
 	struct	stat	buf;
 
@@ -636,9 +630,7 @@ open_file(name)
 
 
 void
-putline(buf, num)
-	char	*buf;
-	int		num;
+putline(char *buf, int num)
 {
 	int			print_pos;
 	unsigned	char	ch;
@@ -689,8 +681,7 @@ putline(buf, num)
 
 
 int
-printout(lns)
-	int lns;
+printout(int lns)
 {
 	int			c, num;
 	int			doub = 0;
@@ -755,9 +746,7 @@ nextchar()
 
 
 void
-pushback(n, where)
-	int	n;
-	char	*where;
+pushback(int n, char *where)
 {
 	if (cnt) memmove(cmdbuf + n, cmdbuf, n);
 	memcpy(cmdbuf, where, n);
@@ -774,8 +763,7 @@ pushback(n, where)
  *  1   found
  */
 int
-bmregexec(scan)
-	char	*scan;
+bmregexec(char *scan)
 {
 	char	*act;
 	int		count, test;
@@ -893,10 +881,7 @@ bmregexec(scan)
 
 
 int
-sbracket(start, scan, count)
-	int		start;
-	char	*scan;
-	int		count;
+sbracket(int start, char *scan, int count)
 {
 	if (*scan++ == '^') {
 		if (!memchr(scan, start, --count)) return 0;
@@ -908,8 +893,7 @@ sbracket(start, scan, count)
 
 
 void
-bmsearch(ch)
-	int	ch;
+bmsearch(int ch)
 {
 	int	i;
 
@@ -961,8 +945,7 @@ emsg(string);
 
 
 void
-emsg(s)
-	char	*s;
+emsg(char *s)
 {
 	putchar('\r');
 	cleartoeol();
