@@ -9,8 +9,9 @@
  * 2013-08-23  V 1.4.0
  * 2019-01-22  V 1.4.1
  * 2023-03-06  V 1.4.2
+ * 2025-07-19  V 1.5.0
  *
- * Copyright 1990-2023 by Gerhard Buergmann
+ * Copyright 1990-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * NOTE: Edit this file with tabstop=4 !

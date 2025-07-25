@@ -7,10 +7,11 @@
  * 2010-06-02 V 1.3.4
  * 2013-08-22 V 1.4.0
  * 2019-10-09 V 1.4.1
+ * 2025-07-19 V 1.5.0
  *
  * NOTE: Edit this file with tabstop=4 !
  *
- * Copyright 1996-2019 by Gerhard Buergmann
+ * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it

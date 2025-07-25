@@ -1,4 +1,7 @@
 Patches:
+Étienne Mollier <emollier@debian.org> gcc-15/C23 issues
+Matthias Klose <doko@debian.org> GCC-15 issues
+Vincent Batts <vbatts@hashbangbash.com> nit cleanup
 Guido <guido@bearix.oche.de> sys_errlist
 Christian "naddy" Weisgerber <naddy@mips.rhein-neckar.de> {Free,Open}BSD
 Gunnar Larisch <la@softing.com> ^ZZ bug

@@ -12,7 +12,7 @@
  * 2006-04-05 V 1.3.3 alpha - binary representation
  * 2014-09-30 V 1.4.0
  * 2019-10-12 V 1.4.1
- * 2025-05-24 V 1.5.0
+ * 2025-07-19 V 1.5.0
  *
  * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at

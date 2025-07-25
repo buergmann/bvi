@@ -5,6 +5,7 @@ New in release 1.5.0
 * fix build fails with gcc-15/C23
 * fix statusline for small windows
 * various issues caught by lintian solved
+* fix old-style-definition warnings
 * Minor fixes
 
 

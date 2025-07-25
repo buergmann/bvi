@@ -12,8 +12,9 @@
  * 2013-08-24 V 1.4.0
  * 2019-01-28 V 1.4.1
  * 2023-03-07 V 1.4.2
+ * 2025-07-19 V 1.5.0
  *
- * Copyright 1996-2023 by Gerhard Buergmann
+ * Copyright 1996-2025 by Gerhard Buergmann
  * gerhard@puon.at
  *
  * This program is free software; you can redistribute it and/or modify it
